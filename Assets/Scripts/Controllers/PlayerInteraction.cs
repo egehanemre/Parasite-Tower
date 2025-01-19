@@ -10,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float interactionRange = 5f;
     [SerializeField] private Iinteractable itemOnHand;
     [SerializeField] private Transform grabLocation;
+    [SerializeField] private float dropForce = 5f;
 
     private void Start()
     {
@@ -57,6 +58,10 @@ public class PlayerInteraction : MonoBehaviour
         MonoBehaviour itemMn = itemOnHand as MonoBehaviour;
         itemMn.transform.SetParent(null);
         itemOnHand = null;
+
+        if (itemMn.TryGetComponent<Rigidbody>(out Rigidbody rb)) {
+            rb.AddForce(pov.forward * dropForce, ForceMode.Impulse);
+        }
     }
 
     public Iinteractable GetItemOnFocus() {
