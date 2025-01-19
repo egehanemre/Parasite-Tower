@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour, IEvent
+public class Fire : MonoBehaviour, IEvent, Iinteractable
 {
     [Header("Stages")]
     public int currentStage;
@@ -36,5 +36,11 @@ public class Fire : MonoBehaviour, IEvent
     public float GetWeight()
     {
         return tickPossibility;
+    }
+
+    public bool CanHold(out float time)
+    {
+        time = 1;
+        return true;
     }
 }

@@ -288,10 +288,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   pov: {fileID: 0}
   interactionRange: 5
   grabLocation: {fileID: 6504685860169209037}
+  dropForce: 5
+  holdingTime: 0
 --- !u!1 &3385384639620000817
 GameObject:
   m_ObjectHideFlags: 0

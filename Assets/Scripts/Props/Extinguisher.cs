@@ -10,23 +10,16 @@ public class Extinguisher : MonoBehaviour, Iinteractable
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField] private Collider collider;
     [SerializeField] private float extinguishingCooldown = 0.33f;
-    private float extinguishingTimer = 0;
 
     public void Interact() { }
 
-    private void FixedUpdate()
-    {
-        extinguishingTimer -= Time.fixedDeltaTime;
-    }
-
-    public void InteractWhileOnHand(Transform pov)
-    {
+    public void InteractWhileHolding(Transform pov, float holdingTime) {
+        if(extinguishingCooldown > holdingTime) return;
+        
         bool foundFire = Physics.Raycast(pov.transform.position, pov.transform.TransformDirection(Vector3.forward), out RaycastHit hit, 
             extinguishRange, extinguishableLayer, QueryTriggerInteraction.Collide);
 
-        if (foundFire && extinguishingTimer <= 0 && hit.collider.gameObject.TryGetComponent<Fire>(out Fire fire))
-        {
-            extinguishingTimer = extinguishingCooldown;
+        if (foundFire && hit.collider.gameObject.TryGetComponent<Fire>(out Fire fire)) {
             fire.ChangeStage(-1);
         }
     }
@@ -38,6 +31,12 @@ public class Extinguisher : MonoBehaviour, Iinteractable
     }
 
     public bool CanGrab() {
+        return true;
+    }
+    
+    public bool CanHold(out float time)
+    {
+        time = extinguishingCooldown;
         return true;
     }
 }

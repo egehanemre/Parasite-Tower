@@ -12,21 +12,41 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Transform grabLocation;
     [SerializeField] private float dropForce = 5f;
 
+    [Header("Holding")]
+    [SerializeField] private float holdingTime = 0;
+    private Iinteractable holdingAt;
+    private float holdingTimer;
+
     private void Start()
     {
         if(pov == null) pov = Camera.main.transform;
     }
 
-    public void Update()
-    {
+    public void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
+            holdingAt = GetItemOnFocus();
             itemOnHand?.InteractWhileOnHand(pov);
             OnInteractionRequest();
-        }
+        } 
+        
+        else if (Input.GetKey(KeyCode.E)) OnHoldRequest();
+        else if (holdingAt != null) holdingTimer = 0;
+        if (Input.GetKey(KeyCode.G)) if(itemOnHand != null) DropItem();
+    }
 
-        if (Input.GetKey(KeyCode.G))
-        {
-            if(itemOnHand != null) DropItem();
+    public void OnHoldRequest() {
+        if(holdingAt == null) return;
+        
+        if (!holdingAt.CanHold(out holdingTime)) {
+            holdingAt = null;
+        }
+        else  {
+            holdingTimer += Time.deltaTime;
+            if (holdingTime <= holdingTimer) {
+                holdingAt = null;
+                itemOnHand?.InteractWhileHolding(pov, holdingTimer);
+                holdingTimer = 0;
+            }
         }
     }
 
@@ -34,7 +54,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         Iinteractable itemOnFocus = GetItemOnFocus();
         if (itemOnFocus == null) return;
-        
         itemOnFocus.Interact();
                 
         if (itemOnFocus.CanGrab()) {
@@ -65,9 +84,10 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     public Iinteractable GetItemOnFocus() {
-        bool foundObject = Physics.Raycast(pov.transform.position, pov.transform.TransformDirection(Vector3.forward), out RaycastHit hit, 
+        bool foundObject = Physics.Raycast(pov.transform.position, pov.transform.TransformDirection(Vector3.forward), out RaycastHit hit,
             interactionRange, interactableLayer, QueryTriggerInteraction.Collide);
-
+        Debug.DrawRay(pov.transform.position, pov.transform.TransformDirection(Vector3.forward) * interactionRange, Color.blue, 1);
+        
         if (foundObject) {
             return hit.collider.GetComponent<Iinteractable>();
         }
