@@ -16,11 +16,11 @@ public class Tank : MonoBehaviour
     private float fixedYaw;
     private float thrustTimer = 0;
     private float attackTimer = 0;
-    private Transform target;
+    private TankTarget target;
     private float calculatedThrust = 0.55f;
     private float hitCheckTimer = 0;
 
-    public void Setup(Transform targetInstance) {
+    public void Setup(TankTarget targetInstance) {
         fixedYaw = transform.rotation.y;
         target = targetInstance;
     }
@@ -54,9 +54,10 @@ public class Tank : MonoBehaviour
         
         // Deal Damage
         Debug.Log("A tank hit us!");
+        target.ApplyDamage(damage);
     }
 
     public bool IsInRange() {
-        return (transform.position - target.position).sqrMagnitude < attackRange;
+        return (transform.position - target.transform.position).sqrMagnitude < attackRange;
     }
 }

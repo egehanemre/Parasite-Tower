@@ -11,7 +11,7 @@ public class TankSpawner : MonoBehaviour, IEvent
     [SerializeField] private float spawnFrequency = 0.1f;
     [SerializeField] private float slotsSpawnCooldown = 5f;
     [SerializeField] private Vector3 posVariety = new Vector3();
-    [SerializeField] private Transform designatedTarget;
+    [SerializeField] private TankTarget designatedTarget;
     [SerializeField] private int maxTankPerLine = 2;
 
     public void FixedUpdate()
@@ -28,6 +28,8 @@ public class TankSpawner : MonoBehaviour, IEvent
 
     public void Tick()
     {
+        if(!designatedTarget) return;
+        
         TankSpawnSlot foundSlot = FindSpawnSlot();
         if(foundSlot != null) SpawnTankAtSlot(foundSlot, designatedTarget);
     }
@@ -36,7 +38,7 @@ public class TankSpawner : MonoBehaviour, IEvent
         return spawnFrequency;
     }
 
-    public void SpawnTankAtSlot(TankSpawnSlot slot, Transform target) {
+    public void SpawnTankAtSlot(TankSpawnSlot slot, TankTarget target) {
         slot.cooldown = slotsSpawnCooldown;
         
         GameObject spawnedTank = Instantiate(tankPrefab, slot.location);
