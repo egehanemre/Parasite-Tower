@@ -5,8 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     private CharacterController controller;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
     private Transform cameraTransform;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintTransitSpeed = 5f;
     [SerializeField] private float gravity = 9.8f;
     [SerializeField] private float jumpHeight = 2f;
-    [SerializeField] private float maxLookAngle = 90f;
+    [SerializeField] private float maxLookAngle = 70f;
     private float verticalVelocity;
     private float currentSpeed;
     private float xRotation;
@@ -26,34 +26,30 @@ public class PlayerController : MonoBehaviour
     private float mouseX;
     private float mouseY;
 
+    [Header("Camera Bob Settings")]
+    [SerializeField] private float bobFrequency = 1f;
+    [SerializeField] private float bobAmplitude = 1f;
+    private float bobTimer = 0f;
+    private CinemachineBasicMultiChannelPerlin noiseComponent;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        if (controller == null)
-        {
-            Debug.LogError("CharacterController is not assigned!");
-            enabled = false;
-            return;
-        }
-
-        if (virtualCamera == null)
-        {
-            Debug.LogError("Virtual Camera is not assigned!");
-            enabled = false;
-            return;
-        }
+        noiseComponent = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cameraTransform = virtualCamera.transform;
-
-        // Lock the cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor();
     }
+
 
     private void Update()
     {
         InputManagement();
         Movement();
+    }
+    private void LateUpdate()
+    {
+        CameraBob();
     }
 
     private void Movement()
@@ -61,7 +57,20 @@ public class PlayerController : MonoBehaviour
         GroundMovement();
         Turn();
     }
-
+    private void CameraBob()
+    {
+        if (controller.isGrounded && controller.velocity.magnitude > 0.1f)
+        {
+            float speedMultiplier = Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f;
+            noiseComponent.m_AmplitudeGain = bobAmplitude * speedMultiplier;
+            noiseComponent.m_FrequencyGain = bobFrequency * speedMultiplier;
+        }
+        else
+        {
+            noiseComponent.m_AmplitudeGain = 0.0f;
+            noiseComponent.m_FrequencyGain = 0.0f;
+        }
+    }
     private void GroundMovement()
     {
         Vector3 move = new Vector3(strafeInput, 0, moveInput);
@@ -74,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * Time.deltaTime);
     }
-
     private void Turn()
     {
         mouseX *= mouseSensitivity * Time.deltaTime;
@@ -83,16 +91,14 @@ public class PlayerController : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -maxLookAngle, maxLookAngle);
 
-        cameraTransform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        virtualCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up * mouseX);
     }
-
     private float CalculateCurrentSpeed()
     {
         float targetSpeed = moveSpeed * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f);
         return Mathf.Lerp(currentSpeed, targetSpeed, sprintTransitSpeed * Time.deltaTime);
     }
-
     private float VerticalForceCalculation()
     {
         if (controller.isGrounded)
@@ -110,12 +116,16 @@ public class PlayerController : MonoBehaviour
         }
         return verticalVelocity;
     }
-
     private void InputManagement()
     {
         moveInput = Input.GetAxis("Vertical");
         strafeInput = Input.GetAxis("Horizontal");
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
+    }
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

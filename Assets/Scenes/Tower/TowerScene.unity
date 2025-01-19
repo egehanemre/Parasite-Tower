@@ -497,6 +497,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 413463141244891128, guid: eeda344747aaa004587f54720527552b, type: 3}
+      propertyPath: maxLookAngle
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 2193912316092195272, guid: eeda344747aaa004587f54720527552b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -504,8 +508,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6647306732217226031, guid: eeda344747aaa004587f54720527552b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2018299518}
   m_SourcePrefab: {fileID: 100100000, guid: eeda344747aaa004587f54720527552b, type: 3}
+--- !u!1 &2018299514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6647306732217226031, guid: eeda344747aaa004587f54720527552b, type: 3}
+  m_PrefabInstance: {fileID: 1088454870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2018299518
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018299514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 554b0ed52734c154eab51f6cedd3a7d7, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &1876271066753005394
 PrefabInstance:
   m_ObjectHideFlags: 0
