@@ -18,6 +18,9 @@ public class EventManager : MonoBehaviour
 
     private void Start()
     {
+        if (events.Length == 0) {
+            events = GameObject.FindGameObjectsWithTag("Event");
+        }
         CalculateWeights();
     }
 
