@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     [Header("Camera Bob Settings")]
     [SerializeField] private float bobFrequency = 1f;
     [SerializeField] private float bobAmplitude = 1f;
+    private float currentBobAmplitude = 0f;
+    private float currentBobFrequency = 0f;
+    [SerializeField] private float bobTransitionSpeed = 2f;
     private float bobTimer = 0f;
     private CinemachineBasicMultiChannelPerlin noiseComponent;
 
@@ -57,20 +60,34 @@ public class PlayerController : MonoBehaviour
         GroundMovement();
         Turn();
     }
+
+
     private void CameraBob()
     {
-        if (controller.isGrounded && controller.velocity.magnitude > 0.1f)
+        bool isMoving = controller.isGrounded && controller.velocity.magnitude > 0.1f;
+        float targetAmplitude = isMoving ? bobAmplitude * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f) : 0f;
+        float targetFrequency = isMoving ? bobFrequency * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f) : 0f;
+
+        currentBobAmplitude = Mathf.Lerp(currentBobAmplitude, targetAmplitude, Time.deltaTime * bobTransitionSpeed);
+        currentBobFrequency = Mathf.Lerp(currentBobFrequency, targetFrequency, Time.deltaTime * bobTransitionSpeed);
+
+        if (isMoving)
         {
-            float speedMultiplier = Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f;
-            noiseComponent.m_AmplitudeGain = bobAmplitude * speedMultiplier;
-            noiseComponent.m_FrequencyGain = bobFrequency * speedMultiplier;
+            bobTimer += Time.deltaTime * currentBobFrequency;
+            float bobbingEffect = Mathf.Sin(bobTimer) * currentBobAmplitude;
+
+            noiseComponent.m_AmplitudeGain = Mathf.Abs(bobbingEffect);
         }
         else
         {
-            noiseComponent.m_AmplitudeGain = 0.0f;
-            noiseComponent.m_FrequencyGain = 0.0f;
+            noiseComponent.m_AmplitudeGain = currentBobAmplitude;
         }
+
+        noiseComponent.m_FrequencyGain = currentBobFrequency;
     }
+
+
+
     private void GroundMovement()
     {
         Vector3 move = new Vector3(strafeInput, 0, moveInput);
