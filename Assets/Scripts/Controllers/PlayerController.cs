@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
     private float currentSpeed;
     private float xRotation;
+    private bool movementLocked;
 
     [Header("Input")]
     [SerializeField] private float mouseSensitivity = 100f;
@@ -34,6 +36,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float bobTransitionSpeed = 2f;
     private float bobTimer = 0f;
     private CinemachineBasicMultiChannelPerlin noiseComponent;
+    private bool cameraBobLocked;
+
+    [Header("Camera Transition")] 
+    public Transform baseLookAt;
+    public Transform baseFollow;
 
     private void Start()
     {
@@ -41,6 +48,8 @@ public class PlayerController : MonoBehaviour
         noiseComponent = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cameraTransform = virtualCamera.transform;
+        baseLookAt = virtualCamera.m_LookAt;
+        baseFollow = virtualCamera.m_Follow;
         LockCursor();
     }
 
@@ -57,13 +66,14 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
+        if(movementLocked) return;
         GroundMovement();
         Turn();
     }
 
 
-    private void CameraBob()
-    {
+    private void CameraBob() {        
+        if(cameraBobLocked) return;
         bool isMoving = controller.isGrounded && controller.velocity.magnitude > 0.1f;
         float targetAmplitude = isMoving ? bobAmplitude * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f) : 0f;
         float targetFrequency = isMoving ? bobFrequency * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeedMultiplier : 1f) : 0f;
@@ -144,5 +154,29 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void UpdateMovementLock(bool locked) {
+        Cursor.visible = locked;
+        movementLocked = locked;
+        cameraBobLocked = locked;
+        if (cameraBobLocked) noiseComponent.m_AmplitudeGain = 0;
+        
+        CursorLockMode cursorLockMode = CursorLockMode.Locked;
+        if (locked) cursorLockMode = CursorLockMode.None;
+        Cursor.lockState = cursorLockMode;
+    }
+
+    public void UpdateCameraMode(Transform newFollow, Transform newLookAt, bool movementLock, Quaternion newRotation) {
+        UpdateMovementLock(movementLock);
+        virtualCamera.m_Follow = newFollow;
+        virtualCamera.m_LookAt = newLookAt;
+        virtualCamera.transform.rotation = newRotation;
+    }
+    
+    public void UpdateCameraMode(Transform newFollow, Transform newLookAt, bool movementLock) {
+        UpdateMovementLock(movementLock);
+        virtualCamera.m_Follow = newFollow;
+        virtualCamera.m_LookAt = newLookAt;
     }
 }

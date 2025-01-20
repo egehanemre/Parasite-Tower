@@ -54,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Iinteractable itemOnFocus = GetItemOnFocus();
         if (itemOnFocus == null) return;
-        itemOnFocus.Interact();
+        itemOnFocus.Interact(this);
                 
         if (itemOnFocus.CanGrab()) {
             if(itemOnHand != null) DropItem();
