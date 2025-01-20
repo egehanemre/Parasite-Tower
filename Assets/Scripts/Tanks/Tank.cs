@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class Tank : MonoBehaviour
@@ -19,6 +20,8 @@ public class Tank : MonoBehaviour
     private TankTarget target;
     private float calculatedThrust = 0.55f;
     private float hitCheckTimer = 0;
+
+    public UnityEvent<Tank> onTankDestroyed = new UnityEvent<Tank>();
 
     public void Setup(TankTarget targetInstance) {
         fixedYaw = transform.rotation.y;
@@ -48,7 +51,7 @@ public class Tank : MonoBehaviour
         }
     }
 
-    public void TryShoot() {
+    private void TryShoot() {
         if(attackTimer > 0) return;
         attackTimer = attackCooldown;
         
@@ -57,7 +60,14 @@ public class Tank : MonoBehaviour
         target.ApplyDamage(damage);
     }
 
-    public bool IsInRange() {
+    private bool IsInRange() {
         return (transform.position - target.transform.position).sqrMagnitude < attackRange;
     }
+
+    public void HitTank() {
+        onTankDestroyed?.Invoke(this);
+        Destroy(gameObject);
+    }
+    
+    
 }

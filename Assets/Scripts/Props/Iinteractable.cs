@@ -4,9 +4,13 @@ using UnityEngine;
 
 public interface Iinteractable
 {
-    public void Interact(PlayerInteraction interaction)
+    public void Interact()
     {
         
+    }
+    public void Interact(PlayerInteraction interaction)
+    {
+        Interact();
     }
 
     public void InteractWhileOnHand(Transform pov)

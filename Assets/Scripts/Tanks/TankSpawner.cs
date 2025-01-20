@@ -38,7 +38,7 @@ public class TankSpawner : MonoBehaviour, IEvent
         return spawnFrequency;
     }
 
-    public void SpawnTankAtSlot(TankSpawnSlot slot, TankTarget target) {
+    private void SpawnTankAtSlot(TankSpawnSlot slot, TankTarget target) {
         slot.cooldown = slotsSpawnCooldown;
         
         GameObject spawnedTank = Instantiate(tankPrefab, slot.location);
@@ -50,10 +50,17 @@ public class TankSpawner : MonoBehaviour, IEvent
         if (spawnedTank.TryGetComponent<Tank>(out Tank tank)) {
             tank.Setup(target);
             slot.spawnedTanks.Add(tank);
+            tank.onTankDestroyed.AddListener(OnTankDestroyed);
         }
     }
 
-    public TankSpawnSlot FindSpawnSlot() {
+    private void OnTankDestroyed(Tank tank) {
+        foreach (var slot in spawnSlots) {
+            slot.spawnedTanks.Remove(tank);
+        }
+    }
+
+    private TankSpawnSlot FindSpawnSlot() {
         if (spawnSlots == null || spawnSlots.Count == 0)
         {
             Debug.Log("No spawn slots for tank spawner found.");
