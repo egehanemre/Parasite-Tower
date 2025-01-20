@@ -11,6 +11,7 @@ public class RadarRenderer : MonoBehaviour
     [SerializeField] private Vector3 positionOffset;
     public void RenderAll(List<GameObject> targets) {
         ClearRender();
+        gameObject.SetActive(true);
 
         foreach (var target in targets) {
             if(!target) continue;

@@ -11,7 +11,7 @@ public class Radar : MonoBehaviour
     private float renderTimer;
 
     private void Start() {
-        if (!radarRenderer) radarRenderer = FindObjectOfType<RadarRenderer>();
+        if (!radarRenderer) radarRenderer = FindObjectOfType<RadarRenderer>(true);
     }
 
     public void FixedUpdate() {

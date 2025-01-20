@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadarRender
       objectReference: {fileID: 0}
+    - target: {fileID: 5249549394708822904, guid: 25056a1ebf743fb4f94b229a76476679, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6254413086626561039, guid: 25056a1ebf743fb4f94b229a76476679, type: 3}
       propertyPath: m_Pivot.x
       value: 1
