@@ -33,14 +33,21 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable
         ChangeStage(1);
     }
 
-    public float GetWeight()
-    {
+    public float GetWeight() {
         return tickPossibility;
     }
 
-    public bool CanHold(out float time)
-    {
+    public bool CanHold(out float time) {
         time = 1;
         return true;
     }
+
+    public bool ShouldRenderAtRadar() {
+        return currentStage > 0;
+    }
+
+    public Color GetRadarColor() {
+        return Color.Lerp(Color.red, Color.black, currentStage*0.25f);
+    }
+
 }

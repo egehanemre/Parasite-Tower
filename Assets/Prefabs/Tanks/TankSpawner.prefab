@@ -58,7 +58,7 @@ MonoBehaviour:
     location: {fileID: 8014005216796771336}
     spawnedTanks: []
   tankPrefab: {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
-  spawnFrequency: 15
+  spawnFrequency: 1
   slotsSpawnCooldown: 1
   posVariety: {x: 0, y: 0, z: 0}
   designatedTarget: {fileID: 0}

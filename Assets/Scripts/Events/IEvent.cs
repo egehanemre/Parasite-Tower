@@ -6,4 +6,6 @@ public interface IEvent
 {
     public void Tick();
     public float GetWeight();
+    public Color GetRadarColor() { return Color.red; }
+    public bool ShouldRenderAtRadar() { return false; }
 }
