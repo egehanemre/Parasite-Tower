@@ -155,4 +155,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gunRange: 100
+  viewportYToRotation: -28
+  viewportXToRotation: 51
+  projectilePrefab: {fileID: 1590377964574130443, guid: d4c8df176a439494aa63f1ea2705fb02, type: 3}
+  activeProjectiles: []
+  projectileSpawnLocation: {fileID: 533987346693827566}
+  projectileTravelSpeed: 25
+  projectileGravity: 5
+  projectileHitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   reloadTime: 0.33
