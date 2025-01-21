@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class GunnerPosition : MonoBehaviour, Iinteractable
+public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent
 {
     [SerializeField] private Transform cameraLocation;
     private bool beingUsed;
     private PlayerInteraction lastInteraction;
     private PlayerController controller;
-    private bool hasEnergy = true;
+    [SerializeField] private bool hasEnergy = true;
 
     [Header("Shooting")] 
     [SerializeField] private LayerMask targetMask;
@@ -35,6 +35,11 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
     public void Interact(PlayerInteraction interaction) {
         if (beingUsed) {
             Debug.Log("Gunner position is occupied.");
+            return;
+        }
+
+        if (!hasEnergy) {
+            Debug.Log("Gunner position has no energy");
             return;
         }
 
@@ -137,5 +142,17 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
         Debug.Log("No tanks are hit");            
         Debug.DrawRay(targetRay.origin , targetRay.direction * 100, Color.red, 100, true);
         return;
+    }
+
+    public void SetPowerState(bool state) {
+        hasEnergy = state;
+        if(!beingUsed || state == true) return;
+        controller.UpdateMovementLock(false);
+        cameraLocation.gameObject.SetActive(false);
+        beingUsed = false;
+    }
+
+    public bool GetPowerState() {
+        return hasEnergy;
     }
 }
