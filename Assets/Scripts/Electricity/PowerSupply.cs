@@ -40,4 +40,13 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
         time = 1;
         return true;
     }
+    
+    
+    public bool ShouldRenderAtRadar() {
+        return !dependent.GetPowerState();
+    }
+
+    public Color GetRadarColor() {
+        return Color.blue;
+    }
 }

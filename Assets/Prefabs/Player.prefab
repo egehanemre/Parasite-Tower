@@ -274,6 +274,9 @@ MonoBehaviour:
   mouseSensitivity: 400
   bobFrequency: 1
   bobAmplitude: 1
+  bobTransitionSpeed: 2
+  baseLookAt: {fileID: 0}
+  baseFollow: {fileID: 0}
 --- !u!114 &1062711712009159485
 MonoBehaviour:
   m_ObjectHideFlags: 0

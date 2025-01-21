@@ -2,14 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
+    private bool DEBUG = false;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float health = 100;
     [SerializeField] private TowerShield[] shields;
     [SerializeField] private TankTarget[] sides;
     [SerializeField] private HealthBar healthBar;
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.F8)) {
+            DEBUG = !DEBUG;
+        }
+    }
 
     public void Start() {
         shields = FindObjectsByType<TowerShield>(FindObjectsSortMode.None);
@@ -49,8 +57,8 @@ public class HealthManager : MonoBehaviour
         health -= damage;
         if(healthBar)healthBar.UpdateValue(health/maxHealth);
 
-        if (health <= 0) {
-            // Game Over
+        if (health <= 0 && !DEBUG) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
