@@ -6,12 +6,17 @@ using UnityEngine;
 public class Fire : MonoBehaviour, IEvent, Iinteractable
 {
     [Header("Stages")]
-    public int currentStage;
-    public GameObject[] stages;
-
+    private int currentStage;
+    [SerializeField] private GameObject[] stages;
+    [SerializeField] private float damageTickTime = 1;
+    [SerializeField] private float damagePerStage = 2;
+    
     [Header("Settings")] public float tickPossibility = 1;
+    private HealthManager healthRef;
 
     private void Start() {
+        if (!healthRef) healthRef = FindObjectOfType<HealthManager>();
+        StartCoroutine(FireDamageLoop());
         ChangeStage(0);
     }
 
@@ -27,6 +32,15 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable
         currentStage = Mathf.Clamp(change+currentStage, 0, stages.Length);
         ClearRender();
         Render(currentStage);
+    }
+
+    private IEnumerator FireDamageLoop() {
+        while (healthRef) {
+            yield return new WaitForSeconds(damageTickTime);
+            if (currentStage > 0) {
+                healthRef.OnDamageTaken(damagePerStage*currentStage, "inside");
+            }
+        }
     }
 
     public void Tick() {

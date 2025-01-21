@@ -504,8 +504,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radarTargetPrefab: {fileID: 3218820261205236410, guid: 76c4f6555cff2874c8564b7f91eb0bbe, type: 3}
-  positionMultiplier: -25
-  positionOffset: {x: 0, y: -25, z: 0}
+  positionMultiplier: -20
+  positionOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5324833809913697569
 GameObject:
   m_ObjectHideFlags: 0

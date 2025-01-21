@@ -13,6 +13,7 @@ public class Tank : MonoBehaviour
     [SerializeField] private float damage = 5;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float attackRange = 10;
+    [SerializeField] private float moveRange => attackRange/2;
     [SerializeField] private Rigidbody rigidbody;
     private float fixedYaw;
     private float thrustTimer = 0;
@@ -29,6 +30,17 @@ public class Tank : MonoBehaviour
     }
 
     public void FixedUpdate() {
+        if ((transform.position - target.transform.position).sqrMagnitude > moveRange)
+        {
+            rigidbody.velocity = transform.forward * (calculatedThrust * Time.fixedDeltaTime);
+
+            thrustTimer -= Time.fixedDeltaTime;
+            if (thrustTimer <= 0)
+            {
+                thrustTimer = thrustRandomizationOffset;
+                calculatedThrust = thrustPower * Random.Range(1, thrustRandomization);
+            }
+        }
         
         if (IsInRange())
         {
@@ -40,14 +52,6 @@ public class Tank : MonoBehaviour
                 hitCheckTimer = 0.5f;
             }
             return;
-        }
-        
-        rigidbody.velocity = transform.forward * (calculatedThrust * Time.fixedDeltaTime);
-
-        thrustTimer -= Time.fixedDeltaTime;
-        if (thrustTimer <= 0) {
-            thrustTimer = thrustRandomizationOffset;
-            calculatedThrust = thrustPower * Random.Range(1, thrustRandomization);
         }
     }
 

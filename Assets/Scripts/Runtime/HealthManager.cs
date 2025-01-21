@@ -48,5 +48,9 @@ public class HealthManager : MonoBehaviour
         Debug.Log("Damage taken.. " + health + " => " + (health-damage));
         health -= damage;
         if(healthBar)healthBar.UpdateValue(health/maxHealth);
+
+        if (health <= 0) {
+            // Game Over
+        }
     }
 }

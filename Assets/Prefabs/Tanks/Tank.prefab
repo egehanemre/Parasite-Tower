@@ -267,7 +267,7 @@ MonoBehaviour:
   thrustRandomizationOffset: 0.35
   damage: 5
   attackCooldown: 2
-  attackRange: 200
+  attackRange: 700
   rigidbody: {fileID: 7764665940517001470}
   onTankDestroyed:
     m_PersistentCalls:

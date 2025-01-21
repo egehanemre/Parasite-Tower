@@ -40,7 +40,9 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
 
         lastInteraction = interaction;
         controller = lastInteraction.gameObject.GetComponent<PlayerController>();
-        controller.UpdateCameraMode(cameraLocation, null, true, cameraLocation.rotation);
+        //controller.UpdateCameraMode(cameraLocation, null, true, cameraLocation.rotation);        
+        controller.UpdateMovementLock(true);
+        cameraLocation.gameObject.SetActive(true);
         beingUsed = true;
     }
 
@@ -49,7 +51,9 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
         chamberTimer -= Time.deltaTime;
         
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
+            //controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
+            controller.UpdateMovementLock(false);
+            cameraLocation.gameObject.SetActive(false);
             beingUsed = false;
             return;
         }
