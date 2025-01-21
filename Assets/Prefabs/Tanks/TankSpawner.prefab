@@ -36,6 +36,7 @@ Transform:
   - {fileID: 8014005216796771336}
   - {fileID: 6125541488446314222}
   - {fileID: 5171604398337790518}
+  - {fileID: 4772354288532929097}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2442742503575894708
@@ -66,6 +67,59 @@ MonoBehaviour:
   posVariety: {x: 0, y: 0, z: 0}
   designatedTarget: {fileID: 4686637775677254224}
   maxTankPerLine: 2
+--- !u!1 &512588005049451957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4772354288532929097}
+  - component: {fileID: 5837540451788836708}
+  m_Layer: 0
+  m_Name: GunnerHitZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4772354288532929097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512588005049451957}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.99999547, z: -0, w: 0.00302229}
+  m_LocalPosition: {x: -20.498411, y: 1.5200005, z: 0.3252513}
+  m_LocalScale: {x: 20, y: 5, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4785735242495363645}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5837540451788836708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512588005049451957}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3345626532214839107
 GameObject:
   m_ObjectHideFlags: 0

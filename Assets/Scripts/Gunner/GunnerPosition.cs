@@ -10,6 +10,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
     private bool beingUsed;
     private PlayerInteraction lastInteraction;
     private PlayerController controller;
+    private bool hasEnergy = true;
 
     [Header("Shooting")] 
     [SerializeField] private LayerMask targetMask;
