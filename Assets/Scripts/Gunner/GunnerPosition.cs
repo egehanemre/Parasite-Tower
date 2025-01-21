@@ -100,7 +100,8 @@ public class GunnerPosition : MonoBehaviour, Iinteractable
         }
         
         chamberTimer = reloadTime;
-        ViewportBasedProjectile(mainCam);
+        //ViewportBasedProjectile(mainCam);
+        InstantHitCheck(mainCam);
     }
 
     private void ViewportBasedProjectile(Camera mainCam) {
