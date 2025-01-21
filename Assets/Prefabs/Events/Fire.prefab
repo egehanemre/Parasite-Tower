@@ -297,11 +297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97460c324edacf04aaf4f198573b845f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStage: 0
   stages:
   - {fileID: 193128574178473913}
   - {fileID: 3639257233807703857}
   - {fileID: 5726994735874537347}
+  damageTickTime: 2.5
+  damagePerStage: 0.25
   tickPossibility: 1
 --- !u!65 &1656291292438102946
 BoxCollider:

@@ -16,10 +16,10 @@ public class RadarRenderer : MonoBehaviour
         foreach (var target in targets) {
             if(!target) continue;
 
-            if (target.TryGetComponent<IEvent>(out IEvent eventPiece)) {
-                if(!eventPiece.ShouldRenderAtRadar()) continue;
-                Color color = eventPiece.GetRadarColor();
-                Render(color, target.transform.position);
+            if (target.TryGetComponent<IRadarTarget>(out IRadarTarget radarTarget)) {
+                if(!radarTarget.ShouldRenderAtRadar()) continue;
+                Color color = radarTarget.GetRadarColor();
+                Render(color, target.transform.position + radarTarget.RadarRenderOffset());
             }
         }
     }

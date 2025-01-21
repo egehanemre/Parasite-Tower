@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Gunner : MonoBehaviour
 {
+    [SerializeField] private GunnerPosition position;
     [SerializeField] private Transform reachZone;
     [SerializeField] private LayerMask targetsMask;
     [SerializeField] private int lifetime = 10;
@@ -15,12 +16,15 @@ public class Gunner : MonoBehaviour
         StartCoroutine(ShootLoop());
     }
 
-    private IEnumerator ShootLoop() {
+    private IEnumerator ShootLoop()
+    {
+        position.beingUsed = true;
         for (int i = 0; i < lifetime; i++) {
             yield return new WaitForSeconds(shootCooldown);
-            HitRandomTarget();
+            if(position && position.GetPowerState()) HitRandomTarget();
         }
-        
+
+        position.beingUsed = false;
         Destroy(gameObject);
     }
 

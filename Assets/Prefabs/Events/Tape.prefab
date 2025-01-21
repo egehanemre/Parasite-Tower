@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixableLayer:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 128
   fixingRange: 5
   rigidbody: {fileID: 3857379536279113258}
   collider: {fileID: 6718090432103618348}

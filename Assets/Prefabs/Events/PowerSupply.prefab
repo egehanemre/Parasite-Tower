@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connected: {fileID: 0}
-  possibility: 0.25
+  possibility: 0.15
+  fixingCooldown: 0.33

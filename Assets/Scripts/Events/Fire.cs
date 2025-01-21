@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour, IEvent, Iinteractable
+public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
 {
     [Header("Stages")]
     private int currentStage;
     [SerializeField] private GameObject[] stages;
     [SerializeField] private float damageTickTime = 1;
     [SerializeField] private float damagePerStage = 2;
-    
-    [Header("Settings")] public float tickPossibility = 1;
+
+    [Header("Settings")] 
+    public float tickPossibility = 1;
     private HealthManager healthRef;
+    [SerializeField] private float extinguishingTime = 0.33f; 
+    [SerializeField] private Vector3 radarOffset = Vector3.zero;
 
     private void Start() {
         if (!healthRef) healthRef = FindObjectOfType<HealthManager>();
@@ -52,7 +55,7 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable
     }
 
     public bool CanHold(out float time) {
-        time = 1;
+        time = extinguishingTime;
         return true;
     }
 
@@ -62,6 +65,10 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable
 
     public Color GetRadarColor() {
         return Color.Lerp(Color.red, Color.black, currentStage*0.25f);
+    }
+
+    public Vector3 RadarRenderOffset() {
+        return radarOffset;
     }
 
 }

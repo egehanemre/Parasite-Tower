@@ -265,7 +265,7 @@ MonoBehaviour:
   thrustPower: 150
   thrustRandomization: 1.25
   thrustRandomizationOffset: 0.35
-  damage: 5
+  damage: 3
   attackCooldown: 2
   attackRange: 700
   rigidbody: {fileID: 7764665940517001470}

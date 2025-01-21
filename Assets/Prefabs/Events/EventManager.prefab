@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events: []
-  throwInterval: 1
+  throwInterval: 0.85
   intervalRandomization: 2
   throwRate: 0.85

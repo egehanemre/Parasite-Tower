@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
+public class PowerSupply : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
 {
     [SerializeField] private GameObject connected;
     [SerializeField] private float possibility = 1;
     private IPowerDependent dependent;
+    [SerializeField] private float fixingCooldown = 0.33f;
+    [SerializeField] private Vector3 radarOffset = Vector3.zero;
 
     private void Start() {
         if (!connected) {
@@ -30,17 +32,14 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
         dependent.SetPowerState(true);
     }
     
-
     public float GetWeight() {
         return possibility;
     }
-    
-    
+
     public bool CanHold(out float time) {
-        time = 1;
+        time = fixingCooldown;
         return true;
     }
-    
     
     public bool ShouldRenderAtRadar() {
         return !dependent.GetPowerState();
@@ -48,5 +47,9 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
 
     public Color GetRadarColor() {
         return Color.blue;
+    }
+    
+    public Vector3 RadarRenderOffset() {
+        return radarOffset;
     }
 }

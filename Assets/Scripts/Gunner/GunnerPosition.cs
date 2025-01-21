@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
-public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent
+public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRadarTarget
 {
     [SerializeField] private Transform cameraLocation;
-    private bool beingUsed;
+    public bool beingUsed;
     private PlayerInteraction lastInteraction;
     private PlayerController controller;
     [SerializeField] private bool hasEnergy = true;
+    [SerializeField] private Vector3 radarOffset = Vector3.zero;
 
     [Header("Shooting")] 
     [SerializeField] private LayerMask targetMask;
@@ -154,5 +155,19 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent
 
     public bool GetPowerState() {
         return hasEnergy;
+    }
+    
+    
+    public bool ShouldRenderAtRadar() {
+        return true;
+    }
+
+    public Color GetRadarColor() {
+        if(beingUsed) return Color.Lerp(Color.yellow, Color.black, 0.15f);
+        return Color.Lerp(Color.yellow, Color.black, 0.55f);
+    }
+    
+    public Vector3 RadarRenderOffset() {
+        return radarOffset;
     }
 }
