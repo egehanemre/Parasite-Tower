@@ -27,16 +27,16 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.677
+    value: 0.687
   smoothness:
     overrideState: 1
-    value: 0.817
+    value: 0.226
   roundness:
     overrideState: 1
-    value: 0.352
+    value: 0.959
   rounded:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   mask:
     overrideState: 0
     value: {fileID: 0}
@@ -65,13 +65,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.809
+    value: 1
   size:
     overrideState: 1
-    value: 1
+    value: 1.99
   lumContrib:
     overrideState: 0
-    value: 0.8
+    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,13 +147,13 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 0, g: 1, b: 0.07796383, a: 1}
+    value: {r: 0.051886797, g: 1, b: 0.12056328, a: 1}
   hueShift:
-    overrideState: 0
+    overrideState: 1
     value: 0
   saturation:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -100
   brightness:
     overrideState: 0
     value: 0
