@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/EventManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/EventManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/PowerSupply.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/PowerSupply.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/Tape.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/Tape.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/GunnerPosition.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/GunnerPosition.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/Shield.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/Shield.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/Tank.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/TankSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/TankSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/IEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/IEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gunner/Gunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gunner/Gunner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gunner/GunnerPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gunner/GunnerPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/RadarRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/RadarRenderer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +89,8 @@
       <workItem from="1737309668429" duration="5672000" />
       <workItem from="1737374487333" duration="4756000" />
       <workItem from="1737390445549" duration="7635000" />
+      <workItem from="1737503061830" duration="907000" />
+      <workItem from="1737511241644" duration="90000" />
     </task>
     <servers />
   </component>

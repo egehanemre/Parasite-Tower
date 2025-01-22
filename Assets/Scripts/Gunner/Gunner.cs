@@ -18,13 +18,13 @@ public class Gunner : MonoBehaviour
 
     private IEnumerator ShootLoop()
     {
-        position.beingUsed = true;
+        position.beingUsedByAI = true;
         for (int i = 0; i < lifetime; i++) {
             yield return new WaitForSeconds(shootCooldown);
             if(position && position.GetPowerState()) HitRandomTarget();
         }
 
-        position.beingUsed = false;
+        position.beingUsedByAI = false;
         Destroy(gameObject);
     }
 

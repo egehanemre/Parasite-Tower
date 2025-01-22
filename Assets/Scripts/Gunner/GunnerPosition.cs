@@ -7,7 +7,8 @@ using UnityEngine;
 public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRadarTarget
 {
     [SerializeField] private Transform cameraLocation;
-    public bool beingUsed;
+    public bool beingUsedByPlayer;
+    public bool beingUsedByAI;
     private PlayerInteraction lastInteraction;
     private PlayerController controller;
     [SerializeField] private bool hasEnergy = true;
@@ -34,7 +35,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
 
 
     public void Interact(PlayerInteraction interaction) {
-        if (beingUsed) {
+        if (beingUsedByPlayer || beingUsedByAI) {
             Debug.Log("Gunner position is occupied.");
             return;
         }
@@ -49,18 +50,18 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         //controller.UpdateCameraMode(cameraLocation, null, true, cameraLocation.rotation);        
         controller.UpdateMovementLock(true);
         cameraLocation.gameObject.SetActive(true);
-        beingUsed = true;
+        beingUsedByPlayer = true;
     }
 
     public void Update() {
-        if(!beingUsed) return;
+        if(!beingUsedByPlayer) return;
         chamberTimer -= Time.deltaTime;
         
         if (Input.GetKeyDown(KeyCode.Escape)) {
             //controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
             controller.UpdateMovementLock(false);
             cameraLocation.gameObject.SetActive(false);
-            beingUsed = false;
+            beingUsedByPlayer = false;
             return;
         }
 
@@ -147,10 +148,10 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
 
     public void SetPowerState(bool state) {
         hasEnergy = state;
-        if(!beingUsed || state == true) return;
+        if(!beingUsedByPlayer || state == true) return;
         controller.UpdateMovementLock(false);
         cameraLocation.gameObject.SetActive(false);
-        beingUsed = false;
+        beingUsedByPlayer = false;
     }
 
     public bool GetPowerState() {
@@ -163,7 +164,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
     }
 
     public Color GetRadarColor() {
-        if(beingUsed) return Color.Lerp(Color.yellow, Color.black, 0.15f);
+        if(beingUsedByPlayer) return Color.Lerp(Color.yellow, Color.black, 0.15f);
         return Color.Lerp(Color.yellow, Color.black, 0.55f);
     }
     
