@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: NightVisionObject
+      value: 
+      objectReference: {fileID: 119711653}
     - target: {fileID: 7611464317931887678, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: m_Name
       value: GunnerPosition (3)
@@ -367,6 +371,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
+--- !u!1 &119711653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6235577481439937298, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+  m_PrefabInstance: {fileID: 7565335585767880043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156870698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -475,6 +484,10 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: NightVisionObject
+      value: 
+      objectReference: {fileID: 119711653}
     - target: {fileID: 7611464317931887678, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: m_Name
       value: GunnerPosition (2)
@@ -577,6 +590,10 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: NightVisionObject
+      value: 
+      objectReference: {fileID: 119711653}
     - target: {fileID: 7611464317931887678, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: m_Name
       value: GunnerPosition (1)
@@ -1624,6 +1641,71 @@ Transform:
   - {fileID: 569415272}
   m_Father: {fileID: 696276505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564738683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1225861308218181293, guid: 5e61c7b929b69504d906aca138f35b26, type: 3}
+  m_PrefabInstance: {fileID: 5743091181625463976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564738684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564738683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 569415272}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &1577674249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2060306167463702085, guid: 355eff94c3333004781e10a862951fb0, type: 3}
@@ -2350,6 +2432,10 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: NightVisionObject
+      value: 
+      objectReference: {fileID: 119711653}
     - target: {fileID: 7611464317931887678, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: m_Name
       value: GunnerPosition
@@ -2430,8 +2516,68 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1225861308218181293, guid: 5e61c7b929b69504d906aca138f35b26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564738684}
   m_SourcePrefab: {fileID: 100100000, guid: 5e61c7b929b69504d906aca138f35b26, type: 3}
+--- !u!1001 &7565335585767880043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.881405
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.346657
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.4275427
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 980757877683920226, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235577481439937298, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
+      propertyPath: m_Name
+      value: Nightvision
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 868281b42d656ed46bed1e7524cb62e4, type: 3}
 --- !u!1001 &9160675604382405983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2565,3 +2711,4 @@ SceneRoots:
   - {fileID: 1373065413}
   - {fileID: 108198167}
   - {fileID: 1292577940}
+  - {fileID: 7565335585767880043}

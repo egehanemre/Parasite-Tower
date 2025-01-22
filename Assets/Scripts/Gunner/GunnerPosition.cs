@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRadarTarget
 {
+    [SerializeField] private GameObject NightVisionObject;
+
     [SerializeField] private Transform cameraLocation;
     public bool beingUsedByPlayer;
     public bool beingUsedByAI;
@@ -51,6 +53,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         controller.UpdateMovementLock(true);
         cameraLocation.gameObject.SetActive(true);
         beingUsedByPlayer = true;
+        NightVisionObject.SetActive(true);
     }
 
     public void Update() {
@@ -59,6 +62,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         
         if (Input.GetKeyDown(KeyCode.Escape)) {
             //controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
+            NightVisionObject.SetActive(false);
             controller.UpdateMovementLock(false);
             cameraLocation.gameObject.SetActive(false);
             beingUsedByPlayer = false;
