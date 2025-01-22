@@ -7,8 +7,7 @@ using UnityEngine;
 public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRadarTarget
 {
     [SerializeField] private GameObject NightVisionObject;
-
-    [SerializeField] private Transform cameraLocation;
+    [SerializeField] private CinemachineVirtualCamera linkedCamera;
     public bool beingUsedByPlayer;
     public bool beingUsedByAI;
     private PlayerInteraction lastInteraction;
@@ -21,7 +20,20 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
     [SerializeField] private float gunRange;
     [SerializeField] private float viewportYToRotation;
     [SerializeField] private float viewportXToRotation;
-    
+
+    [Header("Aiming")] 
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float horizontalEulerCap;
+    [SerializeField] private float verticalEulerCap;
+    [SerializeField] private float maxZoom = 80;
+    [SerializeField] private float minZoom= 30;
+    [SerializeField] private float zoomSpeed = 1;
+    private float currentZoom = 60;
+    private Vector3 movement;
+    private Vector3 defaultEuler;
+    private float currentVerticalEuler;
+    private float currentHorizontalEuler;
+
     [Header("Projectiles")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private List<GameObject> activeProjectiles = new List<GameObject>();
@@ -51,20 +63,28 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         controller = lastInteraction.gameObject.GetComponent<PlayerController>();
         //controller.UpdateCameraMode(cameraLocation, null, true, cameraLocation.rotation);        
         controller.UpdateMovementLock(true);
-        cameraLocation.gameObject.SetActive(true);
+        linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
         NightVisionObject.SetActive(true);
+        defaultEuler = linkedCamera.transform.eulerAngles;
     }
 
     public void Update() {
         if(!beingUsedByPlayer) return;
+        movement = new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0)*movementSpeed;
+        currentVerticalEuler = Mathf.Clamp(currentVerticalEuler + movement.y, -verticalEulerCap, verticalEulerCap);
+        currentHorizontalEuler = Mathf.Clamp(currentHorizontalEuler + movement.x, -horizontalEulerCap, horizontalEulerCap);
+        linkedCamera.transform.eulerAngles =
+            new Vector3(currentHorizontalEuler, currentVerticalEuler, 0) + defaultEuler;
         chamberTimer -= Time.deltaTime;
+        currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
+        linkedCamera.m_Lens.FieldOfView = currentZoom;
         
         if (Input.GetKeyDown(KeyCode.Escape)) {
             //controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
             NightVisionObject.SetActive(false);
             controller.UpdateMovementLock(false);
-            cameraLocation.gameObject.SetActive(false);
+            linkedCamera.gameObject.SetActive(false);
             beingUsedByPlayer = false;
             return;
         }
@@ -154,7 +174,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         hasEnergy = state;
         if(!beingUsedByPlayer || state == true) return;
         controller.UpdateMovementLock(false);
-        cameraLocation.gameObject.SetActive(false);
+        linkedCamera.gameObject.SetActive(false);
         beingUsedByPlayer = false;
     }
 

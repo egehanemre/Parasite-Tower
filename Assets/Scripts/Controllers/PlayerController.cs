@@ -157,26 +157,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void UpdateMovementLock(bool locked) {
-        Cursor.visible = locked;
         movementLocked = locked;
         cameraBobLocked = locked;
         if (cameraBobLocked) noiseComponent.m_AmplitudeGain = 0;
-        
-        CursorLockMode cursorLockMode = CursorLockMode.Locked;
-        if (locked) cursorLockMode = CursorLockMode.None;
-        Cursor.lockState = cursorLockMode;
-    }
-
-    public void UpdateCameraMode(Transform newFollow, Transform newLookAt, bool movementLock, Quaternion newRotation) {
-        UpdateMovementLock(movementLock);
-        virtualCamera.m_Follow = newFollow;
-        virtualCamera.m_LookAt = newLookAt;
-        virtualCamera.transform.rotation = newRotation;
-    }
-    
-    public void UpdateCameraMode(Transform newFollow, Transform newLookAt, bool movementLock) {
-        UpdateMovementLock(movementLock);
-        virtualCamera.m_Follow = newFollow;
-        virtualCamera.m_LookAt = newLookAt;
     }
 }

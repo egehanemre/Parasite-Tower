@@ -4288,7 +4288,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: throwInterval
-      value: 1.4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 852150481626944296, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: m_Name
@@ -4835,6 +4835,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 696276505}
     m_Modifications:
+    - target: {fileID: 592639441999448812, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026941222409547642, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4907345831523096986, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: lifetime
       value: 40
@@ -4918,14 +4926,6 @@ PrefabInstance:
     - target: {fileID: 6766758040737483854, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
-      propertyPath: radarOffset.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
-      propertyPath: radarOffset.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7553155673990795370, guid: c4ccee7982e7b564e84f95f4f59a06be, type: 3}
       propertyPath: NightVisionObject

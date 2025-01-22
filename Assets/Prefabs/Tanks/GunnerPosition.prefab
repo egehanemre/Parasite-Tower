@@ -445,16 +445,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe86e23c13839fa49b25d33b0863bae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraLocation: {fileID: 6061619888286627108}
-  beingUsed: 0
+  NightVisionObject: {fileID: 0}
+  linkedCamera: {fileID: 592639441999448812}
+  beingUsedByPlayer: 0
+  beingUsedByAI: 0
   hasEnergy: 1
-  radarOffset: {x: 0, y: 0, z: 0}
+  radarOffset: {x: 1, y: -1, z: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 256
   gunRange: 100
   viewportYToRotation: -28
   viewportXToRotation: 51
+  movementSpeed: 1
+  horizontalEulerCap: 35
+  verticalEulerCap: 35
+  maxZoom: 80
+  minZoom: 30
+  zoomSpeed: 100
   projectilePrefab: {fileID: 1590377964574130443, guid: d4c8df176a439494aa63f1ea2705fb02, type: 3}
   activeProjectiles: []
   projectileSpawnLocation: {fileID: 533987346693827566}
