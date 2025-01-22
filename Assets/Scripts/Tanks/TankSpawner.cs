@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
 public class TankSpawner : MonoBehaviour, IEvent
@@ -41,14 +42,14 @@ public class TankSpawner : MonoBehaviour, IEvent
     private void SpawnTankAtSlot(TankSpawnSlot slot, TankTarget target) {
         slot.cooldown = slotsSpawnCooldown;
         
-        GameObject spawnedTank = Instantiate(tankPrefab, slot.location);
+        GameObject spawnedTank = Instantiate(tankPrefab, slot.startLocation);
         spawnedTank.transform.localPosition = Vector3.zero;
         
         spawnedTank.transform.position += new Vector3(Random.Range(-posVariety.x, posVariety.x),
             Random.Range(-posVariety.y, posVariety.y), Random.Range(-posVariety.z, posVariety.z));
 
         if (spawnedTank.TryGetComponent<Tank>(out Tank tank)) {
-            tank.Setup(target);
+            tank.Setup(target, slot.path);
             slot.spawnedTanks.Add(tank);
             tank.onTankDestroyed.AddListener(OnTankDestroyed);
         }
@@ -82,6 +83,7 @@ public class TankSpawner : MonoBehaviour, IEvent
 public class TankSpawnSlot
 {
     public float cooldown = 1;
-    public Transform location;
+    public SplineContainer path;
+    public Transform startLocation;
     public List<Tank> spawnedTanks = new List<Tank>();
 }
