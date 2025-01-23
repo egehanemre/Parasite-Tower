@@ -296,6 +296,8 @@ MonoBehaviour:
   interactionRange: 5
   grabLocation: {fileID: 6504685860169209037}
   dropForce: 5
+  radarOffset: {x: 0, y: 0, z: 0}
+  playerIcon: {fileID: 21300000, guid: e8c8d0bf5c1f4764caf0fa0afb493e22, type: 3}
   holdingTime: 0
 --- !u!1 &3385384639620000817
 GameObject:

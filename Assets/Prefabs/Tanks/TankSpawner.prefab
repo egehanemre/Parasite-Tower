@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitTaker
       objectReference: {fileID: 0}
+    - target: {fileID: 3429610069242082968, guid: de5fe78efe42414409d5772bc170e05c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4639957292214837494, guid: de5fe78efe42414409d5772bc170e05c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80.3
@@ -280,7 +284,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8529726739970580941, guid: de5fe78efe42414409d5772bc170e05c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4639957292214837494, guid: de5fe78efe42414409d5772bc170e05c, type: 3}

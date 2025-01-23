@@ -3,10 +3,80 @@
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/816d097f89b62fe1165911f6e963080872cd647e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/816d097f89b62fe1165911f6e963080872cd647e.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_03.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_08.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_18.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_19.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_20.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_22.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crosshairs/Textures/Crosshair_27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/PowerSupply.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/PowerSupply.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Radar/RadarTarget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Radar/RadarTarget.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/GunnerPosition.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/GunnerPosition.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tanks/TankSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tanks/TankSpawner.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gunner/GunnerPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gunner/GunnerPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/IRadarTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/IRadarTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/Radar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/Radar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/RadarRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/RadarRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +164,7 @@
       <workItem from="1737503061830" duration="907000" />
       <workItem from="1737511241644" duration="90000" />
       <workItem from="1737554593073" duration="8895000" />
+      <workItem from="1737594636889" duration="6522000" />
     </task>
     <servers />
   </component>

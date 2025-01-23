@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,24 +8,30 @@ public class RadarRenderer : MonoBehaviour
 {
     private List<GameObject> renderedTargets = new List<GameObject>();
     [SerializeField] private GameObject radarTargetPrefab;
-    [SerializeField] private float positionMultiplier = 1;
     [SerializeField] private Vector3 positionOffset;
-    public void RenderAll(List<GameObject> targets) {
+    [SerializeField] private float scaleToRender = 1;
+    private RectTransform rectTransform;
+
+    private void Awake() {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
+    public void RenderAll(List<RadarEntity> targets) {
         ClearRender();
         gameObject.SetActive(true);
 
         foreach (var target in targets) {
-            if(!target) continue;
+            if(!target.gameObject) continue;
 
-            if (target.TryGetComponent<IRadarTarget>(out IRadarTarget radarTarget)) {
+            if (target.gameObject.TryGetComponent<IRadarTarget>(out IRadarTarget radarTarget)) {
                 if(!radarTarget.ShouldRenderAtRadar()) continue;
-                Color color = radarTarget.GetRadarColor();
-                Render(color, target.transform.position + radarTarget.RadarRenderOffset());
+                Sprite icon = radarTarget.GetRenderIcon();
+                Render(icon, target.relativePosition, target.scanZoneScale, radarTarget.GetRenderSize());
             }
         }
     }
 
-    public void Render(Color color, Vector3 position) {
+    public void Render(Sprite icon, Vector3 position, Vector3 scale, float iconSize) {
         if (!radarTargetPrefab) {
             Debug.Log("No prefab for radar target found.");
             return;
@@ -32,9 +39,13 @@ public class RadarRenderer : MonoBehaviour
 
         GameObject spawnedRadarTarget = Instantiate(radarTargetPrefab, transform);
         renderedTargets.Add(spawnedRadarTarget);
-        spawnedRadarTarget.transform.localPosition = new Vector3(position.x*positionMultiplier, position.y*positionMultiplier, 0) + positionOffset;
+        spawnedRadarTarget.transform.localPosition = new Vector3(-rectTransform.sizeDelta.x/2, -rectTransform.sizeDelta.y/2);
+        spawnedRadarTarget.transform.localPosition += new Vector3(position.x*scale.x, position.y*scale.y)*scaleToRender;
+        
+        //spawnedRadarTarget.transform.localPosition = new Vector3(-xInBounds, -yInBounds, 0) + offset;
         if (spawnedRadarTarget.TryGetComponent<Image>(out Image image)) {
-            image.color = color;
+            image.sprite = icon;
+            spawnedRadarTarget.transform.localScale *= iconSize;
         }
     }
 

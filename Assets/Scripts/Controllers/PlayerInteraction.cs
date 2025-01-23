@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour, IRadarTarget
 {
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform pov;
@@ -11,6 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Iinteractable itemOnHand;
     [SerializeField] private Transform grabLocation;
     [SerializeField] private float dropForce = 5f;
+    [SerializeField] private Vector3 radarOffset = Vector3.zero;
+    [SerializeField] private Sprite playerIcon;
 
     [Header("Holding")]
     [SerializeField] private float holdingTime = 0;
@@ -94,4 +96,18 @@ public class PlayerInteraction : MonoBehaviour
 
         return null;
     }
+    
+    
+    
+    public bool ShouldRenderAtRadar() {
+        return true;
+    }
+    public Vector3 RadarRenderOffset() {
+        return radarOffset;
+    }
+
+    public Sprite GetRenderIcon() {
+        return playerIcon;
+    }
+
 }

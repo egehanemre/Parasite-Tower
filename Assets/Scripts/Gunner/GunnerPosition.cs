@@ -14,6 +14,9 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
     private PlayerController controller;
     [SerializeField] private bool hasEnergy = true;
     [SerializeField] private Vector3 radarOffset = Vector3.zero;
+    [SerializeField] private Sprite seatedSprite;
+    [SerializeField] private Sprite emptySprite;
+    [SerializeField] private Sprite electricShutdownIcon;
 
     [Header("Shooting")] 
     [SerializeField] private LayerMask targetMask;
@@ -187,12 +190,15 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         return true;
     }
 
-    public Color GetRadarColor() {
-        if(beingUsedByPlayer) return Color.Lerp(Color.yellow, Color.black, 0.15f);
-        return Color.Lerp(Color.yellow, Color.black, 0.55f);
-    }
-    
     public Vector3 RadarRenderOffset() {
         return radarOffset;
     }
+    
+    public Sprite GetRenderIcon() {
+        if (!hasEnergy) return electricShutdownIcon;
+        
+        if (beingUsedByPlayer || beingUsedByAI) return seatedSprite;
+        else return emptySprite;
+    }
+
 }

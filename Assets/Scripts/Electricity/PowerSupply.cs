@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerSupply : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
+public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
 {
     [SerializeField] private GameObject connected;
     [SerializeField] private float possibility = 1;
@@ -39,17 +39,5 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
     public bool CanHold(out float time) {
         time = fixingCooldown;
         return true;
-    }
-    
-    public bool ShouldRenderAtRadar() {
-        return !dependent.GetPowerState();
-    }
-
-    public Color GetRadarColor() {
-        return Color.blue;
-    }
-    
-    public Vector3 RadarRenderOffset() {
-        return radarOffset;
     }
 }

@@ -22,20 +22,31 @@ public class Radar : MonoBehaviour
         }
     }
 
-    public List<GameObject> Scan(LayerMask layerMask) {
+    public List<RadarEntity> Scan(LayerMask layerMask) {
         Transform unwrapped = transform;
         Collider[] overlapResult = Physics.OverlapBox(unwrapped.position, unwrapped.lossyScale/2, Quaternion.identity, layerMask);
 
         if (overlapResult == null || overlapResult.Length == 0) {
             Debug.Log("Radar has not found any target");
-            return new List<GameObject>();
+            return null;
         }
 
-        List<GameObject> results = new List<GameObject>();
+        List<RadarEntity> results = new List<RadarEntity>();
         foreach (var result in overlapResult) {
-            results.Add(result.gameObject);   
+            RadarEntity newEntity = new RadarEntity();
+            newEntity.gameObject = result.gameObject;
+            newEntity.relativePosition = transform.position - result.gameObject.transform.position;
+            newEntity.scanZoneScale = transform.localScale;
+            results.Add(newEntity);   
         }
 
         return results;
     }
+}
+
+public struct RadarEntity
+{
+    public Vector3 scanZoneScale;
+    public Vector3 relativePosition;
+    public GameObject gameObject;
 }

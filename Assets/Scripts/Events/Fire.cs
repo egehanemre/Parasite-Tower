@@ -16,6 +16,7 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
     private HealthManager healthRef;
     [SerializeField] private float extinguishingTime = 0.33f; 
     [SerializeField] private Vector3 radarOffset = Vector3.zero;
+    [SerializeField] private Sprite fireIcon;
 
     private void Start() {
         if (!healthRef) healthRef = FindObjectOfType<HealthManager>();
@@ -63,12 +64,15 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
         return currentStage > 0;
     }
 
-    public Color GetRadarColor() {
-        return Color.Lerp(Color.red, Color.black, currentStage*0.25f);
-    }
-
     public Vector3 RadarRenderOffset() {
         return radarOffset;
     }
+    
+    public Sprite GetRenderIcon() {
+        return fireIcon;
+    }
 
+    public float GetRenderSize() {
+        return 0.65f;
+    }
 }

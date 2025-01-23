@@ -121,3 +121,5 @@ MonoBehaviour:
   connected: {fileID: 0}
   possibility: 0.15
   fixingCooldown: 0.33
+  radarOffset: {x: 0, y: 0, z: 0}
+  electricShutdownIcon: {fileID: 21300000, guid: aea0924f0aa9a98449ca9786e793ed93, type: 3}
