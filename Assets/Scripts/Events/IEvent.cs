@@ -6,4 +6,5 @@ public interface IEvent
 {
     public void Tick();
     public float GetWeight();
+    public bool IsActive();
 }

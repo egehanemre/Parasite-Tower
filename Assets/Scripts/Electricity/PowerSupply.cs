@@ -36,8 +36,18 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
         return possibility;
     }
 
+    public bool IsActive()
+    {
+        return !dependent.GetPowerState();
+    }
+
     public bool CanHold(out float time) {
         time = fixingCooldown;
         return true;
+    }
+
+    public void InteractOnHolding(Transform pov, float holdingTime)
+    {
+        Fix();
     }
 }

@@ -45,6 +45,7 @@ public class PlayerInteraction : MonoBehaviour, IRadarTarget
         else  {
             holdingTimer += Time.deltaTime;
             if (holdingTime <= holdingTimer) {
+                holdingAt?.InteractOnHolding(pov,holdingTimer);
                 holdingAt = null;
                 itemOnHand?.InteractWhileHolding(pov, holdingTimer);
                 holdingTimer = 0;
@@ -101,9 +102,6 @@ public class PlayerInteraction : MonoBehaviour, IRadarTarget
     
     public bool ShouldRenderAtRadar() {
         return true;
-    }
-    public Vector3 RadarRenderOffset() {
-        return radarOffset;
     }
 
     public Sprite GetRenderIcon() {

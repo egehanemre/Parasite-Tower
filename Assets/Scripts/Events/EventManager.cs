@@ -5,8 +5,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     [Header("Event Cache")]
-    [SerializeField] private GameObject[] events = new GameObject[] { };
-    private readonly List<IEvent> eventSlots = new List<IEvent>();
+    private List<IEvent> eventSlots = new List<IEvent>();
     private readonly List<EventWeight> calculatedEventWeights = new List<EventWeight>();
     private float totalWeight = 0;
 
@@ -14,13 +13,13 @@ public class EventManager : MonoBehaviour
     [SerializeField] private float throwInterval = 5f;
     [SerializeField] private float intervalRandomization = 2f;
     [SerializeField] private float throwRate = 0.85f;
+    [SerializeField] private int maxParallelEventAmount = 3;
+    [SerializeField] private float activeEventsToThrowRate = -0.1f;
     private float throwTimer = 0;
 
-    private void Start()
-    {
-        if (events.Length == 0) {
-            events = GameObject.FindGameObjectsWithTag("Event");
-        }
+    private void Start() {
+        GameObject[] eventObjects = GameObject.FindGameObjectsWithTag("Event");
+        CacheEvents(eventObjects);
         CalculateWeights();
     }
 
@@ -37,8 +36,10 @@ public class EventManager : MonoBehaviour
     {
         throwTimer = UnityEngine.Random.Range(throwInterval, throwInterval * intervalRandomization);
 
-        if (UnityEngine.Random.value < throwRate)
-        {
+        int activeEventAmount = GetActiveEventAmount();
+        
+        if (UnityEngine.Random.value < (throwRate + activeEventAmount*activeEventsToThrowRate) && activeEventAmount < maxParallelEventAmount) {
+            CalculateWeights();
             ThrowRandomEvent();
         }
     }
@@ -52,6 +53,7 @@ public class EventManager : MonoBehaviour
 
             if (eventComponent != null)
             {
+                if(eventComponent.IsActive()) continue;
                 eventSlots.Add(eventComponent);
             }
             else
@@ -82,13 +84,12 @@ public class EventManager : MonoBehaviour
 
     public void CalculateWeights()
     {
-        if (events == null || events.Length == 0)
+        if (eventSlots == null || eventSlots.Count == 0)
         {
-            Debug.LogWarning("No events configured in the inspector");
+            Debug.LogWarning("No events found to calculate");
             return;
         }
 
-        CacheEvents(events);
         calculatedEventWeights.Clear();
         totalWeight = 0;
 
@@ -103,6 +104,15 @@ public class EventManager : MonoBehaviour
         {
             Debug.LogError("Total weight of all events is zero or negative");
         }
+    }
+    
+    public int GetActiveEventAmount() {
+        int activeEventAmount = 0;
+        foreach (var eventInstance in eventSlots) {
+            if (eventInstance.IsActive()) activeEventAmount++;
+        }
+
+        return activeEventAmount;
     }
 
     public void Shuffle(List<EventWeight> ts)

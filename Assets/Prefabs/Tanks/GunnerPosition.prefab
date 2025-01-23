@@ -320,7 +320,7 @@ MonoBehaviour:
   reachZone: {fileID: 0}
   targetsMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2048
   lifetime: 10
   shootCooldown: 1
 --- !u!1 &7611464317931887678
@@ -456,7 +456,7 @@ MonoBehaviour:
   electricShutdownIcon: {fileID: 21300000, guid: aea0924f0aa9a98449ca9786e793ed93, type: 3}
   targetMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2048
   gunRange: 100
   viewportYToRotation: -28
   viewportXToRotation: 51

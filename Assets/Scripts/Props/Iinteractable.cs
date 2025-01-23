@@ -18,6 +18,7 @@ public interface Iinteractable
         
     }
     public void InteractWhileHolding(Transform pov, float holdingTime) { }
+    public void InteractOnHolding(Transform pov, float holdingTime) { }
 
     public void SetPhysicsMode(bool isActive)
     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
 {
@@ -10,6 +11,9 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
     [SerializeField] private GameObject[] stages;
     [SerializeField] private float damageTickTime = 1;
     [SerializeField] private float damagePerStage = 2;
+    [SerializeField] private float stageGrowthTime = 10;
+    [SerializeField] private float stageGrowthRandomization = 2f;
+    private float calculatedStageGrowthTime;
 
     [Header("Settings")] 
     public float tickPossibility = 1;
@@ -22,6 +26,17 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
         if (!healthRef) healthRef = FindObjectOfType<HealthManager>();
         StartCoroutine(FireDamageLoop());
         ChangeStage(0);
+    }
+
+    private void FixedUpdate() {
+        calculatedStageGrowthTime -= Time.fixedDeltaTime;
+        if (calculatedStageGrowthTime < 0) {
+            calculatedStageGrowthTime = Random.Range(stageGrowthTime / stageGrowthRandomization,
+                stageGrowthTime * stageGrowthRandomization);
+            
+            if(currentStage == 0) return;
+            ChangeStage(1);
+        }
     }
 
     public void ClearRender() {
@@ -55,6 +70,11 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
         return tickPossibility;
     }
 
+    public bool IsActive()
+    {
+        return currentStage > 0;
+    }
+
     public bool CanHold(out float time) {
         time = extinguishingTime;
         return true;
@@ -63,15 +83,11 @@ public class Fire : MonoBehaviour, IEvent, Iinteractable, IRadarTarget
     public bool ShouldRenderAtRadar() {
         return currentStage > 0;
     }
-
-    public Vector3 RadarRenderOffset() {
-        return radarOffset;
-    }
     
     public Sprite GetRenderIcon() {
         return fireIcon;
     }
-
+    
     public float GetRenderSize() {
         return 0.65f;
     }

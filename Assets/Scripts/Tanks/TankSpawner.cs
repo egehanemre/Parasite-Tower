@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
 
-public class TankSpawner : MonoBehaviour, IEvent
+public class TankSpawner : MonoBehaviour
 {
     [SerializeField] private List<TankSpawnSlot> spawnSlots = new List<TankSpawnSlot>();
-    [SerializeField] private GameObject tankPrefab;
     [SerializeField] private float spawnFrequency = 0.1f;
     [SerializeField] private float slotsSpawnCooldown = 5f;
     [SerializeField] private Vector3 posVariety = new Vector3();
@@ -27,19 +26,19 @@ public class TankSpawner : MonoBehaviour, IEvent
         }
     }
 
-    public void Tick()
+    /*public void Tick()
     {
         if(!designatedTarget) return;
-        
         TankSpawnSlot foundSlot = FindSpawnSlot();
         if(foundSlot != null) SpawnTankAtSlot(foundSlot, designatedTarget);
-    }
+    }*/
 
     public float GetWeight() {
         return spawnFrequency;
     }
 
-    private void SpawnTankAtSlot(TankSpawnSlot slot, TankTarget target) {
+    public void SpawnTank(GameObject tankPrefab) {
+        TankSpawnSlot slot = FindSpawnSlot();
         slot.cooldown = slotsSpawnCooldown;
         
         GameObject spawnedTank = Instantiate(tankPrefab, slot.startLocation);
@@ -49,7 +48,7 @@ public class TankSpawner : MonoBehaviour, IEvent
             Random.Range(-posVariety.y, posVariety.y), Random.Range(-posVariety.z, posVariety.z));
 
         if (spawnedTank.TryGetComponent<Tank>(out Tank tank)) {
-            tank.Setup(target, slot.path);
+            tank.Setup(designatedTarget, slot.path);
             slot.spawnedTanks.Add(tank);
             tank.onTankDestroyed.AddListener(OnTankDestroyed);
         }
