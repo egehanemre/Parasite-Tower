@@ -38,6 +38,7 @@ public class PowerSupply : MonoBehaviour, IEvent, Iinteractable
 
     public bool IsActive()
     {
+        if (dependent == null) return false; 
         return !dependent.GetPowerState();
     }
 
