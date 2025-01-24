@@ -1994,7 +1994,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveLength: 30
-    breakLength: 15
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1272349573}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1123685801}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
     waveSpawns:
     - targetLine: {fileID: 1448666354}
       tanksToSpawn:
@@ -2006,14 +2066,40 @@ MonoBehaviour:
       - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
       - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
   - waveLength: 30
-    breakLength: 15
+    breakLength: 5
     waveSpawns:
-    - targetLine: {fileID: 1272349573}
+    - targetLine: {fileID: 1448666354}
       tanksToSpawn:
       - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
       - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
-    - targetLine: {fileID: 1123685801}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1827979272}
       tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1448666354}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1827979272}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+  - waveLength: 30
+    breakLength: 5
+    waveSpawns:
+    - targetLine: {fileID: 1448666354}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
+    - targetLine: {fileID: 1827979272}
+      tanksToSpawn:
+      - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
       - {fileID: 5276858637293909731, guid: 85331cb25831c7f419a5f99851b3e3df, type: 3}
   currentWave: 0
   timeRemaining: 5
@@ -2993,10 +3079,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1642327147}
     m_Modifications:
-    - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
-      propertyPath: throwInterval
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 852150481626944296, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: m_Name
       value: EventManager

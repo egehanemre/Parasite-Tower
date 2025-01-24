@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe17c474519b794383cbdf8a0e68b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: []
-  throwInterval: 0.85
+  throwInterval: 15
   intervalRandomization: 2
   throwRate: 0.85
+  maxParallelEventAmount: 3
+  activeEventsToThrowRate: -0.1
