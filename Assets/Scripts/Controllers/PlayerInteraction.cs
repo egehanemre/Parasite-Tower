@@ -36,7 +36,19 @@ public class PlayerInteraction : MonoBehaviour, IRadarTarget
         if (Input.GetKey(KeyCode.G)) if(itemOnHand != null) DropItem();
     }
 
-    public void OnHoldRequest() {
+    private void UpdateSubscription(Iinteractable interactable, bool newState) {
+        Action subscription = interactable.GetOnDropEvent();
+        if (subscription == null) return;
+
+        if (newState) {
+            subscription += DropItem;
+        }
+        else {
+            subscription -= DropItem;
+        }
+    }
+
+    private void OnHoldRequest() {
         if(holdingAt == null) return;
         
         if (!holdingAt.CanHold(out holdingTime)) {
@@ -73,12 +85,14 @@ public class PlayerInteraction : MonoBehaviour, IRadarTarget
         itemTransform.localPosition = Vector3.zero;
         itemTransform.localRotation = Quaternion.identity;
         itemOnHand = item;
+        UpdateSubscription(itemOnHand, true);
     }
 
     public void DropItem() {
         itemOnHand.SetPhysicsMode(true);
         MonoBehaviour itemMn = itemOnHand as MonoBehaviour;
         itemMn.transform.SetParent(null);
+        UpdateSubscription(itemOnHand, false);
         itemOnHand = null;
 
         if (itemMn.TryGetComponent<Rigidbody>(out Rigidbody rb)) {

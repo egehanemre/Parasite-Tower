@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Electricity/PowerSupply.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RenderTextures/Minimap.renderTexture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RenderTextures/Minimap.renderTexture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Iinteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Iinteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonPrototype/URP_ExtractMe.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BodyProcessing/BodyProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Electricity/Tape.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gunner/Gunner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gunner/GunnerPosition.cs" root0="FORCE_HIGHLIGHTING" />
@@ -92,6 +99,8 @@
       <workItem from="1737511241644" duration="90000" />
       <workItem from="1737554593073" duration="8895000" />
       <workItem from="1737594636889" duration="6522000" />
+      <workItem from="1737744102444" duration="595000" />
+      <workItem from="1737755431980" duration="2263000" />
     </task>
     <servers />
   </component>

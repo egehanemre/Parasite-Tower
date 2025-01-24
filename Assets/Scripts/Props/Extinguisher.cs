@@ -33,10 +33,4 @@ public class Extinguisher : MonoBehaviour, Iinteractable
     public bool CanGrab() {
         return true;
     }
-    
-    public bool CanHold(out float time)
-    {
-        time = extinguishingCooldown;
-        return true;
-    }
 }
