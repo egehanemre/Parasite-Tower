@@ -48,4 +48,4 @@ MonoBehaviour:
   intervalRandomization: 2
   throwRate: 0.85
   maxParallelEventAmount: 3
-  activeEventsToThrowRate: -0.1
+  activeEventsToThrowRate: -0.3
