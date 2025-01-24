@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool movementLocked;
 
     [Header("Input")]
-    [SerializeField] private float mouseSensitivity = 100f;
+    [SerializeField] private float mouseSensitivity = 1f;
     private float moveInput;
     private float strafeInput;
     private float mouseX;
@@ -100,8 +100,7 @@ public class PlayerController : MonoBehaviour
 
     private void GroundMovement()
     {
-        Vector3 move = new Vector3(strafeInput, 0, moveInput);
-        move = cameraTransform.TransformDirection(move);
+        Vector3 move = transform.forward * moveInput + transform.right * strafeInput;
 
         currentSpeed = CalculateCurrentSpeed();
         move *= currentSpeed;
@@ -112,14 +111,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Turn()
     {
-        mouseX *= mouseSensitivity * Time.deltaTime;
-        mouseY *= mouseSensitivity * Time.deltaTime;
+        float adjustedMouseX = mouseX * mouseSensitivity;
+        float adjustedMouseY = mouseY * mouseSensitivity;
 
-        xRotation -= mouseY;
+        xRotation -= adjustedMouseY;
         xRotation = Mathf.Clamp(xRotation, -maxLookAngle, maxLookAngle);
 
         virtualCamera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.up * adjustedMouseX);
     }
     private float CalculateCurrentSpeed()
     {

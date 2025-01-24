@@ -7,6 +7,7 @@ using UnityEngine;
 public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRadarTarget
 {
     [SerializeField] private GameObject NightVisionObject;
+    [SerializeField] private GameObject LensEffectObject;
     [SerializeField] private CinemachineVirtualCamera linkedCamera;
     public bool beingUsedByPlayer;
     public bool beingUsedByAI;
@@ -69,6 +70,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
         NightVisionObject.SetActive(true);
+        LensEffectObject.SetActive(false);
         defaultEuler = linkedCamera.transform.eulerAngles;
     }
 
@@ -86,6 +88,7 @@ public class GunnerPosition : MonoBehaviour, Iinteractable, IPowerDependent, IRa
         if (Input.GetKeyDown(KeyCode.Escape)) {
             //controller.UpdateCameraMode(controller.baseFollow, controller.baseLookAt, false);
             NightVisionObject.SetActive(false);
+            LensEffectObject.SetActive(true);
             controller.UpdateMovementLock(false);
             linkedCamera.gameObject.SetActive(false);
             beingUsedByPlayer = false;
