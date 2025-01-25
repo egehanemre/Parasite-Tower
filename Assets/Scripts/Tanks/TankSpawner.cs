@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 using Random = UnityEngine.Random;
@@ -26,13 +27,6 @@ public class TankSpawner : MonoBehaviour
         }
     }
 
-    /*public void Tick()
-    {
-        if(!designatedTarget) return;
-        TankSpawnSlot foundSlot = FindSpawnSlot();
-        if(foundSlot != null) SpawnTankAtSlot(foundSlot, designatedTarget);
-    }*/
-
     public float GetWeight() {
         return spawnFrequency;
     }
@@ -54,27 +48,17 @@ public class TankSpawner : MonoBehaviour
         }
     }
 
+
     private void OnTankDestroyed(Tank tank) {
         foreach (var slot in spawnSlots) {
             slot.spawnedTanks.Remove(tank);
         }
     }
 
-    private TankSpawnSlot FindSpawnSlot() {
-        if (spawnSlots == null || spawnSlots.Count == 0)
-        {
-            Debug.Log("No spawn slots for tank spawner found.");
-            return null;
-        }
-        
-        foreach (var spawnSlot in spawnSlots)
-        {
-            if(spawnSlot.cooldown > 0 || spawnSlot.spawnedTanks.Count >= maxTankPerLine) continue;
-            return spawnSlot;
-        }
-
-        Debug.Log("All spawn slots are already occupied.");
-        return null;
+    private TankSpawnSlot FindSpawnSlot()
+    {
+        return spawnSlots
+            .FirstOrDefault(slot => slot.cooldown <= 0 && slot.spawnedTanks.Count < maxTankPerLine);
     }
 }
 
