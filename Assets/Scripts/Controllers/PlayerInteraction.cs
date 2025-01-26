@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour, IRadarTarget
+public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform pov;
@@ -114,12 +114,12 @@ public class PlayerInteraction : MonoBehaviour, IRadarTarget
     
     
     
-    public bool ShouldRenderAtRadar() {
-        return true;
-    }
+    //public bool ShouldRenderAtRadar() {
+    //    return true;
+    //}
 
-    public Sprite GetRenderIcon() {
-        return playerIcon;
-    }
+    //public Sprite GetRenderIcon() {
+    //    return playerIcon;
+    //}
 
 }
