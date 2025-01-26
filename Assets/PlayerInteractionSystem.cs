@@ -36,25 +36,16 @@ public class PlayerInteractionSystem : MonoBehaviour
     private void HandleInteraction()
     {
         IInteractable itemOnFocus = GetItemOnFocus();
+        currentInteractable = itemOnFocus;
 
-        if (itemOnFocus != null)
+        if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            currentInteractable = itemOnFocus;
-
-            if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+            currentInteractable.Interact();
+            if (currentInteractable.CanGrab())
             {
-                currentInteractable.Interact();
-
-                if (currentInteractable.CanGrab())
-                {
-                    if (itemOnHand != null) DropItem();
-                    GrabItem(currentInteractable);
-                }
+                if (itemOnHand != null) DropItem();
+                GrabItem(currentInteractable);
             }
-        }
-        else
-        {
-            currentInteractable = null;
         }
     }
 
@@ -96,6 +87,7 @@ public class PlayerInteractionSystem : MonoBehaviour
 
     public void GrabItem(IInteractable item)
     {
+        item.SetGrab(true);
         item.SetPhysicsMode(false);
         Transform itemTransform = ((MonoBehaviour)item).transform;
         itemTransform.SetParent(grabLocation);
@@ -108,6 +100,7 @@ public class PlayerInteractionSystem : MonoBehaviour
     {
         if (itemOnHand == null) return;
 
+        itemOnHand.SetGrab(false);
         itemOnHand.SetPhysicsMode(true);
         Transform itemTransform = ((MonoBehaviour)itemOnHand).transform;
         itemTransform.SetParent(null);
@@ -133,18 +126,16 @@ public class PlayerInteractionSystem : MonoBehaviour
 
     private void UpdateInteractionUI()
     {
-        if (currentInteractable != null)
-        {
+        if (currentInteractable != null) {
             interactionButton.SetActive(true);
         }
-        else
-        {
+        else {
             interactionButton.SetActive(false);
         }
     }
 
-    public ObjectsInteractable GetObjectsInteractable()
+    public IInteractable GetObjectsInteractable()
     {
-        return currentInteractable as ObjectsInteractable;
+        return currentInteractable as IInteractable;
     }
 }

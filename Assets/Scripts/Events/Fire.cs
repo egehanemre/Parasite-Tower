@@ -17,8 +17,10 @@ public class Fire : MonoBehaviour, IEvent
     [Header("Settings")]
     [SerializeField] private float tickPossibility = 1f;
     [SerializeField] private float extinguishingTime = 0.33f;
-    [SerializeField] private Vector3 radarOffset = Vector3.zero;
     private TowerHealthManager healthRef;
+
+    [Header("Extinguishing")] 
+    private float extinguishingProgress = 0;
 
     private void Start()
     {
@@ -29,8 +31,8 @@ public class Fire : MonoBehaviour, IEvent
         }
 
         StartCoroutine(FireDamageLoop());
-        ChangeStage(0);
         ResetGrowthTimer();
+        Render(currentStage);
     }
 
     private void FixedUpdate()
@@ -66,6 +68,7 @@ public class Fire : MonoBehaviour, IEvent
 
     private void Render(int stage)
     {
+        ClearRender();
         for (int i = 0; i < stage && i < stages.Length; i++)
         {
             stages[i].SetActive(true);
@@ -111,52 +114,11 @@ public class Fire : MonoBehaviour, IEvent
         return currentStage > 0;
     }
 
-    public bool ShouldRenderAtRadar()
-    {
-        return currentStage > 0;
-    }
-    public void Interact()
-    {
-        if (currentStage > 0)
-        {
+    public void Extinguish(float progress) {
+        extinguishingProgress += progress;
+        if (extinguishingProgress > 1) {
+            extinguishingProgress--;
             ChangeStage(-1);
-            Debug.Log("Fire interacted with and reduced in stage.");
         }
-    }
-    public void InteractOnHolding(Transform pov, float holdingTime)
-    {
-        if (holdingTime >= extinguishingTime)
-        {
-            if (currentStage > 0)
-            {
-                ChangeStage(-1); 
-                Debug.Log("Fire extinguished while holding.");
-            }
-        }
-    }
-    public void SetPhysicsMode(bool isActive)
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        Collider col = GetComponent<Collider>();
-
-        if (rb)
-        {
-            rb.isKinematic = !isActive;
-        }
-
-        if (col)
-        {
-            col.enabled = isActive;
-        }
-    }
-    public bool CanHold(out float time)
-    {
-        time = extinguishingTime; 
-        return true;
-    }
-
-    public bool CanGrab()
-    {
-        return false; 
     }
 }

@@ -3,6 +3,7 @@ public class ObjectsGrabbable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string interactText = "Press E to grab";
     [SerializeField] private float holdTime = 1.5f;
+    [SerializeField] private bool isGrabbed = false;
 
     private Rigidbody rb;
 
@@ -25,6 +26,7 @@ public class ObjectsGrabbable : MonoBehaviour, IInteractable
     {
         Debug.Log($"Holding {gameObject.name} for {holdingTime} seconds.");
     }
+    
 
     public void SetPhysicsMode(bool isActive)
     {
@@ -42,6 +44,14 @@ public class ObjectsGrabbable : MonoBehaviour, IInteractable
 
     public bool CanGrab()
     {
-        return true; // This object can be grabbed
+        return !isGrabbed; // This object can be grabbed
+    }
+
+    public void SetGrab(bool state) {
+        isGrabbed = state;
+    }
+
+    public bool IsGrabbed() {
+        return isGrabbed;
     }
 }

@@ -2917,6 +2917,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &733566178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6504685860169209037, guid: eeda344747aaa004587f54720527552b, type: 3}
+  m_PrefabInstance: {fileID: 1088454870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &760390174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4969,7 +4974,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2699262751039276462, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2101863927}
   m_SourcePrefab: {fileID: 100100000, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
 --- !u!4 &1052273979 stripped
 Transform:
@@ -7511,9 +7519,9 @@ MonoBehaviour:
   maxRayDistance: 4
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2241
   interactionButton: {fileID: 107917601}
-  grabLocation: {fileID: 0}
+  grabLocation: {fileID: 733566178}
   dropForce: 5
   holdingTime: 0
 --- !u!1 &1733236088
@@ -9292,6 +9300,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2101863921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2699262751039276462, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
+  m_PrefabInstance: {fileID: 1052273978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2101863927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101863921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86e07c4539f43f4bae7ce796a253d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extinguishableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  extinguishRange: 5
+  extinguishDelay: 0.1
+  extinguishSpeed: 30
 --- !u!114 &2105473587 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3072216989370562151, guid: 939bc6a8f2318344791b97e1978a9522, type: 3}
