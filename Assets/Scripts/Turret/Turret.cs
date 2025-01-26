@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -9,12 +10,14 @@ public class Turret : ObjectsInteractable
     [SerializeField] private GameObject LensEffectObject;
     [SerializeField] private CinemachineVirtualCamera linkedCamera;
     [SerializeField] private bool hasEnergy = true;
+    [SerializeField] private bool canBeUsed = false;
     public bool beingUsedByPlayer;
 
     [Header("Shooting")] 
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private float gunRange;
     [SerializeField] private int damage = 1;
+    [SerializeField] private GameObject projectilePrefab;
 
     [Header("Aiming")] 
     [SerializeField] private float movementSpeed;
@@ -28,12 +31,23 @@ public class Turret : ObjectsInteractable
     private Vector3 defaultEuler;
     private float currentVerticalEuler;
     private float currentHorizontalEuler;
+    private PlayerController controller;
 
     [Header("Reloading")]
     [SerializeField] private float reloadTime = 0.33f;
     private float chamberTimer = 0.33f;
     private bool ReadyToShoot => chamberTimer <= 0;
 
+    [Header("Upgrades & Ai")] 
+    private int level = 0;
+    [SerializeField] private float shootingCooldown = 2;
+    [SerializeField] private Transform shootingRange;
+    [SerializeField] private Transform shootingTip;
+
+    private void Awake()
+    {
+        defaultEuler = linkedCamera.transform.localEulerAngles;
+    }
 
     public override void Interact() {
         if (!hasEnergy) {
@@ -41,12 +55,23 @@ public class Turret : ObjectsInteractable
             return;
         }
 
-        Camera.main.transform.eulerAngles = Vector3.zero;
+        if (!canBeUsed)
+        {
+            Debug.Log("Gunner position cannot be used");
+            return;
+        }
+
         linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
         NightVisionObject.SetActive(true);
         LensEffectObject.SetActive(false);
-        defaultEuler = linkedCamera.transform.eulerAngles;
+
+        controller = FindObjectOfType<PlayerController>();
+        if (controller)
+        {
+            controller.virtualCamera.transform.localEulerAngles = Vector3.zero;
+            controller.UpdateMovementLock(true);
+        }
     }
 
     public void Update() {
@@ -54,7 +79,7 @@ public class Turret : ObjectsInteractable
         movement = new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0)*movementSpeed;
         currentVerticalEuler = Mathf.Clamp(currentVerticalEuler + movement.y, -verticalEulerCap, verticalEulerCap);
         currentHorizontalEuler = Mathf.Clamp(currentHorizontalEuler + movement.x, -horizontalEulerCap, horizontalEulerCap);
-        linkedCamera.transform.eulerAngles =
+        linkedCamera.transform.localEulerAngles =
             new Vector3(currentHorizontalEuler, currentVerticalEuler, 0) + defaultEuler;
         chamberTimer -= Time.deltaTime;
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
@@ -66,6 +91,10 @@ public class Turret : ObjectsInteractable
             LensEffectObject.SetActive(true);
             linkedCamera.gameObject.SetActive(false);
             beingUsedByPlayer = false;
+            
+            if (controller) {
+                controller.UpdateMovementLock(false);
+            }
             return;
         }
 
@@ -104,6 +133,38 @@ public class Turret : ObjectsInteractable
         Debug.Log("No tanks are hit");            
         Debug.DrawRay(targetRay.origin , targetRay.direction * 100, Color.red, 100, true);
         return;
+    }
+
+    public void LevelUp() {
+        level++;
+
+        if (level == 1) {
+            canBeUsed = true;
+        }
+        else if (level == 2) {
+            StopCoroutine(GunnerAILoop());
+            StartCoroutine(GunnerAILoop());
+        }
+    }
+
+    private IEnumerator GunnerAILoop()
+    {
+        while (level >= 2)
+        {
+            yield return new WaitForSeconds(shootingCooldown);
+            if(beingUsedByPlayer) continue;
+            
+            Collider[] targets = Physics.OverlapBox(shootingRange.transform.position, shootingRange.lossyScale / 2, Quaternion.identity,
+                targetMask);
+            foreach (var target in targets) {
+                if (target.TryGetComponent<RocketTank>(out RocketTank tank)) {
+                    shootingTip.LookAt(tank.transform.position);
+                    GameObject projectile = Instantiate(projectilePrefab);
+                    projectile.transform.position = shootingTip.transform.position;
+                    projectile.transform.rotation = shootingTip.transform.rotation;
+                }
+            }
+        }
     }
 
 }

@@ -6,8 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     private CharacterController controller;
-    private Transform cameraTransform;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    public CinemachineVirtualCamera virtualCamera;
 
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
@@ -38,18 +37,11 @@ public class PlayerController : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin noiseComponent;
     private bool cameraBobLocked;
 
-    [Header("Camera Transition")] 
-    public Transform baseLookAt;
-    public Transform baseFollow;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         noiseComponent = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        cameraTransform = virtualCamera.transform;
-        baseLookAt = virtualCamera.m_LookAt;
-        baseFollow = virtualCamera.m_Follow;
         LockCursor();
     }
 
@@ -158,6 +150,11 @@ public class PlayerController : MonoBehaviour
     public void UpdateMovementLock(bool locked) {
         movementLocked = locked;
         cameraBobLocked = locked;
-        if (cameraBobLocked) noiseComponent.m_AmplitudeGain = 0;
+        if (cameraBobLocked)
+        {
+            currentBobAmplitude = 0;
+            currentBobFrequency = 0;
+            noiseComponent.m_AmplitudeGain = 0;
+        }
     }
 }

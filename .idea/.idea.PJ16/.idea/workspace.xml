@@ -3,13 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ObjectsInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ObjectsInteractable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/Extinguisher.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/Extinguisher.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/Structure/Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/Structure/Tower.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/Structure/TowerPiece.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/Structure/TowerPiece.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/alt zemin.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/alt zemin.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/ara kat.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/ara kat.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/badallar.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/badallar.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/bomba.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/bomba.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/duvar dekor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/duvar dekor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/duvar.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/duvar.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/et 1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/et 1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/et 2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/et 2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/iç sütun.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/iç sütun.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/kutu.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/kutu.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/tavan&amp;zemin.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/tavan&amp;zemin.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/top.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/top.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/top.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/top.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/topun kablosu.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/topun kablosu.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/trabzan.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/trabzan.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ObjectsGrabbable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turret/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/GraphicTestHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Interface/Licenses/License.CCA3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,7 +116,7 @@
       <workItem from="1737594636889" duration="6522000" />
       <workItem from="1737744102444" duration="595000" />
       <workItem from="1737755431980" duration="2981000" />
-      <workItem from="1737893524330" duration="12445000" />
+      <workItem from="1737893524330" duration="19133000" />
     </task>
     <servers />
   </component>

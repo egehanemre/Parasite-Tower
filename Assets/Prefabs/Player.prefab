@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 8207134336634039127}
   moveSpeed: 5
-  sprintSpeedMultiplier: 2
+  sprintSpeedMultiplier: 1.5
   sprintTransitSpeed: 5
   gravity: 9.8
   jumpHeight: 2
