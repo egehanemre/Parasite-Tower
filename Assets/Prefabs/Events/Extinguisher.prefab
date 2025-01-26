@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 7730063062116769136}
   - component: {fileID: 3073297262811745474}
   - component: {fileID: 2389831655835530352}
+  - component: {fileID: 162725857870181864}
   m_Layer: 0
   m_Name: Extinguisher
   m_TagString: Untagged
@@ -254,3 +255,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactText: Fire Extinguisher
   holdTime: 1.5
+  isGrabbed: 0
+--- !u!114 &162725857870181864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2699262751039276462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86e07c4539f43f4bae7ce796a253d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extinguishableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  extinguishRange: 2
+  extinguishDelay: 0.1
+  extinguishSpeed: 30
+  spread: 0.2
+  startLocation: {fileID: 6604043569233993189}

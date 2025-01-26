@@ -8,6 +8,7 @@ public class RocketTank : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 5f;
     public float stopRange = 2f;
+    public int health = 1;
 
     private Rigidbody rb;
     private float fireTimer;
@@ -86,6 +87,14 @@ public class RocketTank : MonoBehaviour
             {
                 projectileScript.SetTarget(targetTower);
             }
+        }
+    }
+
+    public void DealDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0) {
+            Destroy(gameObject);
         }
     }
 }
