@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class PlayerInteractionWithRadius : MonoBehaviour
+public class PlayerInteractionSystem : MonoBehaviour
 {
     public float maxRayDistance = 4f;
     public LayerMask interactableLayer;

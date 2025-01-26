@@ -6,12 +6,12 @@ using TMPro;
 public class PlayerInteractionUI : MonoBehaviour
 {
     [SerializeField] private GameObject interactableUIContainer;
-    [SerializeField] private PlayerInteractionWithRadius playerInteractionWithRadius;
+    [SerializeField] private PlayerInteractionSystem playerInteraction;
     [SerializeField] private TextMeshProUGUI interactableTextGUI;
 
     private void Update()
     {
-        ObjectsInteractable interactable = playerInteractionWithRadius.GetObjectsInteractable();
+        IInteractable interactable = playerInteraction.GetObjectsInteractable();
 
         if (interactable != null)
         {
@@ -22,12 +22,11 @@ public class PlayerInteractionUI : MonoBehaviour
             Hide();
         }
     }
-
-    private void Show(ObjectsInteractable objectsInteractable)
+    private void Show(IInteractable interactable)
     {
-        if (objectsInteractable != null)
+        if (interactable != null)
         {
-            interactableTextGUI.text = objectsInteractable.GetInteractText();
+            interactableTextGUI.text = interactable.GetInteractText();
             interactableUIContainer.SetActive(true);
         }
     }

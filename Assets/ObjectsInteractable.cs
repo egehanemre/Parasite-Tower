@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class ObjectsInteractable : MonoBehaviour, IInteractable
 {
-    public string interactText = "Press E to interact";
+    [SerializeField] private string interactText = "Press E to interact";
+
     public void Interact()
     {
-        Debug.Log("Interacted with: " + gameObject.name);   
+        Debug.Log("Interacted with: " + gameObject.name);
     }
+
     public string GetInteractText()
     {
         return interactText;
@@ -14,25 +16,20 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
 
     public void InteractOnHolding(Transform pov, float holdingTime)
     {
-        Debug.Log($"Holding {gameObject.name} for {holdingTime} seconds.");
     }
 
     public void SetPhysicsMode(bool isActive)
     {
-        if (TryGetComponent<Rigidbody>(out Rigidbody rb))
-        {
-            rb.isKinematic = !isActive;
-        }
     }
 
     public bool CanHold(out float holdTime)
     {
-        holdTime = 2f; // Example hold time
-        return true;
+        holdTime = 0f;
+        return false; 
     }
 
     public bool CanGrab()
     {
-        return true;
+        return false; 
     }
 }

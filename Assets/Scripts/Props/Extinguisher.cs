@@ -1,36 +1,51 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System;
+//using UnityEngine;
 
-public class Extinguisher : MonoBehaviour, Iinteractable
-{
-    [SerializeField] private LayerMask extinguishableLayer;    
-    [SerializeField] private float extinguishRange = 5f;
-    [SerializeField] private Rigidbody rigidbody;
-    [SerializeField] private Collider collider;
-    [SerializeField] private float extinguishingCooldown = 0.33f;
+//public class Extinguisher : MonoBehaviour, IInteractable
+//{
+//    [SerializeField] private LayerMask extinguishableLayer; 
+//    [SerializeField] private float extinguishRange = 5f; 
+//    [SerializeField] private Rigidbody rigidbody; 
+//    [SerializeField] private Collider collider; 
+//    [SerializeField] private float extinguishingCooldown = 0.33f; 
+//    public void Interact()
+//    {
+//        Debug.Log("Interacted with Extinguisher!");
+//    }
+//    public void InteractOnHolding(Transform pov, float holdingTime)
+//    {
+//        if (holdingTime < extinguishingCooldown) return;
 
-    public void Interact() { }
+//        if (Physics.Raycast(
+//                pov.position,
+//                pov.forward,
+//                out RaycastHit hit,
+//                extinguishRange,
+//                extinguishableLayer,
+//                QueryTriggerInteraction.Collide))
+//        {
+//            if (hit.collider.gameObject.TryGetComponent<Fire>(out Fire fire))
+//            {
+//                fire.ChangeStage(-1);
+//                Debug.Log("Fire extinguished!");
+//            }
+//        }
+//    }
 
-    public void InteractWhileHolding(Transform pov, float holdingTime) {
-        if(extinguishingCooldown > holdingTime) return;
-        
-        bool foundFire = Physics.Raycast(pov.transform.position, pov.transform.TransformDirection(Vector3.forward), out RaycastHit hit, 
-            extinguishRange, extinguishableLayer, QueryTriggerInteraction.Collide);
+//    public void SetPhysicsMode(bool isActive)
+//    {
+//        if (collider != null) collider.enabled = isActive;
+//        if (rigidbody != null) rigidbody.isKinematic = !isActive;
+//    }
 
-        if (foundFire && hit.collider.gameObject.TryGetComponent<Fire>(out Fire fire)) {
-            fire.ChangeStage(-1);
-        }
-    }
+//    public bool CanGrab()
+//    {
+//        return true;
+//    }
 
-    public void SetPhysicsMode(bool isActive)
-    {
-        collider.enabled = isActive;
-        rigidbody.isKinematic = !isActive;
-    }
-
-    public bool CanGrab() {
-        return true;
-    }
-}
+//    public bool CanHold(out float holdTime)
+//    {
+//        holdTime = 0f;
+//        return false; 
+//    }
+//}
