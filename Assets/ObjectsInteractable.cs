@@ -11,14 +11,19 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
         // Check if the GameObject has the specified tag
         if (gameObject.CompareTag("Turret"))
         {
-            Turret turretScript = GetComponent<Turret>();
-            if (turretScript != null)
+            if (TryGetComponent<Turret>(out Turret turretScript))
             {
                 turretScript.ActivateTurret();
             }
             else
             {
                 Debug.LogWarning("Turret component not found on the GameObject!");
+            }
+        }
+        else if (gameObject.CompareTag("ShieldButton"))
+        {
+            if (TryGetComponent<ShieldButton>(out ShieldButton shieldButton)) {
+                shieldButton.ActivateLinkedSide();
             }
         }
         else

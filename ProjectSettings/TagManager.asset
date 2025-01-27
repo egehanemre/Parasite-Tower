@@ -8,6 +8,8 @@ TagManager:
   - Tower
   - Projectile
   - Turret
+  - Bomb
+  - ShieldButton
   layers:
   - Default
   - TransparentFX
