@@ -7,6 +7,7 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string interactText = "Hold E to interact";
     [SerializeField] private float holdingTime;
+    private PlayerInteractionSystem InteractionSystem;
     private bool holding = false;
     private float timeRemaining = 0;
 
@@ -36,9 +37,21 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
         if (TryGetComponent<BodyRemainings>(out BodyRemainings bodyRemainings)) {
             bodyRemainings.Collect();
         }
+        if (TryGetComponent<SacrificePoint>(out SacrificePoint sacrificePoint)) {
+            GameObject itemOnHand = InteractionSystem.GetItemOnHand();
+            if (itemOnHand == null || !itemOnHand.CompareTag("Skull"))
+            {
+                Debug.Log("No valid items on hand for sacrifice");
+                return;
+            }
+            
+            InteractionSystem.DropItem();
+            sacrificePoint.Sacrifice(itemOnHand);
+        }
     }
 
-    public virtual void Interact() {
+    public virtual void Interact(PlayerInteractionSystem playerInteractionSystem) {
+        InteractionSystem = playerInteractionSystem;
         holding = true;
         timeRemaining = holdingTime;
         HoldProgressBar.actionProgressBar.Render(true, 1);

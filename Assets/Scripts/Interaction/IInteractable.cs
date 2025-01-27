@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    void Interact();
+    void Interact(PlayerInteractionSystem playerInteractionSystem);
     string GetInteractText(); 
     bool CanGrab();
     void SetGrab(bool state) {}

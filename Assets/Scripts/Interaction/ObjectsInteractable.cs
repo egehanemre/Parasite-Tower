@@ -4,7 +4,7 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private string interactText = "Press E to interact";
 
-    public virtual void Interact()
+    public virtual void Interact(PlayerInteractionSystem playerInteractionSystem)
     {
         Debug.Log("Interacted with: " + gameObject.name);
 

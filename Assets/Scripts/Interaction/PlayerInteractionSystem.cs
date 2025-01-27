@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,6 @@ public class PlayerInteractionSystem : MonoBehaviour
     [Header("Old Logic Additions")]
     [SerializeField] private Transform grabLocation;
     [SerializeField] private float dropForce = 5f;
-    [SerializeField] private float holdingTime = 0f;
 
     private IInteractable currentInteractable;
     private IInteractable itemOnHand;
@@ -39,7 +39,7 @@ public class PlayerInteractionSystem : MonoBehaviour
 
         if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact(this);
             if (currentInteractable.CanGrab())
             {
                 if (itemOnHand != null) DropItem();
@@ -103,6 +103,13 @@ public class PlayerInteractionSystem : MonoBehaviour
         else {
             interactionButton.SetActive(false);
         }
+    }
+
+    public GameObject GetItemOnHand()
+    {
+        if (itemOnHand == null) return null;
+        MonoBehaviour monoBehaviour = itemOnHand as MonoBehaviour;
+        return monoBehaviour.gameObject;
     }
 
     public IInteractable GetObjectsInteractable()

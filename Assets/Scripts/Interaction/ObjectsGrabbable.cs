@@ -11,7 +11,7 @@ public class ObjectsGrabbable : MonoBehaviour, IInteractable
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Interact()
+    public void Interact(PlayerInteractionSystem playerInteractionSystem)
     {
         Debug.Log("Grabbed: " + gameObject.name);
     }
