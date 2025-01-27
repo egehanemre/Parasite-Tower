@@ -28,7 +28,6 @@ public class PlayerInteractionSystem : MonoBehaviour
     private void Update()
     {
         HandleInteraction();
-        HandleHoldRequest();
         UpdateInteractionUI();
         HandleDropRequest();
     }
@@ -46,34 +45,6 @@ public class PlayerInteractionSystem : MonoBehaviour
                 if (itemOnHand != null) DropItem();
                 GrabItem(currentInteractable);
             }
-        }
-    }
-
-    private void HandleHoldRequest()
-    {
-        if (Input.GetKey(KeyCode.E))
-        {
-            if (holdingAt == null && currentInteractable != null && currentInteractable.CanHold(out holdingTime))
-            {
-                holdingAt = currentInteractable;
-            }
-
-            if (holdingAt != null)
-            {
-                holdingTimer += Time.deltaTime;
-
-                if (holdingTimer >= holdingTime)
-                {
-                    holdingAt.InteractOnHolding(pov, holdingTimer);
-                    holdingAt = null;
-                    holdingTimer = 0;
-                }
-            }
-        }
-        else
-        {
-            holdingTimer = 0;
-            holdingAt = null;
         }
     }
 

@@ -6,7 +6,5 @@ public interface IInteractable
     string GetInteractText(); 
     bool CanGrab();
     void SetGrab(bool state) {}
-    bool CanHold(out float holdTime);
-    void InteractOnHolding(Transform pov, float holdingTime);
     void SetPhysicsMode(bool isActive);
 }

@@ -37,18 +37,8 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
         return interactText;
     }
 
-    public void InteractOnHolding(Transform pov, float holdingTime)
-    {
-    }
-
     public void SetPhysicsMode(bool isActive)
     {
-    }
-
-    public bool CanHold(out float holdTime)
-    {
-        holdTime = 0f;
-        return false;
     }
 
     public bool CanGrab()
