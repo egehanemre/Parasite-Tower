@@ -118,7 +118,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    private void UpdateMoneyText()
+    public void UpdateMoneyText()
     {
         moneyText.text = "Money: $" + Money;
     }

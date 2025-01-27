@@ -8,6 +8,7 @@ public class SacrificePoint : MonoBehaviour
 
     public void Sacrifice(GameObject skullObject) {
         upgradeManager.Money++;
+        upgradeManager.UpdateMoneyText();
         Destroy(skullObject);
     }
 }
