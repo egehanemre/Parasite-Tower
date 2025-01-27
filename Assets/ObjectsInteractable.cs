@@ -7,6 +7,24 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
     public virtual void Interact()
     {
         Debug.Log("Interacted with: " + gameObject.name);
+
+        // Check if the GameObject has the specified tag
+        if (gameObject.CompareTag("Turret"))
+        {
+            Turret turretScript = GetComponent<Turret>();
+            if (turretScript != null)
+            {
+                turretScript.ActivateTurret();
+            }
+            else
+            {
+                Debug.LogWarning("Turret component not found on the GameObject!");
+            }
+        }
+        else
+        {
+            Debug.Log("This object is not a turret.");
+        }
     }
 
     public string GetInteractText()
@@ -25,11 +43,11 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
     public bool CanHold(out float holdTime)
     {
         holdTime = 0f;
-        return false; 
+        return false;
     }
 
     public bool CanGrab()
     {
-        return false; 
+        return false;
     }
 }

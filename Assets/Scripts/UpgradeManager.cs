@@ -9,14 +9,13 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] public int Money = 10;
     [SerializeField] TextMeshProUGUI moneyText;
 
-    public int[] upgradePrices = { 1, 3, 5 }; 
+    public int[] upgradePrices = { 1, 3, 5 };
 
     public enum UpgradeLevel
     {
         Level0,
         Level1,
         Level2,
-        Level3,
     }
 
     [System.Serializable]
@@ -33,12 +32,11 @@ public class UpgradeManager : MonoBehaviour
     public List<TurretData> turrets = new List<TurretData>();
     public Sprite upgradeLevelSprite;
     public Sprite noLevelSprite;
-
     private void Start()
     {
-        InitializeTurretButtons();
-        InitializeLevelIndicators();
         UpdateMoneyText();
+        InitializeLevelIndicators();
+        InitializeTurretButtons();
     }
 
     private void InitializeLevelIndicators()
@@ -87,8 +85,8 @@ public class UpgradeManager : MonoBehaviour
             return;
         }
 
-        Money -= upgradeCost; 
-        UpdateMoneyText();    
+        Money -= upgradeCost;
+        UpdateMoneyText();
         turretData.upgradeLevel++;
 
         Debug.Log($"Upgraded {turretData.turret.name} to {turretData.upgradeLevel}");
@@ -127,6 +125,6 @@ public class UpgradeManager : MonoBehaviour
 
     private void ApplyTurretUpgrade(TurretData turretData)
     {
-        //Todo: Apply upgrade to turret
+        turretData.turret.GetComponent<Turret>().LevelUp();
     }
 }

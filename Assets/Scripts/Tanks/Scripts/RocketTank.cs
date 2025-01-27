@@ -4,24 +4,17 @@ using UnityEngine;
 public class RocketTank : MonoBehaviour
 {
     public Transform firePoint;
-    public float fireRate = 2f;
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 5f;
-    public float stopRange = 2f;
-    public int health = 1;
-
+    public float fireRate;
+    public float moveSpeed;
+    public float rotationSpeed;
+    public float stopRange;
+    public int health;
     private Rigidbody rb;
     private float fireTimer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        rb.constraints = RigidbodyConstraints.FreezePositionY |
-                         RigidbodyConstraints.FreezeRotationX |
-                         RigidbodyConstraints.FreezeRotationZ;
-
-        rb.useGravity = false;
 
         if (TankManager.Instance == null)
         {
@@ -52,6 +45,8 @@ public class RocketTank : MonoBehaviour
     void MoveTowardsTarget(Transform targetTower)
     {
         Vector3 direction = (targetTower.position - transform.position).normalized;
+        direction.y = 0;
+
         rb.velocity = direction * moveSpeed;
     }
 
@@ -93,7 +88,8 @@ public class RocketTank : MonoBehaviour
     public void DealDamage(int amount)
     {
         health -= amount;
-        if (health <= 0) {
+        if (health <= 0)
+        {
             Destroy(gameObject);
         }
     }

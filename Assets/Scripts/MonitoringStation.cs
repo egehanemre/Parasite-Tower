@@ -35,6 +35,12 @@ public class MonitoringStation : MonoBehaviour
         Cursor.visible = true;
     }
 
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void TryInteract()
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
@@ -64,7 +70,19 @@ public class MonitoringStation : MonoBehaviour
     {
         isUIActive = false;
         uiCanvas.SetActive(false);
-        Time.timeScale = 1;  
+        Time.timeScale = 1;
         playerController.enabled = true;
+
+        LockCursor();
+
+        StartCoroutine(ForceCursorLock());
+    }
+    private IEnumerator ForceCursorLock()
+    {
+        yield return null;
+
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
     }
 }
