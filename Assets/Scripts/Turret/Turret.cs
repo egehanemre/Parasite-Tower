@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Cinemachine;
 
@@ -12,9 +13,11 @@ public class Turret : MonoBehaviour
     public bool beingUsedByPlayer;
 
     [Header("Shooting")]
-    [SerializeField] private LayerMask targetMask;
     [SerializeField] private float gunRange;
     [SerializeField] private int damage = 1;
+    [SerializeField] private Transform projectileLaunchLocation;
+    [SerializeField] private float generalProjectileSpeed = 10;
+    [SerializeField] private GameObject currentProjectileType;
 
     [Header("Aiming")]
     [SerializeField] private float movementSpeed;
@@ -38,6 +41,12 @@ public class Turret : MonoBehaviour
     [Header("Upgrade")]
     [SerializeField] private int damageIncreasePerLevel = 2;
     [SerializeField] private float rangeIncreasePerLevel = 10;
+
+    [Header("AI")] 
+    [SerializeField] private float aIShootingCooldown = 5;
+    [SerializeField] private float aICooldownChangePerLevel = -1;
+    [SerializeField] private Transform aITargetZone;
+    [SerializeField] private LayerMask targetMask;
 
     private void Awake()
     {
@@ -116,32 +125,23 @@ public class Turret : MonoBehaviour
         }
 
         chamberTimer = reloadTime;
-        InstantHitCheck(mainCam);
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        LaunchProjectile(currentProjectileType, ray.direction);
     }
 
-    private void InstantHitCheck(Camera mainCam)
-    {
-        Ray targetRay = mainCam.ScreenPointToRay(Input.mousePosition);
-        bool foundObject = Physics.Raycast(targetRay, out RaycastHit hit, gunRange, targetMask);
+    private void LaunchProjectile(GameObject projectilePrefab, Vector3 direction) {
 
-        if (!foundObject)
-        {
-            Debug.Log("No objects are hit");
-            Debug.DrawRay(targetRay.origin, targetRay.direction * 100, Color.red, 100, true);
-            return;
+        GameObject spawnedProjectile = Instantiate(projectilePrefab, projectileLaunchLocation.position,
+            Quaternion.LookRotation(direction));
+        if (spawnedProjectile.TryGetComponent<TurretProjectile>(out TurretProjectile turretProjectile)) {
+            turretProjectile.Launch(damage, generalProjectileSpeed);
         }
-
-        if (hit.collider.gameObject.TryGetComponent<RocketTank>(out RocketTank tank))
-        {
-            tank.DealDamage(damage);
-            return;
+        else {
+            Debug.LogError("Projectile has no turret projectile script!");
+            Destroy(spawnedProjectile);
         }
-
-        Debug.Log("No tanks are hit");
-        Debug.DrawRay(targetRay.origin, targetRay.direction * 100, Color.red, 100, true);
-        return;
     }
-
+    
     public void LevelUp()
     {
         if (turretLevel >= UpgradeManager.UpgradeLevel.Level2)
@@ -156,5 +156,27 @@ public class Turret : MonoBehaviour
 
         Debug.Log($"Turret leveled up to Level {turretLevel}!");
         Debug.Log($"New Damage: {damage}, New Gun Range: {gunRange}");
+
+        if (turretLevel >= UpgradeManager.UpgradeLevel.Level2) {
+            StopCoroutine(AIShootingLoop());
+            StartCoroutine(AIShootingLoop());
+        }
+    }
+
+    public IEnumerator AIShootingLoop() {
+        while (turretLevel >= UpgradeManager.UpgradeLevel.Level2)
+        {
+            yield return new WaitForSeconds(aIShootingCooldown + ((int)turretLevel) * aICooldownChangePerLevel);
+            if(beingUsedByPlayer) continue;
+            
+            Collider[] allTargets = Physics.OverlapBox(aITargetZone.position, aITargetZone.lossyScale / 2, aITargetZone.rotation, targetMask);
+            foreach (var target in allTargets) {
+                if (target && target.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
+                    Vector3 direction = tank.transform.position - projectileLaunchLocation.position;
+                    LaunchProjectile(currentProjectileType, direction);
+                    break;
+                }
+            }
+        }
     }
 }
