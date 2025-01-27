@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  projectileSpeed: 25
+  projectileSpeed: 75
   upwardForce: 5
   deviationAngle: 5
   acceleration: 1.5
