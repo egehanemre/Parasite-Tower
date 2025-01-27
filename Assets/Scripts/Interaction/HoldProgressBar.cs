@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class HoldProgressBar : MonoBehaviour
 {
     public static HoldProgressBar actionProgressBar;
-    [SerializeField] private Image image;
-    
+    private Image image;
+
     public void Render(bool activated, float progress) {
         gameObject.SetActive(activated);
         image.fillAmount = progress;
     }
 
     private void Awake() {
+        image = GetComponent<Image>();
         actionProgressBar = this;
     }
 }
