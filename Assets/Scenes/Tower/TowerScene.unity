@@ -6442,7 +6442,7 @@ GameObject:
   - component: {fileID: 1574824612}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6724,7 +6724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5fb198555c7b7f45a28ce1d127f4c17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.2
+      value: 11.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5fb198555c7b7f45a28ce1d127f4c17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6911,7 +6911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35c8b99dc351e6c48840c0aa66b39ec7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.59
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35c8b99dc351e6c48840c0aa66b39ec7, type: 3}
       propertyPath: m_LocalPosition.z
