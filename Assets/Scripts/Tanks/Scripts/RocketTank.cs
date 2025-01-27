@@ -14,6 +14,7 @@ public class RocketTank : MonoBehaviour
 
     void Start()
     {
+        stopRange += Random.Range(-2.5f, 2.5f);
         rb = GetComponent<Rigidbody>();
 
         if (TankManager.Instance == null)

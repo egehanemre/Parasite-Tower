@@ -28,7 +28,7 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
         }
         else
         {
-            Debug.Log("This object is not a turret.");
+            Debug.Log("no tag found");
         }
     }
 
