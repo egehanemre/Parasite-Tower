@@ -8,7 +8,7 @@ public class TurretProjectile : MonoBehaviour
     [Header("Projectile")]
     [SerializeField] protected float lifetime = 5;
     [SerializeField] protected float spawnImmunity = 0.15f;
-    [SerializeField] protected int damage = 1;
+    [SerializeField] public int damage = 1;
     [SerializeField] protected float projectileSpeed = 1;
     protected Rigidbody rigidbody;
 

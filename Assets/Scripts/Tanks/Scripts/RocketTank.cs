@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RocketTank : MonoBehaviour
 {
+    public float generalProjectileSpeed = 10;
     public Transform firePoint;
     public float fireRate;
     public float moveSpeed;
@@ -77,16 +78,15 @@ public class RocketTank : MonoBehaviour
         {
             fireTimer = 0;
 
+            Vector3 direction = TankManager.Instance.sharedTarget.position+TankManager.Instance.generalAimOffset - transform.position;
             GameObject projectile = Instantiate(
                 TankManager.Instance.sharedProjectilePrefab,
-                firePoint.position,
-                firePoint.rotation
+                firePoint.position, Quaternion.LookRotation(direction)
             );
 
             RocketTankProjectile projectileScript = projectile.GetComponent<RocketTankProjectile>();
-            if (projectileScript != null)
-            {
-                projectileScript.SetTarget(targetTower);
+            if (projectileScript != null) {
+                projectileScript.Launch(1, generalProjectileSpeed);
             }
         }
     }

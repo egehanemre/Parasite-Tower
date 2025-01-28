@@ -4,7 +4,8 @@ public class TankManager : MonoBehaviour
 {
     public static TankManager Instance { get; private set; }  // Singleton
 
-    public Transform sharedTarget; 
+    public Transform sharedTarget;
+    public Vector3 generalAimOffset = new Vector3(0, 10, 0);
     public GameObject sharedProjectilePrefab;  
 
     private void Awake()

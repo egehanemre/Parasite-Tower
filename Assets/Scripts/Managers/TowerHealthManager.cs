@@ -41,7 +41,7 @@ public class TowerHealthManager : MonoBehaviour
             RocketTankProjectile projectile = other.GetComponent<RocketTankProjectile>();
             if (projectile != null)
             {
-                TakeDamage(projectile.damageAmount); 
+                TakeDamage(projectile.damage); 
                 Destroy(other.gameObject); 
             }
         }
