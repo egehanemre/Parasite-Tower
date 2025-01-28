@@ -15,6 +15,8 @@ public class Extinguisher : MonoBehaviour
       [SerializeField] private Transform startLocation;
       private float extinguishTime = 0;
       private ObjectsGrabbable grabbableRef;
+      private bool extinguishing = false;
+      [SerializeField] private ParticleSystem extinguishingEffect;
 
       private void Awake() {
             grabbableRef = GetComponent<ObjectsGrabbable>();
@@ -24,7 +26,18 @@ public class Extinguisher : MonoBehaviour
             extinguishTime -= Time.deltaTime;
             if(extinguishTime > 0) return;
 
-            if (Input.GetKey(KeyCode.E) && grabbableRef.IsGrabbed()) {
+            bool previousExtinguishingState = extinguishing;
+            extinguishing = Input.GetKey(KeyCode.E) && grabbableRef.IsGrabbed();
+            if (previousExtinguishingState != extinguishing) {
+                  if (extinguishing)
+                  {
+                        extinguishingEffect.gameObject.SetActive(true);
+                        extinguishingEffect.Play();
+                  }
+                  else extinguishingEffect.Stop();
+            }
+
+            if (extinguishing) {
                   extinguishTime = extinguishDelay;
                   Vector3 rightSpread = transform.right * spread;
                   Vector3 upSpread = transform.up * spread;
