@@ -3,14 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Effect.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Events/Fire.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Impact_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Impact_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Smoke_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Smoke_01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/Fire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/ObjectsHoldable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/ObjectsHoldable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Tank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Tank.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/ThiccTank.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/ThiccTank.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonPrototype/Materials/FX/PolygonPrototype_FX_Dirt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonPrototype/Materials/FX/PolygonPrototype_FX_Dirt.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +111,7 @@
       <workItem from="1737893524330" duration="19133000" />
       <workItem from="1737946373154" duration="8877000" />
       <workItem from="1738051571935" duration="7032000" />
-      <workItem from="1738075550045" duration="4080000" />
+      <workItem from="1738075550045" duration="7245000" />
     </task>
     <servers />
   </component>

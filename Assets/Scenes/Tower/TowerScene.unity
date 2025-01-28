@@ -2321,6 +2321,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 7814835977527726668, guid: b2cfae3dd9f7ad4499ffec6afa4db6c5, type: 3}
   - {fileID: 7814835977527726668, guid: f205ff4451be0864fbe17eace5823c7c, type: 3}
+  - {fileID: 7814835977527726668, guid: a2ee5deacd583324baa7b45a9792c6f9, type: 3}
   targetPosition: {fileID: 1574824611}
   spawnRadius: 50
   spawnDelay: 0.5
@@ -9697,6 +9698,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 796438877}
+    - target: {fileID: 6811701350243756350, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: Cannon

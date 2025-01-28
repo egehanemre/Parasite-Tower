@@ -6,14 +6,15 @@ public class TurretRocket : TurretProjectile
 {
     [Header("Rocket")] 
     [SerializeField] private float explosionSize = 3;
+    [SerializeField] private GameObject onHitEffect;
     
     protected override void OnTriggerEnter(Collider other) {
         if(spawnImmunity > 0) return;
         Explode();
     }
 
-    private void Explode()
-    {
+    private void Explode() {
+        Instantiate(onHitEffect, transform.position, Quaternion.identity);
         Collider[] contacted = Physics.OverlapSphere(transform.position, explosionSize);
         foreach (var contact in contacted)
         {

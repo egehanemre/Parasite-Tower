@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,6 +12,10 @@ public class RocketTank : MonoBehaviour
     public int health;
     private Rigidbody rb;
     private float fireTimer;
+
+    [SerializeField] private GameObject onHitEffect;
+    [SerializeField] private GameObject afterHitEffect;
+    [SerializeField] private GameObject onDeathEffect;
 
     void Start()
     {
@@ -91,7 +96,24 @@ public class RocketTank : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+            GameObject spawnedEffect = Instantiate(onDeathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }
+    
+    public void DealDamage(int amount, Vector3 location) {
+        DealDamage(amount);
+        if(health <= 0) return;
+        
+        GameObject spawnedEffect = Instantiate(onHitEffect, transform);
+        spawnedEffect.transform.position = location;
+        StartCoroutine(PlaySmoke(spawnedEffect.transform.localPosition, 1));
+    }
+
+    public IEnumerator PlaySmoke(Vector3 location, float after) {
+        yield return new WaitForSeconds(after);
+        GameObject spawnedEffect = Instantiate(afterHitEffect, transform);
+        spawnedEffect.transform.localPosition = location;
+        //spawnedEffect.transform.eulerAngles = spawnedEffect.transform.eulerAngles + new Vector3(180, 0, 0);
     }
 }

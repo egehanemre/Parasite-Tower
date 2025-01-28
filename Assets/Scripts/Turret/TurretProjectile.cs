@@ -35,7 +35,7 @@ public class TurretProjectile : MonoBehaviour
         if(spawnImmunity > 0) return;
         
         if (other.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
-            tank.DealDamage(damage);
+            tank.DealDamage(damage, other.ClosestPoint(transform.position));
         }
         
         Destroy(gameObject);
