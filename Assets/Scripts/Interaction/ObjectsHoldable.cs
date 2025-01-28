@@ -26,14 +26,15 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
             
             if (timeRemaining <= 0) {
                 timeRemaining = 0;
-                holding = false;
                 OnHoldingComplete();
-                HoldProgressBar.actionProgressBar.Render(false, 0);
             }
         }
     }
 
     private void OnHoldingComplete() {
+        holding = false;
+        HoldProgressBar.actionProgressBar.Render(false, 0);
+        
         if (TryGetComponent<BodyRemainings>(out BodyRemainings bodyRemainings)) {
             bodyRemainings.Collect();
         }
@@ -59,6 +60,9 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
             loadChamber.FeedChamber(ammunition);
             InteractionSystem.DropItem();
             Destroy(loadableAmmunition.gameObject);
+        }
+        else if (TryGetComponent<CutTurretCable>(out CutTurretCable cable)) {
+            cable.Fix();
         }
     }
 

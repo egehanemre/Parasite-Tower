@@ -4561,14 +4561,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 791618915}
     m_Modifications:
-    - target: {fileID: 1656291292438102946, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656291292438102946, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: m_Size.z
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
@@ -9641,9 +9633,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 696276505}
     m_Modifications:
-    - target: {fileID: 849990953130730418, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 832924617624924119, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 832924617624924119, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 832924617624924119, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 832924617624924119, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1762786655108901010, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_LocalPosition.x

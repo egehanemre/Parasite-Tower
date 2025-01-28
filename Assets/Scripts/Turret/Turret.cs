@@ -105,25 +105,25 @@ public class Turret : MonoBehaviour
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
         linkedCamera.m_Lens.FieldOfView = currentZoom;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // Exit turret control
-            NightVisionObject.SetActive(false);
-            LensEffectObject.SetActive(true);
-            linkedCamera.gameObject.SetActive(false);
-            beingUsedByPlayer = false;
-            HoldProgressBar.actionProgressBar.Render(false, 0);
-
-            if (controller)
-            {
-                controller.UpdateMovementLock(false);
-            }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            LeaveTurret();
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && ReadyToShoot)
-        {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && ReadyToShoot) {
             Shoot();
+        }
+    }
+
+    private void LeaveTurret() {
+        NightVisionObject.SetActive(false);
+        LensEffectObject.SetActive(true);
+        linkedCamera.gameObject.SetActive(false);
+        beingUsedByPlayer = false;
+        HoldProgressBar.actionProgressBar.Render(false, 0);
+
+        if (controller) {
+            controller.UpdateMovementLock(false);
         }
     }
 
@@ -183,7 +183,7 @@ public class Turret : MonoBehaviour
         while (gameObject.activeSelf)
         {
             yield return new WaitForSeconds(aIShootingCooldown + ((int)turretLevel) * aICooldownChangePerLevel);
-            if(beingUsedByPlayer) continue;
+            if(beingUsedByPlayer || !hasEnergy) continue;
             
             Collider[] allTargets = Physics.OverlapBox(aITargetZone.position, aITargetZone.lossyScale / 2, aITargetZone.rotation, targetMask);
             foreach (var target in allTargets) {
@@ -194,5 +194,17 @@ public class Turret : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    public void CutEnergy() {
+        if(!hasEnergy) return;
+        hasEnergy = false;
+        LeaveTurret();
+    }
+
+    public void RecoverEnergy() {
+        if(hasEnergy) return;
+        hasEnergy = true;
     }
 }

@@ -21,7 +21,7 @@ public class Extinguisher : MonoBehaviour
       private void Awake() {
             grabbableRef = GetComponent<ObjectsGrabbable>();
       }
-
+      
       private void Update() {
             extinguishTime -= Time.deltaTime;
             if(extinguishTime > 0) return;

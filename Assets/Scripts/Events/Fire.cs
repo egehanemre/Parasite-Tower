@@ -57,21 +57,12 @@ public class Fire : MonoBehaviour, IEvent
             stageGrowthTime + stageGrowthRandomization
         );
     }
-
-    private void ClearRender()
-    {
-        foreach (var stage in stages)
-        {
-            stage.SetActive(false);
-        }
-    }
-
     private void Render(int stage)
     {
-        ClearRender();
-        for (int i = 0; i < stage && i < stages.Length; i++)
+        for (int i = 0;  i < stages.Length; i++)
         {
-            stages[i].SetActive(true);
+            if(i < stage)stages[i].SetActive(true);
+            else stages[i].SetActive(false);
         }
     }
 
@@ -81,7 +72,6 @@ public class Fire : MonoBehaviour, IEvent
         if (newStage != currentStage)
         {
             currentStage = newStage;
-            ClearRender();
             Render(currentStage);
             Debug.Log($"Fire stage changed to: {currentStage}");
         }
