@@ -37,7 +37,7 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
         if (TryGetComponent<BodyRemainings>(out BodyRemainings bodyRemainings)) {
             bodyRemainings.Collect();
         }
-        if (TryGetComponent<SacrificePoint>(out SacrificePoint sacrificePoint)) {
+        else if (TryGetComponent<SacrificePoint>(out SacrificePoint sacrificePoint)) {
             GameObject itemOnHand = InteractionSystem.GetItemOnHand();
             if (itemOnHand == null || !itemOnHand.CompareTag("Skull"))
             {
@@ -47,6 +47,18 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
             
             InteractionSystem.DropItem();
             sacrificePoint.Sacrifice(itemOnHand);
+        }
+        else if (TryGetComponent<AmmunitionLoadChamber>(out AmmunitionLoadChamber loadChamber)) {
+            GameObject itemOnHand = InteractionSystem.GetItemOnHand();
+            if (itemOnHand == null || !itemOnHand.TryGetComponent<LoadableAmmunition>(out LoadableAmmunition loadableAmmunition)) {
+                Debug.Log("No valid items on hand to load");
+                return;
+            }
+
+            SpecialAmmunition ammunition = loadableAmmunition.GetAmmunition();
+            loadChamber.FeedChamber(ammunition);
+            InteractionSystem.DropItem();
+            Destroy(loadableAmmunition.gameObject);
         }
     }
 

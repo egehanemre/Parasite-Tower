@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
             currentBobAmplitude = 0;
             currentBobFrequency = 0;
             noiseComponent.m_AmplitudeGain = 0;
+            noiseComponent.m_FrequencyGain = 0;
         }
     }
 }

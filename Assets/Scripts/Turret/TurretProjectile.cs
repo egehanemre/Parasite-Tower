@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class TurretProjectile : MonoBehaviour
 {
-    [SerializeField] private float lifetime = 5;
-    private int damage = 1;
-    [SerializeField] private Rigidbody rigidbody;
+    [Header("Projectile")]
+    [SerializeField] protected float lifetime = 5;
+    [SerializeField] protected float spawnImmunity = 0.15f;
+    [SerializeField] protected int damage = 1;
+    [SerializeField] protected float projectileSpeed = 1;
+    protected Rigidbody rigidbody;
+
+    private void Awake() {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void Launch(int damage, float speed, Vector3 direction) {
         if (!rigidbody) {
@@ -16,23 +23,27 @@ public class TurretProjectile : MonoBehaviour
             return;
         }
 
-        this.damage = damage;
-        rigidbody.velocity = direction * speed;
+        this.damage += damage;
+        rigidbody.velocity = direction * (speed * projectileSpeed);
     }
     
     public void Launch(int damage, float speed) {
         Launch(damage, speed, transform.forward);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    protected virtual void OnTriggerEnter(Collider other) {
+        if(spawnImmunity > 0) return;
+        
         if (other.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
             tank.DealDamage(damage);
-            Destroy(gameObject);
         }
+        
+        Destroy(gameObject);
     }
 
     private void FixedUpdate() {
         lifetime -= Time.fixedDeltaTime;
+        if (spawnImmunity > 0) spawnImmunity -= Time.fixedDeltaTime;
         
         if (lifetime < 0) {
             Destroy(gameObject);

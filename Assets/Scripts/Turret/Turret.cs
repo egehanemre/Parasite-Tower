@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
@@ -17,7 +18,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private int damage = 1;
     [SerializeField] private Transform projectileLaunchLocation;
     [SerializeField] private float generalProjectileSpeed = 10;
-    [SerializeField] private GameObject currentProjectileType;
+    [SerializeField] private GameObject defaultProjectileType;
 
     [Header("Aiming")]
     [SerializeField] private float movementSpeed;
@@ -41,6 +42,7 @@ public class Turret : MonoBehaviour
     [Header("Upgrade")]
     [SerializeField] private int damageIncreasePerLevel = 2;
     [SerializeField] private float rangeIncreasePerLevel = 10;
+    [SerializeField] private SpecialAmmunition loadedSpecialAmmunition;
 
     [Header("AI")] 
     [SerializeField] private float aIShootingCooldown = 5;
@@ -48,9 +50,12 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform aITargetZone;
     [SerializeField] private LayerMask targetMask;
 
-    private void Awake()
-    {
+    private void Awake() {
         defaultEuler = linkedCamera.transform.localEulerAngles;
+    }
+
+    private void Start() {
+        StartCoroutine(AIShootingLoop());
     }
 
     public void ActivateTurret()
@@ -61,11 +66,11 @@ public class Turret : MonoBehaviour
             return;
         }
 
-        if (turretLevel <= UpgradeManager.UpgradeLevel.Level0)
+        /*if (turretLevel <= UpgradeManager.UpgradeLevel.Level0)
         {
             Debug.Log("Turret cannot be used");
             return;
-        }
+        }*/
 
         linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
@@ -83,6 +88,13 @@ public class Turret : MonoBehaviour
     private void Update()
     {
         if (!beingUsedByPlayer) return;
+        if (chamberTimer > 0) {
+            chamberTimer -= Time.deltaTime;
+            HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
+        }
+        else {
+            HoldProgressBar.actionProgressBar.Render(false, 0);
+        }
 
         // Turret movement and aiming logic
         movement = new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0) * movementSpeed;
@@ -90,7 +102,6 @@ public class Turret : MonoBehaviour
         currentHorizontalEuler = Mathf.Clamp(currentHorizontalEuler + movement.x, -horizontalEulerCap, horizontalEulerCap);
         linkedCamera.transform.localEulerAngles =
             new Vector3(currentHorizontalEuler, currentVerticalEuler, 0) + defaultEuler;
-        chamberTimer -= Time.deltaTime;
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
         linkedCamera.m_Lens.FieldOfView = currentZoom;
 
@@ -101,6 +112,7 @@ public class Turret : MonoBehaviour
             LensEffectObject.SetActive(true);
             linkedCamera.gameObject.SetActive(false);
             beingUsedByPlayer = false;
+            HoldProgressBar.actionProgressBar.Render(false, 0);
 
             if (controller)
             {
@@ -126,6 +138,12 @@ public class Turret : MonoBehaviour
 
         chamberTimer = reloadTime;
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        GameObject currentProjectileType = defaultProjectileType;
+        if (loadedSpecialAmmunition.amount > 0) {
+            loadedSpecialAmmunition.amount--;
+            currentProjectileType = loadedSpecialAmmunition.ammunitionPrefab;
+        }
+        
         LaunchProjectile(currentProjectileType, ray.direction);
     }
 
@@ -144,27 +162,25 @@ public class Turret : MonoBehaviour
     
     public void LevelUp()
     {
-        if (turretLevel >= UpgradeManager.UpgradeLevel.Level2)
-        {
+        if (turretLevel >= UpgradeManager.UpgradeLevel.Level2) {
             Debug.Log("Turret is already at max level!");
             return;
         }
 
         turretLevel++;
         damage += damageIncreasePerLevel;
-        gunRange += rangeIncreasePerLevel;
+        //gunRange += rangeIncreasePerLevel;
 
         Debug.Log($"Turret leveled up to Level {turretLevel}!");
-        Debug.Log($"New Damage: {damage}, New Gun Range: {gunRange}");
+        Debug.Log($"New Damage: {damage}");
+    }
 
-        if (turretLevel >= UpgradeManager.UpgradeLevel.Level2) {
-            StopCoroutine(AIShootingLoop());
-            StartCoroutine(AIShootingLoop());
-        }
+    public void LoadAmmo(SpecialAmmunition specialAmmunition) {
+        loadedSpecialAmmunition = specialAmmunition;
     }
 
     public IEnumerator AIShootingLoop() {
-        while (turretLevel >= UpgradeManager.UpgradeLevel.Level2)
+        while (gameObject.activeSelf)
         {
             yield return new WaitForSeconds(aIShootingCooldown + ((int)turretLevel) * aICooldownChangePerLevel);
             if(beingUsedByPlayer) continue;
@@ -173,7 +189,7 @@ public class Turret : MonoBehaviour
             foreach (var target in allTargets) {
                 if (target && target.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
                     Vector3 direction = tank.transform.position - projectileLaunchLocation.position;
-                    LaunchProjectile(currentProjectileType, direction);
+                    LaunchProjectile(defaultProjectileType, direction);
                     break;
                 }
             }

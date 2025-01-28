@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5327661219135517110}
   - component: {fileID: 7627352797824246009}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: TurretProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
