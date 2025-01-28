@@ -4899,6 +4899,7 @@ GameObject:
   - component: {fileID: 4299738629470430756}
   - component: {fileID: 4891440538664600065}
   - component: {fileID: 7326644512317886410}
+  - component: {fileID: -8178615604187601886}
   m_Layer: 0
   m_Name: vfx_Shockwave_01
   m_TagString: Untagged
@@ -4932,7 +4933,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 2
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -9777,3 +9778,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-8178615604187601886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080140021571130472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a89b17e95f97094998d90029e71e7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1.6

@@ -64,6 +64,9 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
         else if (TryGetComponent<CutTurretCable>(out CutTurretCable cable)) {
             cable.Fix();
         }
+        else if (TryGetComponent<Bomb>(out Bomb bomb)) {
+            bomb.Detonate();
+        }
     }
 
     public virtual void Interact(PlayerInteractionSystem playerInteractionSystem) {

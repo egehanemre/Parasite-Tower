@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="" />
+    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Shockwave_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Shockwave_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Smoke_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Smoke_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/LaserMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/LaserMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/ObjectsHoldable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/ObjectsHoldable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTank.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/Cable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/HoldProgressBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/ObjectsHoldable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Bomb.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/EffectAutoDestroy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Runtime/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
@@ -97,7 +106,7 @@
       <workItem from="1737893524330" duration="19133000" />
       <workItem from="1737946373154" duration="8877000" />
       <workItem from="1738051571935" duration="7032000" />
-      <workItem from="1738075550045" duration="10472000" />
+      <workItem from="1738075550045" duration="12707000" />
     </task>
     <servers />
   </component>

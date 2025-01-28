@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody))]
 public class RocketTank : MonoBehaviour
 {
+    public TankLevel level;
     public float generalProjectileSpeed = 10;
     public Transform firePoint;
     public float fireRate;
@@ -116,4 +119,12 @@ public class RocketTank : MonoBehaviour
         spawnedEffect.transform.localPosition = location;
         //spawnedEffect.transform.eulerAngles = spawnedEffect.transform.eulerAngles + new Vector3(180, 0, 0);
     }
+}
+
+[Serializable]
+public enum TankLevel
+{
+    Level1,
+    Level2,
+    Level3
 }
