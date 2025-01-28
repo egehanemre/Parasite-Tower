@@ -99,7 +99,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6135
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -120,7 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  rigidbody: {fileID: 7627352797824246009}
+  spawnImmunity: 0.05
+  damage: 1
+  projectileSpeed: 1
 --- !u!54 &7627352797824246009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,7 +142,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6135
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
