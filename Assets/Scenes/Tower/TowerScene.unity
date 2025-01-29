@@ -5399,7 +5399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09146974c933b6c4889df035d3b5f94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketAmmunitionPrefab: {fileID: 3568048085414088903}
+  rocketAmmunitionPrefab: {fileID: 3568048085494913238, guid: 6a8b4e88cd0927b40a990d759777e0fa, type: 3}
 --- !u!1 &1723188828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,11 +6913,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &3568048085414088903 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3568048085494913238, guid: 6a8b4e88cd0927b40a990d759777e0fa, type: 3}
-  m_PrefabInstance: {fileID: 99698705}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &3965731182522730139
 MeshFilter:
   m_ObjectHideFlags: 0

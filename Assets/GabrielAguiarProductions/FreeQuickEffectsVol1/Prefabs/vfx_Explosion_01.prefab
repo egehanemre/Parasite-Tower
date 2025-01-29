@@ -19675,7 +19675,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5162910912013668194}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -19740,7 +19740,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
   randomSeed: 0
@@ -24460,7 +24460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a89b17e95f97094998d90029e71e7b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  time: 2
 --- !u!1 &6472086075581286689
 GameObject:
   m_ObjectHideFlags: 0

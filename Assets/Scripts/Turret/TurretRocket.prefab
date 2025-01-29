@@ -132,16 +132,15 @@ MonoBehaviour:
   lifetime: 5
   spawnImmunity: 0.025
   damage: 2
-  projectileSpeed: 1
+  speed: 1
+  velocityToRayDistance: 3
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 10240
   explosionSize: 5
   onHitEffect: {fileID: 5162910912013668194, guid: cf82839c411151342a7b2337bda9fb34, type: 3}
   linkedTrailEffect: {fileID: 5755713802284757983}
   trailEffectDestroyOffset: 5
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 10240
-  speed: 1
-  velocityToRayDistance: 2
 --- !u!1001 &7588289043978241336
 PrefabInstance:
   m_ObjectHideFlags: 0

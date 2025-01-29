@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 232564869500801138}
   - component: {fileID: 5299707575227864061}
   - component: {fileID: 5015509202970252775}
-  - component: {fileID: 7380477425224234135}
+  - component: {fileID: 7277889385778547661}
   m_Layer: 11
   m_Name: Tank
   m_TagString: Untagged
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcdddead61acaf48babbd2ec8e61131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   generalProjectileSpeed: 10
   firePoint: {fileID: 8985691383682967221}
   fireRate: 2
@@ -202,7 +203,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &7380477425224234135
+--- !u!65 &7277889385778547661
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,8 +222,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6828563, y: 0.5, z: 1.5}
-  m_Center: {x: 0.016211938, y: 0, z: 0.035731792}
+  m_Size: {x: 1, y: 0.20106086, z: 1.6382072}
+  m_Center: {x: 0, y: -0.051227808, z: -0.057980858}
 --- !u!1 &9074398882047844985
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,15 +233,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1895977710274266076}
-  - component: {fileID: 3098416257849904167}
-  - component: {fileID: 8878372546066028115}
-  m_Layer: 0
+  - component: {fileID: 4045672916070992978}
+  m_Layer: 11
   m_Name: FireLaunchger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1895977710274266076
 Transform:
   m_ObjectHideFlags: 0
@@ -249,63 +249,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9074398882047844985}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24283966, y: -0.01876512, z: 0.053124838, w: 0.96842897}
-  m_LocalPosition: {x: -0.025, y: 0.092, z: -0.149}
-  m_LocalScale: {x: 0.077708006, y: 0.4138153, z: 0.07974608}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0.17647308, y: -0, z: -0, w: 0.9843055}
+  m_LocalPosition: {x: -0.019, y: 0.257, z: 0.024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 232564869500801138}
-  m_LocalEulerAnglesHint: {x: 28.186, y: -0.685, z: 6.108}
---- !u!33 &3098416257849904167
-MeshFilter:
+  m_LocalEulerAnglesHint: {x: -20.329, y: 0, z: 0}
+--- !u!65 &4045672916070992978
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9074398882047844985}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8878372546066028115
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9074398882047844985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d33e53c7f4f828c419e42c60103ebcbf, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.1356659, y: 0.17505416, z: 0.65765554}
+  m_Center: {x: -0.026154889, y: 0.00022356378, z: 0.029600807}
 --- !u!1001 &925846292240148202
 PrefabInstance:
   m_ObjectHideFlags: 0

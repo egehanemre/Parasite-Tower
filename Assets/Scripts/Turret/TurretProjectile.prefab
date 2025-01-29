@@ -123,7 +123,11 @@ MonoBehaviour:
   lifetime: 5
   spawnImmunity: 0.05
   damage: 1
-  projectileSpeed: 1
+  speed: 1
+  velocityToRayDistance: 4
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 10240
 --- !u!54 &7627352797824246009
 Rigidbody:
   m_ObjectHideFlags: 0
