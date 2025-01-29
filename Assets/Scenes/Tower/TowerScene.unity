@@ -315,10 +315,6 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: tickPossibility
-      value: 0.65
-      objectReference: {fileID: 0}
     - target: {fileID: 7179780277878031803, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: m_Name
       value: Fire (4)
@@ -2974,10 +2970,6 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: tickPossibility
-      value: 0.65
-      objectReference: {fileID: 0}
     - target: {fileID: 7179780277878031803, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: m_Name
       value: Fire (2)
@@ -4080,14 +4072,6 @@ PrefabInstance:
       propertyPath: radarOffset.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: damageTickTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: tickPossibility
-      value: 0.65
-      objectReference: {fileID: 0}
     - target: {fileID: 7179780277878031803, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: m_Name
       value: Fire
@@ -4196,10 +4180,6 @@ PrefabInstance:
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: tickPossibility
-      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7179780277878031803, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: m_Name
@@ -4671,10 +4651,6 @@ PrefabInstance:
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
-      propertyPath: tickPossibility
-      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7179780277878031803, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: m_Name
@@ -5852,7 +5828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: throwInterval
-      value: 60
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: intervalRandomization

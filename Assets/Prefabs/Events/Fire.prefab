@@ -308,7 +308,7 @@ MonoBehaviour:
   damagePerStage: 0.25
   stageGrowthTime: 10
   stageGrowthRandomization: 2
-  tickPossibility: 1
+  tickPossibility: 0.65
   extinguishingTime: 0.33
 --- !u!65 &1656291292438102946
 BoxCollider:
@@ -329,8 +329,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.65, y: 0.1, z: 1.65}
-  m_Center: {x: 0.1, y: -0.6, z: -0.25}
+  m_Size: {x: 1.65, y: 0.5629425, z: 1.6500001}
+  m_Center: {x: 0.100000024, y: -0.36852884, z: -0.25}
 --- !u!1001 &3980626048239481175
 PrefabInstance:
   m_ObjectHideFlags: 0
