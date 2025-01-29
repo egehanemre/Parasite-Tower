@@ -3862,6 +3862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6a61e57d3622e48b1c32fd686095f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketCost: 1
+  rocketStock: {fileID: 1708226934}
   Money: 50
   moneyText: {fileID: 1034610822}
   upgradePrices: 010000000300000005000000
@@ -4595,7 +4597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1430889534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1101026971}
+        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
+        m_MethodName: BuyRocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1430889534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,6 +4683,7 @@ Transform:
   - {fileID: 583269778}
   - {fileID: 1743815832}
   - {fileID: 1155938329}
+  - {fileID: 1708226933}
   m_Father: {fileID: 696276505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1469989217
@@ -5340,6 +5355,51 @@ MonoBehaviour:
   - {fileID: 1820155723}
   - {fileID: 1004494170}
   - {fileID: 647546211}
+--- !u!1 &1708226932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708226933}
+  - component: {fileID: 1708226934}
+  m_Layer: 0
+  m_Name: RocketStock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708226933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708226932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.868, y: 0.886, z: 5.551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1469989216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1708226934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708226932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09146974c933b6c4889df035d3b5f94b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketAmmunitionPrefab: {fileID: 3568048085414088903}
 --- !u!1 &1723188828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6853,6 +6913,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &3568048085414088903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3568048085494913238, guid: 6a8b4e88cd0927b40a990d759777e0fa, type: 3}
+  m_PrefabInstance: {fileID: 99698705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &3965731182522730139
 MeshFilter:
   m_ObjectHideFlags: 0

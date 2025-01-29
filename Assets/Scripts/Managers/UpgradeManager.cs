@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class UpgradeManager : MonoBehaviour
 {
+    [SerializeField] private int rocketCost = 1;
+    [SerializeField] private RocketStock rocketStock;
     [SerializeField] public int Money = 10;
     [SerializeField] TextMeshProUGUI moneyText;
 
@@ -77,5 +79,19 @@ public class UpgradeManager : MonoBehaviour
     private void ApplyTurretUpgrade(TurretData turretData)
     {
         turretData.turret.GetComponent<Turret>().LevelUp();
+    }
+
+    public void BuyRocket()
+    {
+        if (Money < rocketCost) {
+            Debug.Log("Not enough money to upgrade.");
+            EventSystem.current.SetSelectedGameObject(null);
+            return;
+        }
+        
+        Money -= rocketCost;
+        UpdateMoneyText();
+        rocketStock.Spawn();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }

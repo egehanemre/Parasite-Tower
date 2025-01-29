@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammunition:
     ammunitionPrefab: {fileID: 9164204269961636578, guid: c6aafd22b487ebd429b440cf3bc80214, type: 3}
-    amount: 3
+    amount: 1
 --- !u!1 &7308302232167912752
 GameObject:
   m_ObjectHideFlags: 0
