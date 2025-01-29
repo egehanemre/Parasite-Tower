@@ -26,6 +26,14 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
                 shieldButton.ActivateLinkedSide();
             }
         }
+        else if(gameObject.CompareTag("MonitoringStation"))
+        {
+            if(TryGetComponent<MonitoringStation>(out MonitoringStation monitoringStation))
+            {
+                monitoringStation.IncreasePriority();
+                monitoringStation.UnlockCursor();
+            }
+        }
         else
         {
             Debug.Log("no tag found");

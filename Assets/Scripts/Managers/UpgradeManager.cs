@@ -23,46 +23,20 @@ public class UpgradeManager : MonoBehaviour
     {
         public GameObject turret;
         public Button upgradeButton;
-        public TextMeshProUGUI upgradePriceText;
-        public GameObject upgradeIndicatorsParent;
-        public List<Image> upgradeIndicators;
         public UpgradeLevel upgradeLevel = UpgradeLevel.Level0;
     }
 
     public List<TurretData> turrets = new List<TurretData>();
-    public Sprite upgradeLevelSprite;
-    public Sprite noLevelSprite;
     private void Start()
     {
         UpdateMoneyText();
-        InitializeLevelIndicators();
         InitializeTurretButtons();
     }
-
-    private void InitializeLevelIndicators()
-    {
-        foreach (var turretData in turrets)
-        {
-            turretData.upgradeIndicators.Clear();
-
-            foreach (Transform child in turretData.upgradeIndicatorsParent.transform)
-            {
-                Image indicator = child.GetComponent<Image>();
-                if (indicator != null)
-                {
-                    turretData.upgradeIndicators.Add(indicator);
-                }
-            }
-            UpdateUpgradeUI(turretData);
-        }
-    }
-
     private void InitializeTurretButtons()
     {
         foreach (var turretData in turrets)
         {
             turretData.upgradeButton.onClick.AddListener(() => UpgradeTurret(turretData));
-            UpdateUpgradeUI(turretData);
         }
     }
 
@@ -90,34 +64,11 @@ public class UpgradeManager : MonoBehaviour
         turretData.upgradeLevel++;
 
         Debug.Log($"Upgraded {turretData.turret.name} to {turretData.upgradeLevel}");
-        UpdateUpgradeUI(turretData);
 
         ApplyTurretUpgrade(turretData);
 
         EventSystem.current.SetSelectedGameObject(null);
     }
-    private void UpdateUpgradeUI(TurretData turretData)
-    {
-        int currentLevel = (int)turretData.upgradeLevel;
-
-        for (int i = 0; i < turretData.upgradeIndicators.Count; i++)
-        {
-            turretData.upgradeIndicators[i].sprite = i < currentLevel ? upgradeLevelSprite : noLevelSprite;
-        }
-
-        if (currentLevel < upgradePrices.Length)
-        {
-            int nextUpgradeCost = upgradePrices[currentLevel];
-            turretData.upgradePriceText.text = (currentLevel == 0 ? "Purchase: $" : "Upgrade: $") + nextUpgradeCost;
-            turretData.upgradeButton.interactable = Money >= nextUpgradeCost;
-        }
-        else
-        {
-            turretData.upgradePriceText.text = "MAX";
-            turretData.upgradeButton.interactable = false;
-        }
-    }
-
     public void UpdateMoneyText()
     {
         moneyText.text = "Money: $" + Money;

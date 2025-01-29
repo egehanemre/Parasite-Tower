@@ -11,6 +11,7 @@ TagManager:
   - Bomb
   - ShieldButton
   - Skull
+  - MonitoringStation
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Tank
   - LensCamera
   - Ground
-  - 
+  - UI_PostFX3
   - 
   - 
   - 
