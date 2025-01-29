@@ -189,6 +189,8 @@ MonoBehaviour:
   projectileSpeed: 1
   explosionSize: 3
   onHitEffect: {fileID: 3077343761403282166, guid: f78aaaec3b393e24ca74cd6de8194347, type: 3}
+  linkedTrailEffect: {fileID: 2471744427528745994}
+  trailEffectDestroyOffset: 5
 --- !u!54 &-5463666749331860569
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,11 +265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2148412142962102433, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.003482
+      value: 0.00354
       objectReference: {fileID: 0}
     - target: {fileID: 2148412142962102433, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2148412142962102433, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -301,6 +303,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_RocketTrail
       objectReference: {fileID: 0}
+    - target: {fileID: 5299146926960630741, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299146926960630741, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -309,5 +319,10 @@ PrefabInstance:
 --- !u!4 &1815712177675539020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2148412142962102433, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
+  m_PrefabInstance: {fileID: 351850236636283629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2471744427528745994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2787556212050310887, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
   m_PrefabInstance: {fileID: 351850236636283629}
   m_PrefabAsset: {fileID: 0}

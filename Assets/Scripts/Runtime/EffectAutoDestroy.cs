@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EffectAutoDestroy : MonoBehaviour
 {
-    [SerializeField] private float time;
+    [SerializeField] public float time;
 
     private void FixedUpdate()
     {

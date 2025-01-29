@@ -5828,7 +5828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: throwInterval
-      value: 1
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 606181244202881175, guid: 355eff94c3333004781e10a862951fb0, type: 3}
       propertyPath: intervalRandomization

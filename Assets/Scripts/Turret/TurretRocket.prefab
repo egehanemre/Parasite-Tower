@@ -164,6 +164,8 @@ MonoBehaviour:
   projectileSpeed: 1
   explosionSize: 5
   onHitEffect: {fileID: 5162910912013668194, guid: cf82839c411151342a7b2337bda9fb34, type: 3}
+  linkedTrailEffect: {fileID: 5755713802284757983}
+  trailEffectDestroyOffset: 5
 --- !u!65 &3870786065081535228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -242,6 +244,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
+--- !u!1 &5755713802284757983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2787556212050310887, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}
+  m_PrefabInstance: {fileID: 7588289043978241336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8403635370141128089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2148412142962102433, guid: 798c7bd633a7d52449c206761b04e45e, type: 3}

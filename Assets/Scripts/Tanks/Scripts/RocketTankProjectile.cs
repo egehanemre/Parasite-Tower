@@ -8,6 +8,7 @@ public class RocketTankProjectile : TurretRocket
         foreach (var contact in contacted)
         {
             if (contact.gameObject.TryGetComponent<TowerHealthManager>(out TowerHealthManager tower)) {
+                LeaveTrailBehind();
                 Destroy(gameObject);
             }
         }
