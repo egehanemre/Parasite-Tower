@@ -4693,6 +4693,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extinguisher
       objectReference: {fileID: 0}
+    - target: {fileID: 5564698230502603571, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
+      propertyPath: m_Volume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564698230502603571, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5839963477733584717, guid: 58d5f82a10b95e54a91484fdbddf9efb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.053
@@ -6641,6 +6649,8 @@ MonoBehaviour:
   interactionButton: {fileID: 107917601}
   grabLocation: {fileID: 733566178}
   dropForce: 5
+  onItemPickedSound: {fileID: 8300000, guid: 25492f997ed61bc4d94f13d1c9266b11, type: 3}
+  onItemDropSound: {fileID: 8300000, guid: 705238727039d984688c3d8b965809ec, type: 3}
 --- !u!1 &1701766409
 GameObject:
   m_ObjectHideFlags: 0

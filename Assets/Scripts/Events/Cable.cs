@@ -20,4 +20,5 @@ public class Cable : MonoBehaviour, IEvent
     public bool IsActive() {
         return cutCable.gameObject.activeSelf;
     }
+
 }

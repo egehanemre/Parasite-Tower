@@ -8,20 +8,31 @@ using Random = UnityEngine.Random;
 public class Extinguisher : MonoBehaviour
 {
       [SerializeField] private LayerMask extinguishableLayer; 
-      [SerializeField] private float extinguishRange = 5f;
       [SerializeField] private float extinguishSpeed = 100;
       [SerializeField] private Transform collisionCheckZone;
       private ObjectsGrabbable grabbableRef;
       private bool extinguishing = false;
       [SerializeField] private ParticleSystem extinguishingEffect;
+      private float activationCooldown = 0.5f;
+      private bool hasBeenGrabbed = false;
 
       private void Awake() {
             grabbableRef = GetComponent<ObjectsGrabbable>();
       }
       
       private void Update() {
+            bool newGrabState = grabbableRef.IsGrabbed();
+            if (hasBeenGrabbed != newGrabState) {
+                  activationCooldown = 0.5f;
+                  hasBeenGrabbed = newGrabState;
+            }
+            
+            activationCooldown -= Time.deltaTime;
+            
+            if(activationCooldown > 0 ) return;
+
             bool previousExtinguishingState = extinguishing;
-            extinguishing = Input.GetKey(KeyCode.E) && grabbableRef.IsGrabbed();
+            extinguishing = Input.GetKey(KeyCode.E) && hasBeenGrabbed;
             if (previousExtinguishingState != extinguishing) {
                   if (extinguishing)
                   {

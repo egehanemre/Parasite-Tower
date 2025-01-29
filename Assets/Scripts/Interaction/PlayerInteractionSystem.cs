@@ -16,6 +16,8 @@ public class PlayerInteractionSystem : MonoBehaviour
     private IInteractable itemOnHand;
     private IInteractable holdingAt;
     private float holdingTimer;
+    [SerializeField] private AudioClip onItemPickedSound;
+    [SerializeField] private AudioClip onItemDropSound;
 
     private Transform pov;
 
@@ -65,6 +67,7 @@ public class PlayerInteractionSystem : MonoBehaviour
         itemTransform.localPosition = Vector3.zero;
         itemTransform.localRotation = Quaternion.identity;
         itemOnHand = item;
+        AudioSource.PlayClipAtPoint(onItemPickedSound, transform.position);
     }
 
     public void DropItem()
@@ -81,6 +84,7 @@ public class PlayerInteractionSystem : MonoBehaviour
         {
             rb.AddForce(pov.forward * dropForce, ForceMode.Impulse);
         }
+        AudioSource.PlayClipAtPoint(onItemDropSound, transform.position);
     }
 
     private IInteractable GetItemOnFocus()

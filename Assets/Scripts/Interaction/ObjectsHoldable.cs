@@ -10,6 +10,11 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
     private PlayerInteractionSystem InteractionSystem;
     private bool holding = false;
     private float timeRemaining = 0;
+    private IinteractionInformationTaker informationTaker;
+
+    private void Start() {
+        informationTaker = GetComponent<IinteractionInformationTaker>();
+    }
 
     private void Update()
     {
@@ -17,12 +22,14 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
             holding = false;
             timeRemaining = 0;
             HoldProgressBar.actionProgressBar.Render(false, 0);
+            if(informationTaker != null) informationTaker.HasBeenHoldingSince(holdingTime-timeRemaining, false);
         }
 
         if (Input.GetKey(KeyCode.E) && holding) {
             timeRemaining -= Time.deltaTime;
             float remainingProgress = (timeRemaining / holdingTime);
             HoldProgressBar.actionProgressBar.Render(true, remainingProgress);
+            if(informationTaker != null) informationTaker.HasBeenHoldingSince(holdingTime-timeRemaining, timeRemaining > 0);
             
             if (timeRemaining <= 0) {
                 timeRemaining = 0;
@@ -74,6 +81,7 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
         holding = true;
         timeRemaining = holdingTime;
         HoldProgressBar.actionProgressBar.Render(true, 1);
+        if(informationTaker != null) informationTaker.InteractionStarted();
     }
 
     public string GetInteractText()
