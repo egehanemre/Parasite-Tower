@@ -11,6 +11,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private int cooldown = 60;
     [SerializeField] private GameObject detonateEffect;
     [SerializeField] private Transform detonationLocation;
+    [SerializeField] private AudioClip audio;
     private float secondsRemaining = 0;
 
     private void Start()
@@ -30,5 +31,6 @@ public class Bomb : MonoBehaviour
         waveManager.ClearEnemies();
         Instantiate(detonateEffect, detonationLocation.position, detonationLocation.rotation);
         secondsRemaining = cooldown;
+        AudioSource.PlayClipAtPoint(audio, transform.position);
     }
 }
