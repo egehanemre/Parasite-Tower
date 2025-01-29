@@ -6,21 +6,26 @@ using UnityEngine;
 public class SoundEffectsManager : MonoBehaviour
 {
     public static SoundEffectsManager instance;
+    public static bool isTowerMode => instance.currentMode == "tower";
+    public static bool isGunnerMode => instance.currentMode == "gunner";
     public List<SoundEffectInstance> soundEffectInstances = new List<SoundEffectInstance>();
+    public string currentMode;
 
     private void Awake() {
         instance = this;
     }
 
-    public void SetStateOfEffect(string soundId, bool active) {
+    public void SetEffectPackActivation(string soundType, bool activation) {
         foreach (var soundEffect in soundEffectInstances) {
-            if (soundEffect.id != soundId) continue;
+            if (soundEffect.id != soundType) continue;
                 
-            soundEffect.soundSource.mute = !active;
+            soundEffect.soundSource.mute = !activation;
             foreach (var subSource in soundEffect.subSources) {
-                subSource.mute = !active;
+                subSource.mute = !activation;
             }
         }
+
+        if(activation)currentMode = soundType;
     }
 }
 

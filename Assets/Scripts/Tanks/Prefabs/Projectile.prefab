@@ -184,16 +184,18 @@ MonoBehaviour:
   lifetime: 5
   spawnImmunity: 0.15
   damage: 1
-  projectileSpeed: 1
+  speed: 1
+  velocityToRayDistance: 6
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 32768
+  audioOnLaunch: {fileID: 8300000, guid: f6c56b28ff1bfc745acc3b37bfc8aea6, type: 3}
+  audioOnContact: {fileID: 8300000, guid: 90194e47ddbebf44a98e03b69bc55b63, type: 3}
+  audioPower: 0.1
   explosionSize: 3
   onHitEffect: {fileID: 3077343761403282166, guid: f78aaaec3b393e24ca74cd6de8194347, type: 3}
   linkedTrailEffect: {fileID: 2471744427528745994}
   trailEffectDestroyOffset: 5
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 32768
-  speed: 1
-  velocityToRayDistance: 6
 --- !u!1001 &351850236636283629
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -37,14 +38,30 @@ public class PlayerController : MonoBehaviour
     private CinemachineBasicMultiChannelPerlin noiseComponent;
     private bool cameraBobLocked;
 
+    [Header("Movement Sound")] 
+    [SerializeField] private float progressToStepRate = 1;
+    [SerializeField] private List<AudioClip> stepSounds = new List<AudioClip>();
+    private int stepSoundIndex = 0;
+    private float movementProgress = 0;
 
-    private void Start()
-    {
+    private void Start() {
         controller = GetComponent<CharacterController>();
         noiseComponent = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         LockCursor();
     }
 
+    private void FixedUpdate() {
+        movementProgress += controller.velocity.sqrMagnitude * progressToStepRate * Time.fixedDeltaTime;
+        if (movementProgress > 1) {
+            AudioClip stepSound = stepSounds[stepSoundIndex];
+            AudioSource.PlayClipAtPoint(stepSound, transform.position);
+            movementProgress = 0;
+            if (stepSoundIndex + 1 < stepSounds.Count) {
+                stepSoundIndex++;
+            }
+            else stepSoundIndex = 0;
+        }
+    }
 
     private void Update()
     {

@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private bool hasEnergy = true;
     [SerializeField] private bool canBeUsed = false;
     public bool beingUsedByPlayer;
+    [SerializeField] private AudioClip audioOnSeated;
 
     [Header("Shooting")]
     [SerializeField] private float gunRange;
@@ -83,6 +84,10 @@ public class Turret : MonoBehaviour
             controller.virtualCamera.transform.localEulerAngles = Vector3.zero;
             controller.UpdateMovementLock(true);
         }
+        
+        AudioSource.PlayClipAtPoint(audioOnSeated, transform.position);
+        SoundEffectsManager.instance.SetEffectPackActivation("gunner", true);
+        SoundEffectsManager.instance.SetEffectPackActivation("tower", false);
     }
 
     private void Update()
@@ -125,6 +130,9 @@ public class Turret : MonoBehaviour
         if (controller) {
             controller.UpdateMovementLock(false);
         }
+        
+        SoundEffectsManager.instance.SetEffectPackActivation("gunner", false);
+        SoundEffectsManager.instance.SetEffectPackActivation("tower", true);
     }
 
     private void Shoot()

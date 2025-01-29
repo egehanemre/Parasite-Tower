@@ -18,7 +18,7 @@ public class RocketTankProjectile : TurretRocket
     }
     
     protected override void Explode() {
-        LeaveTrailBehind();
+        LeaveTrailBehind();                
         Destroy(gameObject);
     }
 }

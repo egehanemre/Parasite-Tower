@@ -11,6 +11,7 @@ public class TurretRocket : TurretProjectile
     [SerializeField] protected float trailEffectDestroyOffset = 2;
     
     protected virtual void Explode() {
+        if(audioOnContact)AudioSource.PlayClipAtPoint(audioOnContact, transform.position, audioPower);
         Instantiate(onHitEffect, transform.position, Quaternion.identity);
         LeaveTrailBehind();
         Collider[] contacted = Physics.OverlapSphere(transform.position, explosionSize);

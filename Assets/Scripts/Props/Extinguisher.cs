@@ -19,7 +19,7 @@ public class Extinguisher : MonoBehaviour
       private void Awake() {
             grabbableRef = GetComponent<ObjectsGrabbable>();
       }
-      
+
       private void Update() {
             bool newGrabState = grabbableRef.IsGrabbed();
             if (hasBeenGrabbed != newGrabState) {

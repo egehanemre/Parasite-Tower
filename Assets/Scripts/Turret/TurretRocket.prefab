@@ -137,6 +137,9 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 10240
+  audioOnLaunch: {fileID: 8300000, guid: c306d61a3d809f845ae1c5daea42197c, type: 3}
+  audioOnContact: {fileID: 8300000, guid: 90194e47ddbebf44a98e03b69bc55b63, type: 3}
+  audioPower: 0.6
   explosionSize: 5
   onHitEffect: {fileID: 5162910912013668194, guid: cf82839c411151342a7b2337bda9fb34, type: 3}
   linkedTrailEffect: {fileID: 5755713802284757983}

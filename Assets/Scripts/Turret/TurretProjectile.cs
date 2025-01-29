@@ -12,10 +12,14 @@ public class TurretProjectile : MonoBehaviour
     [SerializeField] protected float speed = 1;
     [SerializeField] protected float velocityToRayDistance = 2;
     [SerializeField] protected LayerMask hitMask;
+    [SerializeField] protected AudioClip audioOnLaunch;
+    [SerializeField] protected AudioClip audioOnContact;
+    [SerializeField] protected float audioPower = 0.6f;
 
     protected virtual void Launch(int damage, float speed, Vector3 direction) {
         this.speed = speed;
         this.damage += damage;
+        if(audioOnLaunch && SoundEffectsManager.isGunnerMode)AudioSource.PlayClipAtPoint(audioOnLaunch, transform.position, audioPower);
     }
     
     public void Launch(int damage, float speed) {
@@ -27,6 +31,7 @@ public class TurretProjectile : MonoBehaviour
         bool didHit = Physics.Raycast(transform.position, velocity, out RaycastHit hit, velocity.sqrMagnitude*velocityToRayDistance, hitMask);
         if (didHit) {
             if (hit.rigidbody && hit.rigidbody.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
+                if(audioOnContact)AudioSource.PlayClipAtPoint(audioOnContact, transform.position, audioPower);
                 tank.DealDamage(damage, hit.point);
             }
             

@@ -681,6 +681,7 @@ MonoBehaviour:
   hasEnergy: 1
   canBeUsed: 0
   beingUsedByPlayer: 0
+  audioOnSeated: {fileID: 8300000, guid: 664b3fdad65db8f4ca0eae270626be0b, type: 3}
   gunRange: 55
   damage: 1
   projectileLaunchLocation: {fileID: 11276393579164718}
