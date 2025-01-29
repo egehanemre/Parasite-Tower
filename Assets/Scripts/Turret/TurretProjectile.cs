@@ -16,7 +16,7 @@ public class TurretProjectile : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Launch(int damage, float speed, Vector3 direction) {
+    protected virtual void Launch(int damage, float speed, Vector3 direction) {
         if (!rigidbody) {
             Debug.LogWarning("Turret projectile has no rigidbody attached");
             Destroy(gameObject);
@@ -41,12 +41,17 @@ public class TurretProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void FixedUpdate() {
+    protected virtual void FixedUpdate() {
         lifetime -= Time.fixedDeltaTime;
         if (spawnImmunity > 0) spawnImmunity -= Time.fixedDeltaTime;
         
         if (lifetime < 0) {
-            Destroy(gameObject);
+            OnLifetimeExpired();
         }
+    }
+
+    protected virtual void OnLifetimeExpired()
+    {
+        Destroy(gameObject);
     }
 }
