@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GabrielAguiarProductions/FreeQuickEffectsVol1/Prefabs/vfx_Explosion_02.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Props/Extinguisher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Runtime/SoundEffectsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Runtime/SoundEffectsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Projectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTankProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTankProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretProjectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/TurretRocket.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 01.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 01.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 02.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 02.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 03.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 04.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 04.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 05.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 06.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 06.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 07.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 07.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 08.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/Drop Metal Item 08.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/MetalFall IE01_55_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/Controller/MetalFall IE01_55_1.wav.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +102,7 @@
       <workItem from="1737946373154" duration="8877000" />
       <workItem from="1738051571935" duration="7032000" />
       <workItem from="1738075550045" duration="13296000" />
-      <workItem from="1738141564811" duration="21837000" />
+      <workItem from="1738141564811" duration="22432000" />
     </task>
     <servers />
   </component>

@@ -5102,6 +5102,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 477260368}
     - target: {fileID: 413463141244891128, guid: eeda344747aaa004587f54720527552b, type: 3}
+      propertyPath: progressToStepRate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413463141244891128, guid: eeda344747aaa004587f54720527552b, type: 3}
       propertyPath: stepSounds.Array.size
       value: 5
       objectReference: {fileID: 0}
