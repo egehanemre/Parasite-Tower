@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] private WaveManager waveManager;
-    [SerializeField] private UpgradeManager upgradeManager;
+    private WaveManager waveManager;
+    private UpgradeManager upgradeManager;
     [SerializeField] private int cost = 1;
     [SerializeField] private int cooldown = 60;
     [SerializeField] private GameObject detonateEffect;
     [SerializeField] private Transform detonationLocation;
     private float secondsRemaining = 0;
+
+    private void Start()
+    {
+        waveManager = FindObjectOfType<WaveManager>();
+        upgradeManager = FindObjectOfType<UpgradeManager>();
+    }
 
     private void FixedUpdate() {
         if(secondsRemaining > 0) secondsRemaining -= Time.fixedDeltaTime;

@@ -2217,8 +2217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4404961f3465e48bcc504991242db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveManager: {fileID: 418018736}
-  upgradeManager: {fileID: 0}
   cost: 1
   cooldown: 30
   detonateEffect: {fileID: 9080140021571130472, guid: 82066d902ed0dd6488ddfd32eb994801, type: 3}
