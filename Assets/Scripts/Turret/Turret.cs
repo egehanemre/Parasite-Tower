@@ -208,7 +208,7 @@ public class Turret : MonoBehaviour
     public void CutEnergy() {
         if(!hasEnergy) return;
         hasEnergy = false;
-        LeaveTurret();
+        if(beingUsedByPlayer)LeaveTurret();
     }
 
     public void RecoverEnergy() {
