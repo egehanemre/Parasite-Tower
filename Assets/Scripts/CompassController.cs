@@ -9,6 +9,6 @@ public class CompassSync : MonoBehaviour
     {
         float yaw = target3D.eulerAngles.y;
 
-        compass.rotation = Quaternion.Euler(0, 0, -yaw);
+        compass.rotation = Quaternion.Euler(0, 0, yaw);
     }
 }

@@ -170,7 +170,7 @@ public class Turret : MonoBehaviour
     
     public void LevelUp()
     {
-        if (turretLevel >= UpgradeManager.UpgradeLevel.Level2) {
+        if (turretLevel >= UpgradeManager.UpgradeLevel.Tier2) {
             Debug.Log("Turret is already at max level!");
             return;
         }

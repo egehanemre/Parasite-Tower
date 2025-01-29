@@ -20,6 +20,7 @@ public class MonitoringStation : MonoBehaviour
         monitoringStationCamera.Priority = 11;
         playerController.UpdateMovementLock(true);
         otherUIElements.SetActive(false);
+        playerController.enabled = false;
     }
 
     public void DecreasePriority()
@@ -27,6 +28,7 @@ public class MonitoringStation : MonoBehaviour
         monitoringStationCamera.Priority = 1;
         playerController.UpdateMovementLock(false);
         otherUIElements.SetActive(true);
+        playerController.enabled = true;
     }
 
     public void UnlockCursor()
