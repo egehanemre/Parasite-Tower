@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: f6afbe628c1b33044848377f06eaa9d5
+guid: 810f9dd72fd4d2645b56054942ff70e9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panel
+    second: {fileID: 2100000, guid: 48ff04d93dd199d45918c482869b0a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panel_et
+    second: {fileID: 2100000, guid: e972d135ca18f95469eab20ce172f0c8, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: panel
+    second: {fileID: 2800000, guid: f35dc94a5bbd26a49b2d80b4666953b9, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
