@@ -274,8 +274,8 @@ MonoBehaviour:
   bobFrequency: 1
   bobAmplitude: 1
   bobTransitionSpeed: 2
-  baseLookAt: {fileID: 0}
-  baseFollow: {fileID: 0}
+  progressToStepRate: 0.1
+  stepSounds: []
 --- !u!1 &3385384639620000817
 GameObject:
   m_ObjectHideFlags: 0
