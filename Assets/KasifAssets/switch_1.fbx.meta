@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: bd53f03d25cfbf943b1f8f99e9c65619
+guid: e1c078019e4af074a9d355e8fb0af5b9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: switch
+    second: {fileID: 2100000, guid: 663f7122d50ee804fb749323445866db, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: switch
+    second: {fileID: 2800000, guid: 6efd383e40b1dc5448b377b7464132f2, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
