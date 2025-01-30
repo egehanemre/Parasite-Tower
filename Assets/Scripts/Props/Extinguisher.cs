@@ -32,7 +32,7 @@ public class Extinguisher : MonoBehaviour
             if(activationCooldown > 0 ) return;
 
             bool previousExtinguishingState = extinguishing;
-            extinguishing = Input.GetKey(KeyCode.E) && hasBeenGrabbed;
+            extinguishing = Input.GetKey(KeyCode.Mouse0) && hasBeenGrabbed;
             if (previousExtinguishingState != extinguishing) {
                   if (extinguishing)
                   {
