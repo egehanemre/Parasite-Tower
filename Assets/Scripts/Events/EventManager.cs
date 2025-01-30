@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    public static EventManager eventManager;
     [Header("Event Cache")]
     private List<IEvent> eventSlots = new List<IEvent>();
     private readonly List<EventWeight> calculatedEventWeights = new List<EventWeight>();
@@ -16,6 +17,10 @@ public class EventManager : MonoBehaviour
     [SerializeField] private int maxParallelEventAmount = 3;
     [SerializeField] private float activeEventsToThrowRate = -0.1f;
     private float throwTimer = 0;
+
+    private void Awake() {
+        eventManager = this;
+    }
 
     private void Start() {
         GameObject[] eventObjects = GameObject.FindGameObjectsWithTag("Event");
@@ -126,6 +131,15 @@ public class EventManager : MonoBehaviour
             ts[i] = ts[r];
             ts[r] = tmp;
         }
+    }
+
+    public List<EventData> GetAllActiveEventDatas() {
+        List<EventData> eventDatas = new List<EventData>();
+        foreach (var eventSlot in eventSlots) {
+            if(eventSlot != null && eventSlot.IsActive()) eventDatas.Add(eventSlot.GetData());
+        }
+
+        return eventDatas;
     }
 }
 

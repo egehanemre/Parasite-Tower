@@ -7,6 +7,7 @@ public class Cable : MonoBehaviour, IEvent
     [SerializeField] private CutTurretCable cutCable;
     [SerializeField] private Turret linkedTurret;
     [SerializeField] private float cutProbability = 0.25f;
+    [SerializeField] private int floor = 0;
 
     public void Tick() {
         linkedTurret.CutEnergy();
@@ -21,4 +22,11 @@ public class Cable : MonoBehaviour, IEvent
         return cutCable.gameObject.activeSelf;
     }
 
+    public EventData GetData() {
+        return new EventData()
+        {
+            eventType = EventType.Fire,
+            floor = floor
+        };
+    }
 }

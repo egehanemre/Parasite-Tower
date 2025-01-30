@@ -18,6 +18,7 @@ public class Fire : MonoBehaviour, IEvent
     [SerializeField] private float tickPossibility = 1f;
     [SerializeField] private float extinguishingTime = 0.33f;
     private TowerHealthManager healthRef;
+    [SerializeField] private int floor = 0;
 
     [Header("Extinguishing")] 
     private float extinguishingProgress = 0;
@@ -111,4 +112,13 @@ public class Fire : MonoBehaviour, IEvent
             ChangeStage(-1);
         }
     }
+
+    public EventData GetData() {
+        return new EventData()
+        {
+            eventType = EventType.Fire,
+            floor = floor
+        };
+    }
+
 }

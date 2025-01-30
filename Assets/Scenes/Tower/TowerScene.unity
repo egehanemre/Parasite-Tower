@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonW1
@@ -821,6 +825,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 791618915}
     m_Modifications:
+    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
+      propertyPath: floor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
@@ -4528,6 +4536,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonN2
@@ -5143,6 +5155,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonN3
@@ -6530,6 +6546,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonE1
@@ -7329,6 +7349,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonE2
@@ -7412,6 +7436,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonW4
@@ -7587,6 +7615,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonE3
@@ -9251,6 +9283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 791618915}
     m_Modifications:
+    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
+      propertyPath: floor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
@@ -11711,6 +11747,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 791618915}
     m_Modifications:
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
       objectReference: {fileID: 0}
@@ -12239,6 +12279,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 791618915}
     m_Modifications:
     - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544689416000166901, guid: e659e35e80fc82249849e8d05a2a0c53, type: 3}
       propertyPath: radarOffset.y
       value: 0
       objectReference: {fileID: 0}
@@ -12620,6 +12664,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonS1
@@ -13739,6 +13787,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonW3
@@ -14949,6 +15001,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonS3
@@ -15207,6 +15263,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonN4
@@ -15272,6 +15332,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonW2
@@ -15977,6 +16041,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonS2
@@ -16131,6 +16199,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonS4
@@ -17191,6 +17263,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonN1
@@ -18941,6 +19017,10 @@ PrefabInstance:
       propertyPath: NightVisionObject
       value: 
       objectReference: {fileID: 379576839}
+    - target: {fileID: 5873696239697873445, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
+      propertyPath: floor
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8735132919614411611, guid: 4432d2acec6ad3b4fb4bf000907bc7e7, type: 3}
       propertyPath: m_Name
       value: CannonE4
