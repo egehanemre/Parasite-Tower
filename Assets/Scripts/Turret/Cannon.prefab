@@ -696,11 +696,12 @@ MonoBehaviour:
   reloadTime: 3
   damageIncreasePerLevel: 1
   rangeIncreasePerLevel: 150
+  reloadSpeedChangePerLevel: -0.05
   loadedSpecialAmmunition:
     ammunitionPrefab: {fileID: 0}
     amount: 0
-  aIShootingCooldown: 8
-  aICooldownChangePerLevel: -1
+  aIShootingCooldown: 10
+  aICooldownChangePerLevel: -1.75
   aITargetZone: {fileID: 3432062690332962825}
   targetMask:
     serializedVersion: 2

@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private bool hasEnergy = true;
     public bool beingUsedByPlayer;
     [SerializeField] private AudioClip audioOnSeated;
+    private float seatedRecently = 0;
 
     [Header("Shooting")]
     [SerializeField] private int damage = 1;
@@ -36,10 +37,12 @@ public class Turret : MonoBehaviour
     [SerializeField] private float reloadTime = 0.33f;
     private float chamberTimer = 0.33f;
     private bool ReadyToShoot => chamberTimer <= 0;
+    private float currentReloadTime => reloadTime + ((int)turretLevel * reloadSpeedChangePerLevel);
 
     [Header("Upgrade")]
     [SerializeField] private int damageIncreasePerLevel = 2;
     [SerializeField] private float rangeIncreasePerLevel = 10;
+    [SerializeField] private float reloadSpeedChangePerLevel = -0.05f;
     [SerializeField] private SpecialAmmunition loadedSpecialAmmunition;
 
     [Header("AI")] 
@@ -83,15 +86,17 @@ public class Turret : MonoBehaviour
         AudioSource.PlayClipAtPoint(audioOnSeated, transform.position);
         SoundEffectsManager.instance.SetEffectPackActivation("gunner", true);
         SoundEffectsManager.instance.SetEffectPackActivation("tower", false);
-        HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
+        HoldProgressBar.actionProgressBar.Render(true, chamberTimer / currentReloadTime);
+        seatedRecently = 0.15f;
     }
 
     private void Update() {
         chamberTimer -= Time.deltaTime;
+        seatedRecently -= Time.deltaTime;
         AIShootingTick();
         if (!beingUsedByPlayer) return;
         if (chamberTimer > 0) {
-            HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
+            HoldProgressBar.actionProgressBar.Render(true, chamberTimer / currentReloadTime);
         }
         else {
             HoldProgressBar.actionProgressBar.Render(false, 0);
@@ -106,7 +111,7 @@ public class Turret : MonoBehaviour
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
         linkedCamera.m_Lens.FieldOfView = currentZoom;
 
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E)) {
+        if (seatedRecently < 0 && Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E)) {
             LeaveTurret();
             return;
         }
