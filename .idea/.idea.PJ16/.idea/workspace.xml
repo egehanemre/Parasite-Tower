@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RenderTextures/RadarMinimap.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RenderTextures/RadarMinimap.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/High_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/High_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Low_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Low_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Medium_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Medium_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Ultra_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Ultra_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Very High_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Very High_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Very Low_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Very Low_PipelineAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Body/SacrificePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Body/SacrificePoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +105,7 @@
       <workItem from="1738051571935" duration="7032000" />
       <workItem from="1738075550045" duration="13296000" />
       <workItem from="1738141564811" duration="22432000" />
-      <workItem from="1738235500215" duration="7560000" />
+      <workItem from="1738235500215" duration="7877000" />
     </task>
     <servers />
   </component>
