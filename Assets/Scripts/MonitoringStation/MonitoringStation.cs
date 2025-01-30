@@ -47,7 +47,7 @@ public class MonitoringStation : MonoBehaviour
     {
         if (monitoringStationCamera.Priority == 11)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))
             {
                 DecreasePriority();
                 LockCursor();

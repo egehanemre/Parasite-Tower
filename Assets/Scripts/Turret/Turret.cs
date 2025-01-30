@@ -108,7 +108,7 @@ public class Turret : MonoBehaviour
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
         linkedCamera.m_Lens.FieldOfView = currentZoom;
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E)) {
             LeaveTurret();
             return;
         }
