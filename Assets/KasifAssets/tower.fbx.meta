@@ -1,9 +1,114 @@
 fileFormatVersion: 2
-guid: 35c8b99dc351e6c48840c0aa66b39ec7
+guid: 6807385d2c6c0d642956591a0e661a71
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: box
+    second: {fileID: 2100000, guid: 2718b6d464d9e9a4a83df6ee90b1557c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: egg
+    second: {fileID: 2100000, guid: 04362eaf8fec99747a7c19795db50a92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: inside_wall
+    second: {fileID: 2100000, guid: 5d65837e7c356354597e8dc8e2c6225c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meat_1
+    second: {fileID: 2100000, guid: 97bafd601d00e0d45921cd031145a10e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meat_2
+    second: {fileID: 2100000, guid: 625f4a4bfc095e743accd60cb581b9c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meat_3
+    second: {fileID: 2100000, guid: 1eeb8bc4a29c8d44abfb48503aae85fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillar
+    second: {fileID: 2100000, guid: 762826915d21c53479467723664d2e52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pillar_light
+    second: {fileID: 2100000, guid: 3a708e6a2769a244b9266f10c32b10a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: railing
+    second: {fileID: 2100000, guid: b444bcce45bf7554492f9452c9efbfcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stairs
+    second: {fileID: 2100000, guid: 83651ac334949124aa0c935219fd256d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2100000, guid: fba17c91c5bc3bc448c05bec7b3f249d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_decor
+    second: {fileID: 2100000, guid: 901487db5df14ca4ba4aabfa007a18bf, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: box
+    second: {fileID: 2800000, guid: 4d99b2b7e7c7d9b43a6dabc956c617ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: egg
+    second: {fileID: 2800000, guid: f17f693cf8fc4eb48b9e24ba38857ac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: inside_wall
+    second: {fileID: 2800000, guid: d4a7363b6ad9ce544bbed40acdf25351, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: meat_2
+    second: {fileID: 2800000, guid: c866efe236ccf17458e3b9607b2bb400, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: meat_3
+    second: {fileID: 2800000, guid: 3af42df231aa91f4bb61b95fcfebb95c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: railing
+    second: {fileID: 2800000, guid: 544986bf88e70d64c92be43a67ac02bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stairs
+    second: {fileID: 2800000, guid: 4a457e1cb301b094998d799200ef2c19, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall
+    second: {fileID: 2800000, guid: 8828829507f3ffb4dbb794ea7037a53b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall_decor
+    second: {fileID: 2800000, guid: 6f4d83bbe5061af49b299249fe6646d7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

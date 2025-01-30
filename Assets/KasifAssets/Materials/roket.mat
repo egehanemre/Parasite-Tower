@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: roket 1
+  m_Name: roket
   m_Shader: {fileID: -6465566751694194690, guid: c1ca506abb00c494fa3b0784c5d47e9a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -102,9 +102,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Max: 1
+    - _Max: 0.2
     - _Metallic: 0
-    - _Min: 0.3
+    - _Min: 0.1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
