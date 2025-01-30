@@ -7,7 +7,6 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] private UpgradeManager.UpgradeLevel turretLevel;
     [SerializeField] private GameObject NightVisionObject;
-    [SerializeField] private GameObject LensEffectObject;
     [SerializeField] private CinemachineVirtualCamera linkedCamera;
     [SerializeField] private bool hasEnergy = true;
     [SerializeField] private bool canBeUsed = false;
@@ -76,7 +75,6 @@ public class Turret : MonoBehaviour
         linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
         NightVisionObject.SetActive(true);
-        LensEffectObject.SetActive(false);
 
         controller = FindObjectOfType<PlayerController>();
         if (controller)
@@ -122,7 +120,6 @@ public class Turret : MonoBehaviour
 
     private void LeaveTurret() {
         NightVisionObject.SetActive(false);
-        LensEffectObject.SetActive(true);
         linkedCamera.gameObject.SetActive(false);
         beingUsedByPlayer = false;
         HoldProgressBar.actionProgressBar.Render(false, 0);
@@ -170,7 +167,7 @@ public class Turret : MonoBehaviour
     
     public void LevelUp()
     {
-        if (turretLevel >= UpgradeManager.UpgradeLevel.Tier2) {
+        if (turretLevel >= UpgradeManager.UpgradeLevel.Tier4) {
             Debug.Log("Turret is already at max level!");
             return;
         }

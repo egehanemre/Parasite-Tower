@@ -9,7 +9,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] public int Money = 10;
     [SerializeField] TextMeshProUGUI moneyText;
 
-    public int[] upgradePrices = { 1, 2, 3, 4, 5 };
+    public int[] upgradePrices = { 1, 2, 3, 4 };
 
     public enum UpgradeLevel
     {
@@ -20,6 +20,8 @@ public class UpgradeManager : MonoBehaviour
         Tier4
     }
 
+    private UpgradeLevel maxLevel = UpgradeLevel.Tier4;
+
     [System.Serializable]
     public class TurretData
     {
@@ -27,6 +29,7 @@ public class UpgradeManager : MonoBehaviour
         public Button upgradeButton;
         public Image turretImage; // Child image to be colored
         public UpgradeLevel upgradeLevel;
+        public TextMeshProUGUI tierText;
     }
 
     public List<TurretData> turrets = new List<TurretData>();
@@ -38,6 +41,15 @@ public class UpgradeManager : MonoBehaviour
         { UpgradeLevel.Tier2, Color.green },
         { UpgradeLevel.Tier3, Color.blue },
         { UpgradeLevel.Tier4, Color.yellow }
+    };
+
+    private readonly Dictionary<UpgradeLevel, string> romanTiers = new Dictionary<UpgradeLevel, string>
+    {
+        { UpgradeLevel.Tier0, "0" },
+        { UpgradeLevel.Tier1, "I" },
+        { UpgradeLevel.Tier2, "II" },
+        { UpgradeLevel.Tier3, "III" },
+        { UpgradeLevel.Tier4, "IV" }
     };
 
     private void Start()
@@ -52,7 +64,8 @@ public class UpgradeManager : MonoBehaviour
         {
             turretData.upgradeButton.onClick.AddListener(() => UpgradeTurret(turretData));
             UpdateTurretImageColor(turretData);
-            ToggleTurretVisibility(turretData); // Set initial visibility
+            ToggleTurretVisibility(turretData);
+            UpdateTierText(turretData); // Set initial tier text
         }
     }
 
@@ -60,7 +73,7 @@ public class UpgradeManager : MonoBehaviour
     {
         int currentLevel = (int)turretData.upgradeLevel;
 
-        if (currentLevel >= upgradePrices.Length)
+        if (turretData.upgradeLevel >= maxLevel) // Prevent overflow
         {
             Debug.Log($"{turretData.turret.name} is already at max level.");
             EventSystem.current.SetSelectedGameObject(null);
@@ -79,18 +92,17 @@ public class UpgradeManager : MonoBehaviour
         UpdateMoneyText();
         turretData.upgradeLevel++;
 
-        Debug.Log($"Upgraded {turretData.turret.name} to {turretData.upgradeLevel}");
-
         ApplyTurretUpgrade(turretData);
-        UpdateTurretImageColor(turretData); // Update color after upgrade
-        ToggleTurretVisibility(turretData); // Enable/Disable turret
+        UpdateTurretImageColor(turretData);
+        ToggleTurretVisibility(turretData);
+        UpdateTierText(turretData); // Update UI tier text
 
         EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void UpdateTurretImageColor(TurretData turretData)
     {
-        if (turretData.turretImage != null)
+        if (turretData.turretImage != null && turretData.upgradeLevel <= UpgradeLevel.Tier4)
         {
             turretData.turretImage.color = tierColors[turretData.upgradeLevel];
         }
@@ -112,5 +124,13 @@ public class UpgradeManager : MonoBehaviour
     private void ApplyTurretUpgrade(TurretData turretData)
     {
         turretData.turret.GetComponent<Turret>().LevelUp();
+    }
+
+    private void UpdateTierText(TurretData turretData)
+    {
+        if (turretData.tierText != null)
+        {
+            turretData.tierText.text = "Tier " + romanTiers[turretData.upgradeLevel];
+        }
     }
 }

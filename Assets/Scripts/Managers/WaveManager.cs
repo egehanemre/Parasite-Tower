@@ -7,7 +7,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [Header("Wave Settings")]
-    public int waveNumber = 0; 
+    public int currentWaveCount = 0; 
     public int baseEnemyCount = 5;
     public float enemyIncreaseFactor = 1.5f;
 
@@ -16,8 +16,8 @@ public class WaveManager : MonoBehaviour
 
     [Header("Spawn Settings")]
     public Transform targetPosition;
-    public float spawnRadius = 10f; 
-    public float spawnDelay = 0.5f;
+    public float spawnRadius; 
+    public float spawnDelay;
 
     private List<GameObject> spawnedEnemies = new List<GameObject>(); 
 
@@ -28,8 +28,8 @@ public class WaveManager : MonoBehaviour
 
     public void StartNextWave()
     {
-        waveNumber++;
-        int enemyCount = Mathf.CeilToInt(baseEnemyCount * Mathf.Pow(enemyIncreaseFactor, waveNumber - 1));
+        currentWaveCount++;
+        int enemyCount = Mathf.CeilToInt(baseEnemyCount * Mathf.Pow(enemyIncreaseFactor, currentWaveCount - 1));
         StartCoroutine(SpawnWave(enemyCount));
     }
 
