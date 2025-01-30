@@ -100,8 +100,8 @@ Transform:
   m_GameObject: {fileID: 1380785934380910122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.35, y: -3.84, z: 0}
-  m_LocalScale: {x: 25, y: 15, z: 25}
+  m_LocalPosition: {x: -52.3122, y: -3.84, z: 4.6599}
+  m_LocalScale: {x: 84.0598, y: 15, z: 50.371693}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1762786655108901010}
@@ -727,7 +727,7 @@ MonoBehaviour:
   minZoom: 30
   zoomSpeed: 50
   reloadTime: 3
-  damageIncreasePerLevel: 1
+  damageIncreasePerLevel: 0
   rangeIncreasePerLevel: 150
   reloadSpeedChangePerLevel: -0.35
   loadedSpecialAmmunition:
@@ -739,7 +739,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 2049
-  gunRange: 1000
+  gunRange: 2500
 --- !u!65 &340335837212373401
 BoxCollider:
   m_ObjectHideFlags: 0
