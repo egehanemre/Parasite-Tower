@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="" />
+    <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonPrototype/URP_ExtractMe.unitypackage.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,6 +106,7 @@
       <workItem from="1738051571935" duration="7032000" />
       <workItem from="1738075550045" duration="13296000" />
       <workItem from="1738141564811" duration="22432000" />
+      <workItem from="1738235500215" duration="326000" />
     </task>
     <servers />
   </component>
