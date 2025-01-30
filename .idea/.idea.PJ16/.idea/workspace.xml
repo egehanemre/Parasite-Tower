@@ -3,26 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/Kat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/Kat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/bomba.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/bomba.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/duvar.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/duvar.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/fire_ex.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/fire_ex.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/merdiven.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/merdiven.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/panel.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/panel.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/panel_et.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/panel_et.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/roket 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/roket 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/Materials/tank_3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/tower.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/tower.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/tower.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KasifAssets/tower.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Cannon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/CutTurretCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/CutTurretCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonAdventure/Scenes/DemoSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonAdventure/Scenes/DemoSettings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Turret/Turret.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +107,7 @@
       <workItem from="1738051571935" duration="7032000" />
       <workItem from="1738075550045" duration="13296000" />
       <workItem from="1738141564811" duration="22432000" />
-      <workItem from="1738235500215" duration="5141000" />
+      <workItem from="1738235500215" duration="6662000" />
     </task>
     <servers />
   </component>

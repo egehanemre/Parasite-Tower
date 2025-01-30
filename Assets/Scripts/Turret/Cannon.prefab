@@ -474,6 +474,7 @@ MonoBehaviour:
   linkedTurret: {fileID: 4211821203046417359}
   playCutSoundDelay: 3
   cutSound: {fileID: 8300000, guid: 873ace66b02ae484e8107332f9ea880d, type: 3}
+  volume: 0.03
 --- !u!82 &4201664778695465210
 AudioSource:
   m_ObjectHideFlags: 0
@@ -680,10 +681,8 @@ MonoBehaviour:
   NightVisionObject: {fileID: 0}
   linkedCamera: {fileID: 5521016729530701796}
   hasEnergy: 1
-  canBeUsed: 0
   beingUsedByPlayer: 0
   audioOnSeated: {fileID: 8300000, guid: 664b3fdad65db8f4ca0eae270626be0b, type: 3}
-  gunRange: 55
   damage: 1
   projectileLaunchLocation: {fileID: 11276393579164718}
   generalProjectileSpeed: 50
@@ -706,6 +705,7 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 2049
+  gunRange: 1000
 --- !u!65 &340335837212373401
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -9,12 +9,10 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject NightVisionObject;
     [SerializeField] private CinemachineVirtualCamera linkedCamera;
     [SerializeField] private bool hasEnergy = true;
-    [SerializeField] private bool canBeUsed = false;
     public bool beingUsedByPlayer;
     [SerializeField] private AudioClip audioOnSeated;
 
     [Header("Shooting")]
-    [SerializeField] private float gunRange;
     [SerializeField] private int damage = 1;
     [SerializeField] private Transform projectileLaunchLocation;
     [SerializeField] private float generalProjectileSpeed = 10;
@@ -49,15 +47,14 @@ public class Turret : MonoBehaviour
     [SerializeField] private float aICooldownChangePerLevel = -1;
     [SerializeField] private Transform aITargetZone;
     [SerializeField] private LayerMask targetMask;
+    [SerializeField] private float gunRange = 10;
+    private float timePassed = 0;
+    private float calculatedAIShootingCooldown => (aIShootingCooldown + ((int)turretLevel) * aICooldownChangePerLevel);
 
     private void Awake() {
         defaultEuler = linkedCamera.transform.localEulerAngles;
     }
-
-    private void Start() {
-        StartCoroutine(AIShootingLoop());
-    }
-
+    
     public void ActivateTurret()
     {
         if (!hasEnergy)
@@ -91,6 +88,7 @@ public class Turret : MonoBehaviour
 
     private void Update() {
         chamberTimer -= Time.deltaTime;
+        AIShootingTick();
         if (!beingUsedByPlayer) return;
         if (chamberTimer > 0) {
             HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
@@ -174,7 +172,8 @@ public class Turret : MonoBehaviour
 
         turretLevel++;
         damage += damageIncreasePerLevel;
-        //gunRange += rangeIncreasePerLevel;
+        gunRange += rangeIncreasePerLevel;
+        
 
         Debug.Log($"Turret leveled up to Level {turretLevel}!");
         Debug.Log($"New Damage: {damage}");
@@ -184,19 +183,21 @@ public class Turret : MonoBehaviour
         loadedSpecialAmmunition = specialAmmunition;
     }
 
-    public IEnumerator AIShootingLoop() {
-        while (gameObject.activeSelf)
-        {
-            yield return new WaitForSeconds(aIShootingCooldown + ((int)turretLevel) * aICooldownChangePerLevel);
-            if(beingUsedByPlayer || !hasEnergy) continue;
+    public void AIShootingTick() {
+        timePassed += Time.deltaTime;
+        if(timePassed < calculatedAIShootingCooldown) return;
+        timePassed = 0;
+        if(beingUsedByPlayer || !hasEnergy) return;
             
-            Collider[] allTargets = Physics.OverlapBox(aITargetZone.position, aITargetZone.lossyScale / 2, aITargetZone.rotation, targetMask);
-            foreach (var target in allTargets) {
-                if (target && target.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
-                    Vector3 direction = tank.transform.position - projectileLaunchLocation.position;
-                    LaunchProjectile(defaultProjectileType, direction);
-                    break;
-                }
+        Collider[] allTargets = Physics.OverlapBox(aITargetZone.position, aITargetZone.lossyScale / 2, aITargetZone.rotation, targetMask);
+        foreach (var target in allTargets) {
+            float distance = (target.transform.position - transform.position).sqrMagnitude;
+            if(distance > gunRange) continue;
+            
+            if (target && target.gameObject.TryGetComponent<RocketTank>(out RocketTank tank)) {
+                Vector3 direction = tank.transform.position - projectileLaunchLocation.position;
+                LaunchProjectile(defaultProjectileType, direction);
+                break;
             }
         }
     }
