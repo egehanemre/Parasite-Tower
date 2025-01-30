@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 715a9499c20579142a7a9fd16187e969, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f745b079e5bf6ca41a29d38fb216c343, type: 2}
     - target: {fileID: 919132149155446097, guid: 715a9499c20579142a7a9fd16187e969, type: 3}
       propertyPath: m_Name
       value: building1
@@ -73,19 +77,27 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7211761364553695759}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
+  m_LocalReferencePoint: {x: -0.0043959618, y: 4.331328, z: -0.31596088}
+  m_Size: 8.654496
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.6
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 9157417489703085018}
   - screenRelativeHeight: 0.3
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 9157417489703085018}
   - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 9157417489703085018}
   m_Enabled: 1
+--- !u!23 &9157417489703085018 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 715a9499c20579142a7a9fd16187e969, type: 3}
+  m_PrefabInstance: {fileID: 7553727421473701726}
+  m_PrefabAsset: {fileID: 0}
