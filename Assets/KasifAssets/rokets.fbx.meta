@@ -13,12 +13,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: roket
-    second: {fileID: 2100000, guid: 0baca82d7abaddb4fa2ae4738487b50b, type: 2}
+    second: {fileID: 2100000, guid: 9dd976f5be920464c892dc9c208dbdd3, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: roket
-    second: {fileID: 2800000, guid: c03d9b11c33644d4bbd7a01d6dc20a3e, type: 3}
+    second: {fileID: 2800000, guid: 32215692b3e17c3428fd0686d1d7a2a6, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

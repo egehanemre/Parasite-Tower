@@ -74,6 +74,9 @@ public class ObjectsHoldable : MonoBehaviour, IInteractable
         else if (TryGetComponent<Bomb>(out Bomb bomb)) {
             bomb.Detonate();
         }
+        else if (TryGetComponent<RocketStock>(out RocketStock rocketStock)) {
+            rocketStock.Spawn();
+        }
     }
 
     public virtual void Interact(PlayerInteractionSystem playerInteractionSystem) {

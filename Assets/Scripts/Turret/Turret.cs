@@ -12,6 +12,7 @@ public class Turret : MonoBehaviour
     public bool beingUsedByPlayer;
     [SerializeField] private AudioClip audioOnSeated;
     private float seatedRecently = 0;
+    [SerializeField] private float seatedRecentlyTimer;
 
     [Header("Shooting")]
     [SerializeField] private int damage = 1;
@@ -72,6 +73,7 @@ public class Turret : MonoBehaviour
             return;
         }*/
 
+        seatedRecently = seatedRecentlyTimer;
         linkedCamera.gameObject.SetActive(true);
         beingUsedByPlayer = true;
         NightVisionObject.SetActive(true);
@@ -87,7 +89,6 @@ public class Turret : MonoBehaviour
         SoundEffectsManager.instance.SetEffectPackActivation("gunner", true);
         SoundEffectsManager.instance.SetEffectPackActivation("tower", false);
         HoldProgressBar.actionProgressBar.Render(true, chamberTimer / currentReloadTime);
-        seatedRecently = 0.15f;
     }
 
     private void Update() {
@@ -111,7 +112,7 @@ public class Turret : MonoBehaviour
         currentZoom = Mathf.Clamp(currentZoom + (-Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime), minZoom, maxZoom);
         linkedCamera.m_Lens.FieldOfView = currentZoom;
 
-        if (seatedRecently < 0 && Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E)) {
+        if (seatedRecently < 0 && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))) {
             LeaveTurret();
             return;
         }
@@ -144,7 +145,7 @@ public class Turret : MonoBehaviour
             return;
         }
 
-        chamberTimer = reloadTime;
+        chamberTimer = currentReloadTime;
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         GameObject currentProjectileType = defaultProjectileType;
         if (loadedSpecialAmmunition.amount > 0) {
