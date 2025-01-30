@@ -733,8 +733,8 @@ MonoBehaviour:
   loadedSpecialAmmunition:
     ammunitionPrefab: {fileID: 0}
     amount: 0
-  aIShootingCooldown: 10
-  aICooldownChangePerLevel: -1.75
+  aIShootingCooldown: 12
+  aICooldownChangePerLevel: -2
   aITargetZone: {fileID: 3432062690332962825}
   targetMask:
     serializedVersion: 2
