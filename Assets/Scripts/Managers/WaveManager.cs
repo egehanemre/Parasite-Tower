@@ -1,60 +1,118 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
+using TMPro;
+
+public enum SpawnDirection { North, South, East, West }
+
+[System.Serializable]
+public class DirectionalTankSpawn
+{
+    public SpawnDirection direction; // Enum instead of string
+    public GameObject tankPrefab;
+    public int count;
+}
+
+[System.Serializable]
+public class SubWave
+{
+    public List<DirectionalTankSpawn> tankSpawns; // Each entry defines tanks per direction
+}
+
+[System.Serializable]
+public class Wave
+{
+    public List<SubWave> subWaves; // A wave consists of multiple sub-waves
+}
 
 public class WaveManager : MonoBehaviour
 {
     [Header("Wave Settings")]
-    public int currentWaveCount = 0; 
-    public int baseEnemyCount = 5;
-    public float enemyIncreaseFactor = 1.5f;
-
-    [Header("Enemy Settings")]
-    public GameObject[] enemyPrefabs; 
+    public int currentWaveIndex = 0;
+    public List<Wave> waves;
 
     [Header("Spawn Settings")]
-    public Transform targetPosition;
-    public float spawnRadius; 
-    public float spawnDelay;
+    public Transform northSpawn;
+    public Transform southSpawn;
+    public Transform eastSpawn;
+    public Transform westSpawn;
+    public float spawnDelay = 1f;
+    public float spawnRadius = 5f; // Circle radius (10x10 area)
 
-    private List<GameObject> spawnedEnemies = new List<GameObject>(); 
+    [Header("UI Elements")]
+    public TextMeshProUGUI waveText;
+
+    private Dictionary<SpawnDirection, Transform> spawnPoints;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     void Start()
     {
+        // Assign spawn points using enums
+        spawnPoints = new Dictionary<SpawnDirection, Transform>()
+        {
+            { SpawnDirection.North, northSpawn },
+            { SpawnDirection.South, southSpawn },
+            { SpawnDirection.East, eastSpawn },
+            { SpawnDirection.West, westSpawn }
+        };
+
         StartNextWave();
     }
 
     public void StartNextWave()
     {
-        currentWaveCount++;
-        int enemyCount = Mathf.CeilToInt(baseEnemyCount * Mathf.Pow(enemyIncreaseFactor, currentWaveCount - 1));
-        StartCoroutine(SpawnWave(enemyCount));
+        if (currentWaveIndex >= waves.Count) return;
+
+        Wave currentWave = waves[currentWaveIndex];
+
+        if (waveText != null)
+            waveText.text = $"Wave {currentWaveIndex + 1}";
+
+        StartCoroutine(SpawnWave(currentWave));
+        currentWaveIndex++;
     }
 
-    private IEnumerator SpawnWave(int enemyCount)
+    private IEnumerator SpawnWave(Wave wave)
     {
-        for (int i = 0; i < enemyCount; i++)
+        foreach (SubWave subWave in wave.subWaves)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(spawnDelay);
+            foreach (DirectionalTankSpawn tankSpawn in subWave.tankSpawns)
+            {
+                if (!spawnPoints.TryGetValue(tankSpawn.direction, out Transform spawnTransform) || spawnTransform == null)
+                {
+                    Debug.LogWarning($"Missing spawn point for direction: {tankSpawn.direction}");
+                    continue;
+                }
+
+                for (int i = 0; i < tankSpawn.count; i++)
+                {
+                    Vector3 spawnPos = GetRandomSpawnPosition(spawnTransform.position);
+                    GameObject spawnedTank = Instantiate(tankSpawn.tankPrefab, spawnPos, Quaternion.identity);
+                    spawnedEnemies.Add(spawnedTank);
+                    yield return new WaitForSeconds(spawnDelay);
+                }
+            }
         }
     }
-
-    private void SpawnEnemy()
+    private Vector3 GetRandomSpawnPosition(Vector3 spawnPointPosition)
     {
-        GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        float minRadius = 100f; //this should be the radius of circle we have with transforms in N E S W 
+        float maxRadius = 115f;
 
-        Vector2 randomOffset = Random.insideUnitCircle.normalized * spawnRadius;
+        Vector3 direction = (spawnPointPosition - Vector3.zero).normalized;
 
-        float temporaryYFix = 1f;
-        Vector3 spawnPosition = new Vector3(targetPosition.position.x + randomOffset.x, targetPosition.position.y + temporaryYFix, targetPosition.position.z + randomOffset.y);
+        float distance = Random.Range(minRadius, maxRadius);
 
-        GameObject spawnedEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-        spawnedEnemies.Add(spawnedEnemy);
+        float angleOffset = Random.Range(-30f, 30f); 
+
+        Quaternion rotation = Quaternion.Euler(0, angleOffset, 0);
+        Vector3 rotatedDirection = rotation * direction;
+
+        Vector3 spawnPosition = rotatedDirection * distance;
+        spawnPosition.y = spawnPointPosition.y; 
+
+        return spawnPosition;
     }
-
     public void ClearEnemies()
     {
         foreach (GameObject enemy in spawnedEnemies)
