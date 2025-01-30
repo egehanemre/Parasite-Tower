@@ -484,7 +484,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2fb61aa18431cde4e9610a708da11e61, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.264
+  m_Volume: 0.164
   m_Pitch: 1
   Loop: 1
   Mute: 1
@@ -676,7 +676,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretLevel: 0
   NightVisionObject: {fileID: 0}
-  LensEffectObject: {fileID: 0}
   linkedCamera: {fileID: 5521016729530701796}
   hasEnergy: 1
   canBeUsed: 0
@@ -1012,7 +1011,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 873ace66b02ae484e8107332f9ea880d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.264
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -167,12 +167,13 @@ public class PlayerController : MonoBehaviour
     public void UpdateMovementLock(bool locked) {
         movementLocked = locked;
         cameraBobLocked = locked;
-        if (cameraBobLocked)
-        {
+        if (cameraBobLocked) {
             currentBobAmplitude = 0;
             currentBobFrequency = 0;
             noiseComponent.m_AmplitudeGain = 0;
             noiseComponent.m_FrequencyGain = 0;
         }
+
+        enabled = !locked;
     }
 }

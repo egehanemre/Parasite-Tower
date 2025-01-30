@@ -86,13 +86,13 @@ public class Turret : MonoBehaviour
         AudioSource.PlayClipAtPoint(audioOnSeated, transform.position);
         SoundEffectsManager.instance.SetEffectPackActivation("gunner", true);
         SoundEffectsManager.instance.SetEffectPackActivation("tower", false);
+        HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
     }
 
-    private void Update()
-    {
+    private void Update() {
+        chamberTimer -= Time.deltaTime;
         if (!beingUsedByPlayer) return;
         if (chamberTimer > 0) {
-            chamberTimer -= Time.deltaTime;
             HoldProgressBar.actionProgressBar.Render(true, chamberTimer / reloadTime);
         }
         else {
