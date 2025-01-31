@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class MonitoringStation : MonoBehaviour
 {
-    public PlayerController playerController;  
+    public PlayerController playerController;
     public CinemachineVirtualCamera monitoringStationCamera;
-    public GameObject otherUIElements;
+    public List<GameObject> otherUIElements;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class MonitoringStation : MonoBehaviour
     {
         monitoringStationCamera.Priority = 11;
         playerController.UpdateMovementLock(true);
-        otherUIElements.SetActive(false);
+        SetUIElementsActive(false);
         playerController.enabled = false;
     }
 
@@ -27,7 +27,7 @@ public class MonitoringStation : MonoBehaviour
     {
         monitoringStationCamera.Priority = 1;
         playerController.UpdateMovementLock(false);
-        otherUIElements.SetActive(true);
+        SetUIElementsActive(true);
         playerController.enabled = true;
     }
 
@@ -52,6 +52,14 @@ public class MonitoringStation : MonoBehaviour
                 DecreasePriority();
                 LockCursor();
             }
+        }
+    }
+
+    private void SetUIElementsActive(bool isActive)
+    {
+        foreach (var element in otherUIElements)
+        {
+            element.SetActive(isActive);
         }
     }
 }
