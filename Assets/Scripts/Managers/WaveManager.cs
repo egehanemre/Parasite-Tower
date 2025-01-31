@@ -47,6 +47,7 @@ public class WaveManager : MonoBehaviour
     [Header("Wave Settings")]
     public int currentWaveIndex = 0;
     public List<Wave> waves;
+    [SerializeField] private float waveStartDelay = 15f;
 
     [Header("Spawn Settings")]
     public Transform northSpawn;
@@ -90,10 +91,8 @@ public class WaveManager : MonoBehaviour
         {
             Wave wave = waves[currentWaveIndex];
 
-            // Show wave starting countdown only for the first subwave
-            yield return StartCoroutine(DisplayCountdown($"Next Wave: {currentWaveIndex + 1}.0", 15f));
+            yield return StartCoroutine(DisplayCountdown($"Next Wave: {currentWaveIndex + 1}.0", waveStartDelay));
 
-            // Start the wave and wait for it to finish before incrementing the index
             yield return StartCoroutine(SpawnWave(wave));
 
             currentWaveIndex++;
@@ -108,13 +107,10 @@ public class WaveManager : MonoBehaviour
         {
             SubWave subWave = wave.subWaves[i];
 
-            // Update wave text dynamically
             waveText.text = $"Current Wave: {currentWaveIndex + 1}.{i}";
 
-            // Spawn the subwave
             StartCoroutine(SpawnSubWave(subWave));
 
-            // Wait for the subwave timer before starting the next subwave
             yield return StartCoroutine(DisplayCountdown($"Next Wave: {currentWaveIndex + 1}.{i + 1}", subWave.subWaveTimer));
         }
     }
