@@ -25,7 +25,7 @@ public class Cable : MonoBehaviour, IEvent
     public EventData GetData() {
         return new EventData()
         {
-            eventType = EventType.Fire,
+            eventType = EventType.Electric,
             floor = floor
         };
     }
