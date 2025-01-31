@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: Hold E to harvest
-  holdingTime: 1
+  holdingTime: 3
