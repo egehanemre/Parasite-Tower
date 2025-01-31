@@ -101,6 +101,7 @@ public class UpgradeManager : MonoBehaviour
         UpdateUpgradeCostText(turretData);
 
         EventSystem.current.SetSelectedGameObject(null);
+        TutorialSignalManager.PushSignal(SignalType.Upgrade, false);
     }
 
     private void UpdateTurretImageColor(TurretData turretData)

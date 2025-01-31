@@ -15,6 +15,8 @@ public class CutTurretCable : MonoBehaviour, IinteractionInformationTaker
     public void Fix() {
         linkedTurret.RecoverEnergy();
         gameObject.SetActive(false);
+        TutorialSignalManager.PushSignal(SignalType.Task, false);
+        TutorialSignalManager.PushSignal(SignalType.Fix, false);
     }
     
     

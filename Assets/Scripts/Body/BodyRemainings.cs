@@ -9,6 +9,7 @@ public class BodyRemainings : MonoBehaviour
     public void Collect() {
         GameObject spawnedSkull = Instantiate(skullPrefab);
         spawnedSkull.transform.position = transform.position;
+        TutorialSignalManager.PushSignal(SignalType.Harvest, false);
         Destroy(gameObject);
     }
 }

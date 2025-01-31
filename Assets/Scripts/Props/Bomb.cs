@@ -32,5 +32,6 @@ public class Bomb : MonoBehaviour
         Instantiate(detonateEffect, detonationLocation.position, detonationLocation.rotation);
         secondsRemaining = cooldown;
         AudioSource.PlayClipAtPoint(audio, transform.position);
+        TutorialSignalManager.PushSignal(SignalType.Bomb, false);
     }
 }

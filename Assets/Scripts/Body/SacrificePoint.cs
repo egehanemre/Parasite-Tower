@@ -17,5 +17,6 @@ public class SacrificePoint : MonoBehaviour
             bloodEffect.Play();
         }
         AudioSource.PlayClipAtPoint(audio, transform.position);
+        TutorialSignalManager.PushSignal(SignalType.Feed, false);
     }
 }

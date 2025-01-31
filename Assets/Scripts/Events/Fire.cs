@@ -110,6 +110,8 @@ public class Fire : MonoBehaviour, IEvent
         if (extinguishingProgress > 1) {
             extinguishingProgress--;
             ChangeStage(-1);
+            TutorialSignalManager.PushSignal(SignalType.Task, false);
+            TutorialSignalManager.PushSignal(SignalType.Extinguish, false);
         }
     }
 
