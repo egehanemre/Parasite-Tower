@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0) {
+        if (Input.GetKeyDown(KeyCode.F1) && Time.timeScale > 0) {
             StopGame();
         }
     }
