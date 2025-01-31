@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 5
   spawnImmunity: 0.05
-  damage: 5
+  damage: 3
   speed: 1
   velocityToRayDistance: 4
   hitMask:

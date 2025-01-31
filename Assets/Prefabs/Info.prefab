@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922887292604582823, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 517.884
+      value: 670.5338
       objectReference: {fileID: 0}
     - target: {fileID: 1922887292604582823, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922887292604582823, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 142.94
+      value: 66.615036
       objectReference: {fileID: 0}
     - target: {fileID: 1922887292604582823, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -142,6 +142,51 @@ PrefabInstance:
     - target: {fileID: 2740231038563706825, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_Name
       value: Info Popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740231038563706825, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207203804629850881, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207203804629850881, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -115.3292
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207203804629850881, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10.33551
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032235929718577216, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
+      propertyPath: m_text
+      value: 'F1 - Main Menu
+
+        G - Drop Item
+
+        E - Interact
+
+
+        E
+        - Hold [Altar, Head required]
+
+        E - Hold [Bomb, 30s Cooldown]
+
+        E
+        - Interact [Monitoring, Upgrades]
+
+
+        L. Click - Extinguish [Extinguisher]
+
+        L.
+        Click - Shoot [Gunner]
+
+
+        E|F - Leave [Gunner]
+
+        E|F - Leave
+        [Monitor]'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4721524117010801030, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}

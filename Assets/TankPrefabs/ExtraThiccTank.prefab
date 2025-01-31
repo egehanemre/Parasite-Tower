@@ -189,7 +189,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80661c4ce74f175438ac99ae17665b4a, type: 2}
+  - {fileID: 2100000, guid: 454990e78cb7dff49ba5b3a43a25ca5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   level: 0
   generalProjectileSpeed: 10
   firePoint: {fileID: 8985691383682967221}
-  fireRate: 2
+  fireRate: 0.66
   moveSpeed: 3
   rotationSpeed: 2
   stopRange: 50

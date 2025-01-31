@@ -15,6 +15,7 @@ public class RocketTank : MonoBehaviour
     public float stopRange;
     public int health;
     private Rigidbody rb;
+    [SerializeField] private int baseProjectileDamage = 0;
     private float fireTimer;
 
     [SerializeField] private GameObject onHitEffect;
@@ -94,7 +95,7 @@ public class RocketTank : MonoBehaviour
             RocketTankProjectile projectileScript = projectile.GetComponent<RocketTankProjectile>();
             if (projectileScript != null)
             {
-                projectileScript.Launch(1, generalProjectileSpeed);
+                projectileScript.Launch(baseProjectileDamage, generalProjectileSpeed);
             }
         }
     }
