@@ -185,10 +185,10 @@ MonoBehaviour:
   spawnImmunity: 0.15
   damage: 1
   speed: 6
-  velocityToRayDistance: 8
+  velocityToRayDistance: 12
   hitMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 33024
   audioOnLaunch: {fileID: 8300000, guid: f6c56b28ff1bfc745acc3b37bfc8aea6, type: 3}
   audioOnContact: {fileID: 8300000, guid: 90194e47ddbebf44a98e03b69bc55b63, type: 3}
   audioPower: 0.1

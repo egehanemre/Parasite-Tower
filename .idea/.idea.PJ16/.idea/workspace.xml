@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655d990a-9055-4b5f-af1e-eaf407b667cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PJ16/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/switch.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/switch.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/switch1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/KasifAssets/switch1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shield/ShieldButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shield/ShieldButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Shield/ShieldManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Shield/ShieldManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MonitoringStation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MonitoringStation.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerSceneChanges.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tower/TowerSceneChanges.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Prefabs/Projectile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTankProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tanks/Scripts/RocketTankProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SyntyStudios/PolygonPrototype/URP_ExtractMe.unitypackage.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -280,7 +280,7 @@ MonoBehaviour:
   fireRate: 2
   moveSpeed: 3
   rotationSpeed: 2
-  stopRange: 45
+  stopRange: 50
   health: 45
   onHitEffect: {fileID: 3077343761403282166, guid: f78aaaec3b393e24ca74cd6de8194347, type: 3}
   afterHitEffect: {fileID: 2787556212050310887, guid: 57970c6bb711ec24b8d98424b1806f3b, type: 3}
