@@ -30,6 +30,7 @@ public class UpgradeManager : MonoBehaviour
         public Image turretImage; // Child image to be colored
         public UpgradeLevel upgradeLevel;
         public TextMeshProUGUI tierText;
+        public TextMeshProUGUI upgradeCostText;
     }
 
     public List<TurretData> turrets = new List<TurretData>();
@@ -66,6 +67,7 @@ public class UpgradeManager : MonoBehaviour
             UpdateTurretImageColor(turretData);
             ToggleTurretVisibility(turretData);
             UpdateTierText(turretData); // Set initial tier text
+            UpdateUpgradeCostText(turretData);
         }
     }
 
@@ -96,6 +98,7 @@ public class UpgradeManager : MonoBehaviour
         UpdateTurretImageColor(turretData);
         ToggleTurretVisibility(turretData);
         UpdateTierText(turretData); // Update UI tier text
+        UpdateUpgradeCostText(turretData);
 
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -131,6 +134,26 @@ public class UpgradeManager : MonoBehaviour
         if (turretData.tierText != null)
         {
             turretData.tierText.text = "Tier " + romanTiers[turretData.upgradeLevel];
+        }
+    }
+
+    private void UpdateUpgradeCostText(TurretData turretData)
+    {
+        if (turretData.upgradeCostText != null)
+        {
+            int currentLevel = (int)turretData.upgradeLevel;
+            if (turretData.upgradeLevel == UpgradeLevel.Tier0)
+            {
+                turretData.upgradeCostText.text = "Build: $" + upgradePrices[currentLevel];
+            }
+            else if(turretData.upgradeLevel != UpgradeLevel.Tier4)
+            {
+                turretData.upgradeCostText.text = "TierUp: $" + upgradePrices[currentLevel];
+            }
+            else if(turretData.upgradeLevel == UpgradeLevel.Tier4)
+            {
+                turretData.upgradeCostText.text = "MAX TIER";
+            }
         }
     }
 }

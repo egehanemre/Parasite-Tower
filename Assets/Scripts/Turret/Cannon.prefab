@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28bf93ee3470d0e4581c6664c7be5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretLevel: 0
+  turretLevel: 1
   NightVisionObject: {fileID: 0}
   linkedCamera: {fileID: 5521016729530701796}
   hasEnergy: 1
@@ -948,7 +948,7 @@ MonoBehaviour:
   cutCable: {fileID: 1672325327740917466}
   linkedTurret: {fileID: 4211821203046417359}
   cutProbability: 0.5
-  floor: 0
+  floor: 4
 --- !u!4 &626589263362066464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 39e51c87ba0d90d41aebecad596b6f37, type: 3}
@@ -1084,6 +1084,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.083
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7b6d321b13c0e98429e7f9a05c0b0ac6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b444bcce45bf7554492f9452c9efbfcf, type: 2}
     - target: {fileID: 919132149155446097, guid: 7b6d321b13c0e98429e7f9a05c0b0ac6, type: 3}
       propertyPath: m_Name
       value: rokets
