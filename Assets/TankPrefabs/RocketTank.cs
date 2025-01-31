@@ -32,6 +32,8 @@ public class RocketTank : MonoBehaviour
         {
             Debug.LogError("RocketTank: No TankManager instance found!");
         }
+
+        rb.isKinematic = false;
     }
 
     void FixedUpdate()

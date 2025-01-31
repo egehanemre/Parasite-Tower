@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Bits: 10240
   audioOnLaunch: {fileID: 8300000, guid: bac32d62564f3ef4fbfcd7d2988d0ae1, type: 3}
   audioOnContact: {fileID: 0}
-  audioPower: 0.6
+  audioPower: 0.2
 --- !u!54 &7627352797824246009
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -29,10 +29,10 @@ public class MainMenu : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1) && Time.timeScale > 0) {
+        if (Input.GetKeyDown(KeyCode.P) && Time.timeScale > 0) {
             StopGame();
         }
-        else if(Input.GetKeyDown(KeyCode.F1) && Mathf.Approximately(Time.timeScale, 0)) {
+        else if(Input.GetKeyDown(KeyCode.P) && Mathf.Approximately(Time.timeScale, 0)) {
             if(CanEnableBack) Resume();
             else {
                 RestartScene();

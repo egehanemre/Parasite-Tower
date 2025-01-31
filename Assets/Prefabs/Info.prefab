@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032235929718577216, guid: a124fdd9fef76154b8a2405088ec45de, type: 3}
       propertyPath: m_text
-      value: 'F1 - Main Menu
+      value: 'P - Main Menu
 
         G - Drop Item
 
