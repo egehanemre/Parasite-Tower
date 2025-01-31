@@ -5,7 +5,10 @@ public class TowerHealthManager : MonoBehaviour
 {
     public float maxHealth = 100f; 
     public TextMeshProUGUI healthText; 
-    private float currentHealth; 
+    private float currentHealth;
+    [SerializeField] private GameObject endGamePrefab;
+    [SerializeField] private Transform ui;
+    private bool alreadyEnd = false;
 
     void Start()
     {
@@ -18,13 +21,18 @@ public class TowerHealthManager : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (currentHealth <= 0f)
+        if (currentHealth <= 0f && !alreadyEnd)
         {
             currentHealth = 0f;
-            Debug.Log("Tower destroyed!");
+            EndGame();
         }
 
         UpdateHealthUI();
+    }
+    private void EndGame() {
+        alreadyEnd = true;
+        GameObject spawnedObject = Instantiate(endGamePrefab, ui);
+        spawnedObject.GetComponent<MainMenu>().StopGame();
     }
     private void UpdateHealthUI()
     {

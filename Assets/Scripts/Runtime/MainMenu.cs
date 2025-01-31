@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private GameObject enablingPart;
     private PlayerController playerController;
+    [SerializeField] private bool CanEnableBack = true;
 
     private void Awake() {
         instance = this;
@@ -21,7 +22,7 @@ public class MainMenu : MonoBehaviour
     private void Start() {
         volumeSlider.onValueChanged.AddListener(NewVolumeValue);
         restartButton.onClick.AddListener(RestartScene);
-        continueButton.onClick.AddListener(Resume);
+        if(CanEnableBack)continueButton.onClick.AddListener(Resume);
         volumeSlider.value = AudioListener.volume;
         playerController = FindObjectOfType<PlayerController>();
     }
@@ -31,6 +32,12 @@ public class MainMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1) && Time.timeScale > 0) {
             StopGame();
         }
+        else if(Input.GetKeyDown(KeyCode.F1) && Mathf.Approximately(Time.timeScale, 0)) {
+            if(CanEnableBack) Resume();
+            else {
+                RestartScene();
+            }
+        }
     }
     
     public void StopGame() {
@@ -38,6 +45,7 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        if(!playerController)playerController = FindObjectOfType<PlayerController>();
         playerController.UpdateMovementLock(true);
     }
 
