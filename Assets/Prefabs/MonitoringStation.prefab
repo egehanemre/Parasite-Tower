@@ -7707,9 +7707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6a61e57d3622e48b1c32fd686095f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 50
+  Money: 0
   moneyText: {fileID: 0}
-  upgradePrices: 0100000002000000030000000400000005000000
+  upgradePrices: 0100000001000000010000000100000001000000
   turrets:
   - turret: {fileID: 0}
     upgradeButton: {fileID: 5825623873554848540}

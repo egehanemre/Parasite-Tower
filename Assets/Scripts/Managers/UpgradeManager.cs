@@ -9,7 +9,7 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] public int Money = 10;
     [SerializeField] TextMeshProUGUI moneyText;
 
-    public int[] upgradePrices = { 1, 2, 3, 4 };
+    public int[] upgradePrices = { 1, 1, 1, 1 };
 
     public enum UpgradeLevel
     {

@@ -64,6 +64,11 @@ public class WaveManager : MonoBehaviour
     private Dictionary<SpawnDirection, Transform> spawnPoints;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    [Header("Endgame")] 
+    [SerializeField] private GameObject endGameObject;
+    [SerializeField] private Transform ui;
+    private bool alreadyEnd = false;
+
     void Start()
     {
         spawnPoints = new Dictionary<SpawnDirection, Transform>()
@@ -91,7 +96,7 @@ public class WaveManager : MonoBehaviour
         {
             Wave wave = waves[currentWaveIndex];
 
-            yield return StartCoroutine(DisplayCountdown($"Next Wave: {currentWaveIndex + 1}.0", waveStartDelay));
+            yield return StartCoroutine(DisplayCountdown($"Wave {currentWaveIndex + 1}.0", waveStartDelay));
 
             yield return StartCoroutine(SpawnWave(wave));
 
@@ -99,6 +104,14 @@ public class WaveManager : MonoBehaviour
         }
 
         cooldownText.text = "All waves completed!";
+        EndGame();
+    }
+    
+    
+    private void EndGame() {
+        alreadyEnd = true;
+        GameObject spawnedObject = Instantiate(endGameObject, ui);
+        spawnedObject.GetComponent<MainMenu>().StopGame();
     }
 
     private IEnumerator SpawnWave(Wave wave)

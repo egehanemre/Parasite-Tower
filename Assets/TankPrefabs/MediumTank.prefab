@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5015509202970252775}
   - component: {fileID: 7380477425224234135}
   m_Layer: 11
-  m_Name: ThiccTank
+  m_Name: MediumTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
