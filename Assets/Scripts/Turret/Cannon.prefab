@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849990953130730418}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.33904347, y: 0.6200741, z: -0.32715005, w: -0.6273202}
+  m_LocalRotation: {x: -0.10413623, y: 0.694558, z: -0.095436946, w: -0.7054337}
   m_LocalPosition: {x: -2.3593369, y: 0.7555175, z: 0.6993077}
   m_LocalScale: {x: 2.145977, y: 0.57590246, z: 0.1780349}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7253251962213963004}
   m_Father: {fileID: 1762786655108901010}
-  m_LocalEulerAnglesHint: {x: 56.211, y: -89.885, z: -1.031}
+  m_LocalEulerAnglesHint: {x: 3.849, y: 16.226, z: 91.79}
 --- !u!114 &5521016729530701796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   generalProjectileSpeed: 50
   defaultProjectileType: {fileID: 3027800820665783597, guid: b963c51b895a36d458e2ae3cd8ff065c, type: 3}
   movementSpeed: 1
-  horizontalEulerCap: 55
+  horizontalEulerCap: 30
   verticalEulerCap: 60
   maxZoom: 80
   minZoom: 30

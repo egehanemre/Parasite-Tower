@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 67b4063280bfb0744a32ce08f69defbe, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -102,9 +102,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Max: 2
+    - _Max: 12
     - _Metallic: 0
-    - _Min: 0.2
+    - _Min: 9
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -123,7 +123,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0.945098, b: 0.75686276, a: 1}
-    - _Color: {r: 0.4339623, g: 0.3254717, b: 0.3254717, a: 1}
+    - _Color: {r: 0, g: 0.945098, b: 0.75686276, a: 1}
     - _EmissionColor: {r: 0, g: 0.9433962, b: 0.7555073, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

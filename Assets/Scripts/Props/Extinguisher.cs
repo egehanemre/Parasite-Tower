@@ -15,14 +15,6 @@ public class Extinguisher : MonoBehaviour
       [SerializeField] private ParticleSystem extinguishingEffect;
       private float activationCooldown = 0.5f;
       private bool hasBeenGrabbed = false;
-      
-      public void Start() {
-            Invoke(nameof(DeactivateKinematic), 1);
-      }
-      
-      public void DeactivateKinematic() {
-            GetComponent<Rigidbody>().isKinematic = false;
-      }
 
       private void Awake() {
             grabbableRef = GetComponent<ObjectsGrabbable>();
