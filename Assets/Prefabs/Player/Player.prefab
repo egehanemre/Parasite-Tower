@@ -265,11 +265,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 8207134336634039127}
-  moveSpeed: 5
-  sprintSpeedMultiplier: 1.5
+  moveSpeed: 4
+  sprintSpeedMultiplier: 1.4
   sprintTransitSpeed: 5
   gravity: 9.8
-  jumpHeight: 2
+  jumpHeight: 1.45
   maxLookAngle: 70
   mouseSensitivity: 1
   bobFrequency: 1

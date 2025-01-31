@@ -17,6 +17,7 @@ public class RocketTank : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private int baseProjectileDamage = 0;
     private float fireTimer;
+    private float rigidbodyFixTimer = 1;
 
     [SerializeField] private GameObject onHitEffect;
     [SerializeField] private GameObject afterHitEffect;
@@ -32,12 +33,16 @@ public class RocketTank : MonoBehaviour
         {
             Debug.LogError("RocketTank: No TankManager instance found!");
         }
-
         rb.isKinematic = false;
     }
 
     void FixedUpdate()
     {
+        /*rigidbodyFixTimer -= Time.fixedDeltaTime;
+        if (rigidbodyFixTimer < 0 && rb.isKinematic == true) {
+            rb.isKinematic = false;
+        }*/
+        
         if (TankManager.Instance?.sharedTarget != null)
         {
             Transform targetTower = TankManager.Instance.sharedTarget;
