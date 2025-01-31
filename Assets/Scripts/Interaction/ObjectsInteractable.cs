@@ -30,6 +30,7 @@ public class ObjectsInteractable : MonoBehaviour, IInteractable
         {
             if(TryGetComponent<MonitoringStation>(out MonitoringStation monitoringStation))
             {
+                monitoringStation.interactionCounter = monitoringStation.interactionCooldown;
                 monitoringStation.IncreasePriority();
                 monitoringStation.UnlockCursor();
             }

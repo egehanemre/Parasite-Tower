@@ -8,6 +8,8 @@ public class MonitoringStation : MonoBehaviour
     public PlayerController playerController;
     public CinemachineVirtualCamera monitoringStationCamera;
     public List<GameObject> otherUIElements;
+    public float interactionCooldown = 0.55f;
+    public float interactionCounter = 0;
 
     void Start()
     {
@@ -45,7 +47,8 @@ public class MonitoringStation : MonoBehaviour
 
     private void Update()
     {
-        if (monitoringStationCamera.Priority == 11)
+        interactionCounter -= Time.deltaTime;
+        if (monitoringStationCamera.Priority == 11 && interactionCounter < 0)
         {
             if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.E))
             {
