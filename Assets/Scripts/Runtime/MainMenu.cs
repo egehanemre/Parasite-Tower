@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Button restartButton;
     [SerializeField] private Button continueButton;
+    [SerializeField] private GameObject enablingPart;
+    private PlayerController playerController;
 
     private void Awake() {
         instance = this;
@@ -20,26 +22,35 @@ public class MainMenu : MonoBehaviour
         volumeSlider.onValueChanged.AddListener(NewVolumeValue);
         restartButton.onClick.AddListener(RestartScene);
         continueButton.onClick.AddListener(Resume);
+        volumeSlider.value = AudioListener.volume;
+        playerController = FindObjectOfType<PlayerController>();
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1) && Time.timeScale > 0) {
+        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale > 0) {
             StopGame();
         }
     }
     
     public void StopGame() {
-        gameObject.SetActive(true);
+        enablingPart.SetActive(true);
         Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        playerController.UpdateMovementLock(true);
     }
 
     private void Resume() {
-        gameObject.SetActive(false);
+        enablingPart.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        playerController.UpdateMovementLock(false);
     }
 
     private void RestartScene() {
+        Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
