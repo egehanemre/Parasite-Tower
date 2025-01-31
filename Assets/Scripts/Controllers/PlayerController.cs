@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Sound")] 
     [SerializeField] private float progressToStepRate = 1;
+    [SerializeField] private float stepVolume = 0.3f;
     [SerializeField] private List<AudioClip> stepSounds = new List<AudioClip>();
     private int stepSoundIndex = 0;
     private float movementProgress = 0;
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
         movementProgress += controller.velocity.sqrMagnitude * progressToStepRate * Time.fixedDeltaTime;
         if (movementProgress > 1) {
             AudioClip stepSound = stepSounds[stepSoundIndex];
-            AudioSource.PlayClipAtPoint(stepSound, transform.position);
+            AudioSource.PlayClipAtPoint(stepSound, transform.position, stepVolume);
             movementProgress = 0;
             if (stepSoundIndex + 1 < stepSounds.Count) {
                 stepSoundIndex++;

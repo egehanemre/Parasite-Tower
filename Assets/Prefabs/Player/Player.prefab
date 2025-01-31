@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 25214051471828777}
   - component: {fileID: 6417670652530640511}
   - component: {fileID: 413463141244891128}
+  - component: {fileID: 3611960421849775592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -275,7 +276,34 @@ MonoBehaviour:
   bobAmplitude: 1
   bobTransitionSpeed: 2
   progressToStepRate: 0.1
-  stepSounds: []
+  stepVolume: 0.15
+  stepSounds:
+  - {fileID: 8300000, guid: ea54f8ced0f97ae4ca54bc064ae3a6c0, type: 3}
+  - {fileID: 8300000, guid: 5923e05cfab7be249af95fc09578e6a7, type: 3}
+  - {fileID: 8300000, guid: e283612b44af9184e9b54df00727b263, type: 3}
+  - {fileID: 8300000, guid: 0e1c3fe6f619bf347ac2facc815d223d, type: 3}
+  - {fileID: 8300000, guid: ddf240e12048cb047a8928427701e2ed, type: 3}
+--- !u!114 &3611960421849775592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2193912316092195272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7956af4fa26cb604aa0c2cc37f2a7d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRayDistance: 4
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 2241
+  interactionButton: {fileID: 0}
+  grabLocation: {fileID: 6504685860169209037}
+  dropForce: 5
+  onItemPickedSound: {fileID: 8300000, guid: 25492f997ed61bc4d94f13d1c9266b11, type: 3}
+  onItemDropSound: {fileID: 8300000, guid: 705238727039d984688c3d8b965809ec, type: 3}
 --- !u!1 &3385384639620000817
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +410,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 1
   m_FrequencyGain: 1
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: -485.53622, y: 280.90378, z: -879.13293}
 --- !u!1 &7152237305499575395
 GameObject:
   m_ObjectHideFlags: 0
