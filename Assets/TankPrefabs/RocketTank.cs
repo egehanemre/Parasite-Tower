@@ -25,6 +25,7 @@ public class RocketTank : MonoBehaviour
     {
         stopRange += Random.Range(-2.5f, 2.5f);
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = true; 
 
         if (TankManager.Instance == null)
         {
@@ -50,27 +51,30 @@ public class RocketTank : MonoBehaviour
                 FireProjectile(targetTower);
             }
         }
+
+        AdjustToTerrain(); 
     }
 
     void MoveTowardsTarget(Transform targetTower)
     {
         Vector3 direction = (targetTower.position - transform.position).normalized;
-        direction.y = 0;
+        direction.y = 0; 
 
-        rb.velocity = direction * moveSpeed;
+        rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
     }
 
     void RotateTowardsTarget(Transform targetTower)
     {
         Vector3 direction = (targetTower.position - transform.position).normalized;
         direction.y = 0;
+
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
     }
 
     void StopMoving()
     {
-        rb.velocity = Vector3.zero;
+        rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
 
     void FireProjectile(Transform targetTower)
@@ -81,14 +85,15 @@ public class RocketTank : MonoBehaviour
         {
             fireTimer = 0;
 
-            Vector3 direction = TankManager.Instance.sharedTarget.position+TankManager.Instance.generalAimOffset - transform.position;
+            Vector3 direction = TankManager.Instance.sharedTarget.position + TankManager.Instance.generalAimOffset - transform.position;
             GameObject projectile = Instantiate(
                 TankManager.Instance.sharedProjectilePrefab,
                 firePoint.position, Quaternion.LookRotation(direction)
             );
 
             RocketTankProjectile projectileScript = projectile.GetComponent<RocketTankProjectile>();
-            if (projectileScript != null) {
+            if (projectileScript != null)
+            {
                 projectileScript.Launch(1, generalProjectileSpeed);
             }
         }
@@ -99,25 +104,43 @@ public class RocketTank : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            GameObject spawnedEffect = Instantiate(onDeathEffect, transform.position, transform.rotation);
+            Instantiate(onDeathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
-    
-    public void DealDamage(int amount, Vector3 location) {
+
+    public void DealDamage(int amount, Vector3 location)
+    {
         DealDamage(amount);
-        if(health <= 0) return;
-        
+        if (health <= 0) return;
+
         GameObject spawnedEffect = Instantiate(onHitEffect, transform);
         spawnedEffect.transform.position = location;
         StartCoroutine(PlaySmoke(spawnedEffect.transform.localPosition, 1));
     }
 
-    public IEnumerator PlaySmoke(Vector3 location, float after) {
+    public IEnumerator PlaySmoke(Vector3 location, float after)
+    {
         yield return new WaitForSeconds(after);
         GameObject spawnedEffect = Instantiate(afterHitEffect, transform);
         spawnedEffect.transform.localPosition = location;
-        //spawnedEffect.transform.eulerAngles = spawnedEffect.transform.eulerAngles + new Vector3(180, 0, 0);
+    }
+
+    void AdjustToTerrain()
+    {
+        RaycastHit hit;
+        Vector3 rayOrigin = transform.position + Vector3.up * 1.5f;
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out hit, 5f, LayerMask.GetMask("Terrain")))
+        {
+            Vector3 targetPosition = rb.position;
+            targetPosition.y = hit.point.y + 0.5f; 
+
+            rb.MovePosition(Vector3.Lerp(rb.position, targetPosition, Time.fixedDeltaTime * 5f));
+
+            Quaternion targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+            rb.MoveRotation(Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f));
+        }
     }
 }
 

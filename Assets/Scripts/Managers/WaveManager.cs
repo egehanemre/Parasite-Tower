@@ -47,7 +47,6 @@ public class WaveManager : MonoBehaviour
     [Header("Wave Settings")]
     public int currentWaveIndex = 0;
     public List<Wave> waves;
-    private int currentSubWaveIndex = 0;
 
     [Header("Spawn Settings")]
     public Transform northSpawn;
@@ -63,8 +62,6 @@ public class WaveManager : MonoBehaviour
 
     private Dictionary<SpawnDirection, Transform> spawnPoints;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
-    private bool waveInProgress = false;
-    private bool nextWaveTimerStarted = false;
 
     void Start()
     {
