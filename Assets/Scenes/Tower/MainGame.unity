@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableUIContainer: {fileID: 236302060}
-  playerInteraction: {fileID: 0}
+  playerInteraction: {fileID: 1683471862}
   interactableTextGUI: {fileID: 1204051792}
 --- !u!1001 &108198167
 PrefabInstance:
@@ -6027,7 +6027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1009287928
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9530,7 +9530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1501258839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10438,6 +10438,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2193912316092195272, guid: eeda344747aaa004587f54720527552b, type: 3}
   m_PrefabInstance: {fileID: 1088454870}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1683471862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3611960421849775592, guid: eeda344747aaa004587f54720527552b, type: 3}
+  m_PrefabInstance: {fileID: 1088454870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683471853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7956af4fa26cb604aa0c2cc37f2a7d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1701766409
 GameObject:
   m_ObjectHideFlags: 0
